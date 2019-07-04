@@ -1,0 +1,4413 @@
+
+xmega_midi_controler_flash_spi.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001e4c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000228  00802000  00001e4c  00001ee0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000092  00802228  00802228  00002108  2**0
+                  ALLOC
+  3 .comment      0000005c  00000000  00000000  00002108  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00002164  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000138  00000000  00000000  000021a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000509b  00000000  00000000  000022dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00002b07  00000000  00000000  00007377  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00001270  00000000  00000000  00009e7e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000005bc  00000000  00000000  0000b0f0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000303a  00000000  00000000  0000b6ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00001406  00000000  00000000  0000e6e6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000190  00000000  00000000  0000faec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 00 01 	jmp	0x200	; 0x200 <__ctors_end>
+       4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+       8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+       c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      10:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      14:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      18:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      1c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      20:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      24:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      28:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      2c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      30:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      34:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      38:	0c 94 f5 0a 	jmp	0x15ea	; 0x15ea <__vector_14>
+      3c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      40:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      44:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      48:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      4c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      50:	0c 94 0c 0b 	jmp	0x1618	; 0x1618 <__vector_20>
+      54:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      58:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      5c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      60:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      64:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      68:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      6c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      70:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      74:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      78:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      7c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      80:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      84:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      88:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      8c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      90:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      94:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      98:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      9c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      a0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      a4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      a8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      ac:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      b0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      b4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      b8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      bc:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      c0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      c4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      c8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      cc:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      d0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      d4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      d8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      dc:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      e0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      e4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      e8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      ec:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      f0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      f4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      f8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+      fc:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     100:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     104:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     108:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     10c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     110:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     114:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     118:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     11c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     120:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     124:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     128:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     12c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     130:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     134:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     138:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     13c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     140:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     144:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     148:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     14c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     150:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     154:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     158:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     15c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     160:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     164:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     168:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     16c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     170:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     174:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     178:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     17c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     180:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     184:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     188:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     18c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     190:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     194:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     198:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     19c:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1a0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1a4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1a8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1ac:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1b0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1b4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1b8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1bc:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1c0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1c4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1c8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1cc:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1d0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1d4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1d8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1dc:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1e0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1e4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1e8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1ec:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1f0:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1f4:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+     1f8:	0c 94 26 01 	jmp	0x24c	; 0x24c <__bad_interrupt>
+
+000001fc <__trampolines_start>:
+     1fc:	0c 94 28 01 	jmp	0x250	; 0x250 <uart_putchar>
+
+00000200 <__ctors_end>:
+     200:	11 24       	eor	r1, r1
+     202:	1f be       	out	0x3f, r1	; 63
+     204:	cf ef       	ldi	r28, 0xFF	; 255
+     206:	cd bf       	out	0x3d, r28	; 61
+     208:	df e3       	ldi	r29, 0x3F	; 63
+     20a:	de bf       	out	0x3e, r29	; 62
+     20c:	00 e0       	ldi	r16, 0x00	; 0
+     20e:	0c bf       	out	0x3c, r16	; 60
+     210:	18 be       	out	0x38, r1	; 56
+     212:	19 be       	out	0x39, r1	; 57
+     214:	1a be       	out	0x3a, r1	; 58
+     216:	1b be       	out	0x3b, r1	; 59
+
+00000218 <__do_copy_data>:
+     218:	12 e2       	ldi	r17, 0x22	; 34
+     21a:	a0 e0       	ldi	r26, 0x00	; 0
+     21c:	b0 e2       	ldi	r27, 0x20	; 32
+     21e:	ec e4       	ldi	r30, 0x4C	; 76
+     220:	fe e1       	ldi	r31, 0x1E	; 30
+     222:	00 e0       	ldi	r16, 0x00	; 0
+     224:	0b bf       	out	0x3b, r16	; 59
+     226:	02 c0       	rjmp	.+4      	; 0x22c <__do_copy_data+0x14>
+     228:	07 90       	elpm	r0, Z+
+     22a:	0d 92       	st	X+, r0
+     22c:	a8 32       	cpi	r26, 0x28	; 40
+     22e:	b1 07       	cpc	r27, r17
+     230:	d9 f7       	brne	.-10     	; 0x228 <__do_copy_data+0x10>
+     232:	1b be       	out	0x3b, r1	; 59
+
+00000234 <__do_clear_bss>:
+     234:	22 e2       	ldi	r18, 0x22	; 34
+     236:	a8 e2       	ldi	r26, 0x28	; 40
+     238:	b2 e2       	ldi	r27, 0x22	; 34
+     23a:	01 c0       	rjmp	.+2      	; 0x23e <.do_clear_bss_start>
+
+0000023c <.do_clear_bss_loop>:
+     23c:	1d 92       	st	X+, r1
+
+0000023e <.do_clear_bss_start>:
+     23e:	aa 3b       	cpi	r26, 0xBA	; 186
+     240:	b2 07       	cpc	r27, r18
+     242:	e1 f7       	brne	.-8      	; 0x23c <.do_clear_bss_loop>
+     244:	0e 94 00 08 	call	0x1000	; 0x1000 <main>
+     248:	0c 94 24 0f 	jmp	0x1e48	; 0x1e48 <_exit>
+
+0000024c <__bad_interrupt>:
+     24c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000250 <uart_putchar>:
+	}while(--len);
+	
+	CS_DISABLE();
+	return;
+	
+}
+     250:	e0 ea       	ldi	r30, 0xA0	; 160
+     252:	fa e0       	ldi	r31, 0x0A	; 10
+     254:	91 81       	ldd	r25, Z+1	; 0x01
+     256:	95 ff       	sbrs	r25, 5
+     258:	fd cf       	rjmp	.-6      	; 0x254 <uart_putchar+0x4>
+     25a:	80 93 a0 0a 	sts	0x0AA0, r24	; 0x800aa0 <__TEXT_REGION_LENGTH__+0x700aa0>
+     25e:	08 95       	ret
+
+00000260 <initClk>:
+     260:	82 e0       	ldi	r24, 0x02	; 2
+     262:	80 93 50 00 	sts	0x0050, r24	; 0x800050 <__TEXT_REGION_LENGTH__+0x700050>
+     266:	e0 e5       	ldi	r30, 0x50	; 80
+     268:	f0 e0       	ldi	r31, 0x00	; 0
+     26a:	81 81       	ldd	r24, Z+1	; 0x01
+     26c:	81 ff       	sbrs	r24, 1
+     26e:	fd cf       	rjmp	.-6      	; 0x26a <initClk+0xa>
+     270:	88 ed       	ldi	r24, 0xD8	; 216
+     272:	84 bf       	out	0x34, r24	; 52
+     274:	81 e0       	ldi	r24, 0x01	; 1
+     276:	80 93 40 00 	sts	0x0040, r24	; 0x800040 <__TEXT_REGION_LENGTH__+0x700040>
+     27a:	08 95       	ret
+
+0000027c <initSPI>:
+     27c:	e0 e4       	ldi	r30, 0x40	; 64
+     27e:	f6 e0       	ldi	r31, 0x06	; 6
+     280:	80 eb       	ldi	r24, 0xB0	; 176
+     282:	81 83       	std	Z+1, r24	; 0x01
+     284:	80 e4       	ldi	r24, 0x40	; 64
+     286:	82 83       	std	Z+2, r24	; 0x02
+     288:	81 ed       	ldi	r24, 0xD1	; 209
+     28a:	80 93 c0 08 	sts	0x08C0, r24	; 0x8008c0 <__TEXT_REGION_LENGTH__+0x7008c0>
+     28e:	08 95       	ret
+
+00000290 <initDebugUART>:
+     290:	88 e0       	ldi	r24, 0x08	; 8
+     292:	80 93 81 06 	sts	0x0681, r24	; 0x800681 <__TEXT_REGION_LENGTH__+0x700681>
+     296:	e0 ea       	ldi	r30, 0xA0	; 160
+     298:	fa e0       	ldi	r31, 0x0A	; 10
+     29a:	84 83       	std	Z+4, r24	; 0x04
+     29c:	83 e0       	ldi	r24, 0x03	; 3
+     29e:	85 83       	std	Z+5, r24	; 0x05
+     2a0:	08 95       	ret
+
+000002a2 <initMidiUART>:
+     2a2:	88 e0       	ldi	r24, 0x08	; 8
+     2a4:	80 93 61 06 	sts	0x0661, r24	; 0x800661 <__TEXT_REGION_LENGTH__+0x700661>
+     2a8:	e0 ea       	ldi	r30, 0xA0	; 160
+     2aa:	f9 e0       	ldi	r31, 0x09	; 9
+     2ac:	83 e8       	ldi	r24, 0x83	; 131
+     2ae:	86 83       	std	Z+6, r24	; 0x06
+     2b0:	17 82       	std	Z+7, r1	; 0x07
+     2b2:	8c e0       	ldi	r24, 0x0C	; 12
+     2b4:	84 83       	std	Z+4, r24	; 0x04
+     2b6:	83 e0       	ldi	r24, 0x03	; 3
+     2b8:	85 83       	std	Z+5, r24	; 0x05
+     2ba:	08 95       	ret
+
+000002bc <initMidiTimer>:
+     2bc:	e0 e4       	ldi	r30, 0x40	; 64
+     2be:	f8 e0       	ldi	r31, 0x08	; 8
+     2c0:	85 e0       	ldi	r24, 0x05	; 5
+     2c2:	80 83       	st	Z, r24
+     2c4:	83 e0       	ldi	r24, 0x03	; 3
+     2c6:	86 83       	std	Z+6, r24	; 0x06
+     2c8:	88 e8       	ldi	r24, 0x88	; 136
+     2ca:	93 e1       	ldi	r25, 0x13	; 19
+     2cc:	86 a3       	std	Z+38, r24	; 0x26
+     2ce:	97 a3       	std	Z+39, r25	; 0x27
+     2d0:	08 95       	ret
+
+000002d2 <initInputTimer>:
+     2d2:	e0 e0       	ldi	r30, 0x00	; 0
+     2d4:	f8 e0       	ldi	r31, 0x08	; 8
+     2d6:	10 82       	st	Z, r1
+     2d8:	83 e0       	ldi	r24, 0x03	; 3
+     2da:	86 83       	std	Z+6, r24	; 0x06
+     2dc:	82 e4       	ldi	r24, 0x42	; 66
+     2de:	9f e0       	ldi	r25, 0x0F	; 15
+     2e0:	86 a3       	std	Z+38, r24	; 0x26
+     2e2:	97 a3       	std	Z+39, r25	; 0x27
+     2e4:	08 95       	ret
+
+000002e6 <initInputADC>:
+     2e6:	e0 e0       	ldi	r30, 0x00	; 0
+     2e8:	f2 e0       	ldi	r31, 0x02	; 2
+     2ea:	84 ea       	ldi	r24, 0xA4	; 164
+     2ec:	81 83       	std	Z+1, r24	; 0x01
+     2ee:	80 e2       	ldi	r24, 0x20	; 32
+     2f0:	82 83       	std	Z+2, r24	; 0x02
+     2f2:	87 e0       	ldi	r24, 0x07	; 7
+     2f4:	84 83       	std	Z+4, r24	; 0x04
+     2f6:	81 e0       	ldi	r24, 0x01	; 1
+     2f8:	80 a7       	std	Z+40, r24	; 0x28
+     2fa:	98 e0       	ldi	r25, 0x08	; 8
+     2fc:	91 a7       	std	Z+41, r25	; 0x29
+     2fe:	80 83       	st	Z, r24
+     300:	08 95       	ret
+
+00000302 <initInterrupts>:
+     302:	e0 ea       	ldi	r30, 0xA0	; 160
+     304:	f0 e0       	ldi	r31, 0x00	; 0
+     306:	82 81       	ldd	r24, Z+2	; 0x02
+     308:	87 60       	ori	r24, 0x07	; 7
+     30a:	82 83       	std	Z+2, r24	; 0x02
+     30c:	08 95       	ret
+
+0000030e <sendMidi>:
+     30e:	e0 ea       	ldi	r30, 0xA0	; 160
+     310:	f9 e0       	ldi	r31, 0x09	; 9
+     312:	91 81       	ldd	r25, Z+1	; 0x01
+     314:	95 ff       	sbrs	r25, 5
+     316:	fd cf       	rjmp	.-6      	; 0x312 <sendMidi+0x4>
+     318:	80 93 a0 09 	sts	0x09A0, r24	; 0x8009a0 <__TEXT_REGION_LENGTH__+0x7009a0>
+     31c:	08 95       	ret
+
+0000031e <sendSPI>:
+     31e:	80 93 c3 08 	sts	0x08C3, r24	; 0x8008c3 <__TEXT_REGION_LENGTH__+0x7008c3>
+     322:	e0 ec       	ldi	r30, 0xC0	; 192
+     324:	f8 e0       	ldi	r31, 0x08	; 8
+     326:	82 81       	ldd	r24, Z+2	; 0x02
+     328:	88 23       	and	r24, r24
+     32a:	ec f7       	brge	.-6      	; 0x326 <sendSPI+0x8>
+     32c:	80 91 c3 08 	lds	r24, 0x08C3	; 0x8008c3 <__TEXT_REGION_LENGTH__+0x7008c3>
+     330:	08 95       	ret
+
+00000332 <sendDummy>:
+     332:	80 e0       	ldi	r24, 0x00	; 0
+     334:	0e 94 8f 01 	call	0x31e	; 0x31e <sendSPI>
+     338:	08 95       	ret
+
+0000033a <memSendAddress>:
+     33a:	cf 93       	push	r28
+     33c:	df 93       	push	r29
+     33e:	c6 2f       	mov	r28, r22
+     340:	d7 2f       	mov	r29, r23
+     342:	0e 94 8f 01 	call	0x31e	; 0x31e <sendSPI>
+     346:	8d 2f       	mov	r24, r29
+     348:	0e 94 8f 01 	call	0x31e	; 0x31e <sendSPI>
+     34c:	8c 2f       	mov	r24, r28
+     34e:	0e 94 8f 01 	call	0x31e	; 0x31e <sendSPI>
+     352:	df 91       	pop	r29
+     354:	cf 91       	pop	r28
+     356:	08 95       	ret
+
+00000358 <getMemStatus>:
+     358:	1f 93       	push	r17
+     35a:	cf 93       	push	r28
+     35c:	df 93       	push	r29
+     35e:	c0 e4       	ldi	r28, 0x40	; 64
+     360:	d6 e0       	ldi	r29, 0x06	; 6
+     362:	10 e1       	ldi	r17, 0x10	; 16
+     364:	1d 83       	std	Y+5, r17	; 0x05
+     366:	1e 83       	std	Y+6, r17	; 0x06
+     368:	85 e0       	ldi	r24, 0x05	; 5
+     36a:	0e 94 8f 01 	call	0x31e	; 0x31e <sendSPI>
+     36e:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     372:	1d 83       	std	Y+5, r17	; 0x05
+     374:	df 91       	pop	r29
+     376:	cf 91       	pop	r28
+     378:	1f 91       	pop	r17
+     37a:	08 95       	ret
+
+0000037c <waitForNotBusy>:
+     37c:	0e 94 ac 01 	call	0x358	; 0x358 <getMemStatus>
+     380:	80 fd       	sbrc	r24, 0
+     382:	fc cf       	rjmp	.-8      	; 0x37c <waitForNotBusy>
+     384:	08 95       	ret
+
+00000386 <memReadToBuffer>:
+     386:	8f 92       	push	r8
+     388:	9f 92       	push	r9
+     38a:	af 92       	push	r10
+     38c:	bf 92       	push	r11
+     38e:	ef 92       	push	r14
+     390:	ff 92       	push	r15
+     392:	0f 93       	push	r16
+     394:	1f 93       	push	r17
+     396:	cf 93       	push	r28
+     398:	df 93       	push	r29
+     39a:	4b 01       	movw	r8, r22
+     39c:	5c 01       	movw	r10, r24
+     39e:	7a 01       	movw	r14, r20
+     3a0:	12 2f       	mov	r17, r18
+     3a2:	0e 94 be 01 	call	0x37c	; 0x37c <waitForNotBusy>
+     3a6:	e0 e4       	ldi	r30, 0x40	; 64
+     3a8:	f6 e0       	ldi	r31, 0x06	; 6
+     3aa:	80 e1       	ldi	r24, 0x10	; 16
+     3ac:	85 83       	std	Z+5, r24	; 0x05
+     3ae:	86 83       	std	Z+6, r24	; 0x06
+     3b0:	83 e0       	ldi	r24, 0x03	; 3
+     3b2:	0e 94 8f 01 	call	0x31e	; 0x31e <sendSPI>
+     3b6:	c5 01       	movw	r24, r10
+     3b8:	b4 01       	movw	r22, r8
+     3ba:	0e 94 9d 01 	call	0x33a	; 0x33a <memSendAddress>
+     3be:	e7 01       	movw	r28, r14
+     3c0:	11 50       	subi	r17, 0x01	; 1
+     3c2:	01 2f       	mov	r16, r17
+     3c4:	10 e0       	ldi	r17, 0x00	; 0
+     3c6:	0f 5f       	subi	r16, 0xFF	; 255
+     3c8:	1f 4f       	sbci	r17, 0xFF	; 255
+     3ca:	0e 0d       	add	r16, r14
+     3cc:	1f 1d       	adc	r17, r15
+     3ce:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     3d2:	89 93       	st	Y+, r24
+     3d4:	c0 17       	cp	r28, r16
+     3d6:	d1 07       	cpc	r29, r17
+     3d8:	d1 f7       	brne	.-12     	; 0x3ce <memReadToBuffer+0x48>
+     3da:	80 e1       	ldi	r24, 0x10	; 16
+     3dc:	80 93 45 06 	sts	0x0645, r24	; 0x800645 <__TEXT_REGION_LENGTH__+0x700645>
+     3e0:	df 91       	pop	r29
+     3e2:	cf 91       	pop	r28
+     3e4:	1f 91       	pop	r17
+     3e6:	0f 91       	pop	r16
+     3e8:	ff 90       	pop	r15
+     3ea:	ef 90       	pop	r14
+     3ec:	bf 90       	pop	r11
+     3ee:	af 90       	pop	r10
+     3f0:	9f 90       	pop	r9
+     3f2:	8f 90       	pop	r8
+     3f4:	08 95       	ret
+
+000003f6 <getFileCount>:
+	//printf("early exit\r\n");
+}
+
+//Sets _fileCount
+void getFileCount()
+{
+     3f6:	cf 93       	push	r28
+     3f8:	df 93       	push	r29
+     3fa:	1f 92       	push	r1
+     3fc:	1f 92       	push	r1
+     3fe:	cd b7       	in	r28, 0x3d	; 61
+     400:	de b7       	in	r29, 0x3e	; 62
+	uint8_t data[2];
+	memReadToBuffer(FILE_COUNT_ADDR, data, 2);
+     402:	22 e0       	ldi	r18, 0x02	; 2
+     404:	ae 01       	movw	r20, r28
+     406:	4f 5f       	subi	r20, 0xFF	; 255
+     408:	5f 4f       	sbci	r21, 0xFF	; 255
+     40a:	64 e0       	ldi	r22, 0x04	; 4
+     40c:	70 e1       	ldi	r23, 0x10	; 16
+     40e:	80 e0       	ldi	r24, 0x00	; 0
+     410:	90 e0       	ldi	r25, 0x00	; 0
+     412:	0e 94 c3 01 	call	0x386	; 0x386 <memReadToBuffer>
+	_fileCount = ((uint16_t)data[0] << 8) + (uint16_t)data[1];	
+     416:	89 81       	ldd	r24, Y+1	; 0x01
+     418:	90 e0       	ldi	r25, 0x00	; 0
+     41a:	98 2f       	mov	r25, r24
+     41c:	88 27       	eor	r24, r24
+     41e:	2a 81       	ldd	r18, Y+2	; 0x02
+     420:	82 0f       	add	r24, r18
+     422:	91 1d       	adc	r25, r1
+     424:	80 93 31 22 	sts	0x2231, r24	; 0x802231 <_fileCount>
+     428:	90 93 32 22 	sts	0x2232, r25	; 0x802232 <_fileCount+0x1>
+}
+     42c:	0f 90       	pop	r0
+     42e:	0f 90       	pop	r0
+     430:	df 91       	pop	r29
+     432:	cf 91       	pop	r28
+     434:	08 95       	ret
+
+00000436 <moveToFile>:
+
+//Uses _fileIndex
+//Sets _fileAddressOffset
+//Since we don't need the file names, we will automatically add the name length to the offset
+void moveToFile()
+{
+     436:	8f 92       	push	r8
+     438:	9f 92       	push	r9
+     43a:	af 92       	push	r10
+     43c:	bf 92       	push	r11
+     43e:	ef 92       	push	r14
+     440:	ff 92       	push	r15
+     442:	0f 93       	push	r16
+     444:	1f 93       	push	r17
+     446:	cf 93       	push	r28
+     448:	df 93       	push	r29
+     44a:	00 d0       	rcall	.+0      	; 0x44c <moveToFile+0x16>
+     44c:	1f 92       	push	r1
+     44e:	cd b7       	in	r28, 0x3d	; 61
+     450:	de b7       	in	r29, 0x3e	; 62
+	
+	uint8_t data[4];
+	uint32_t address = FILE_COUNT_ADDR + 2; //starting address for lookup table is 2 bytes after the size of the total data section.
+	_fileAddressOffset = address + (uint32_t)(_fileCount * 4); //first file address is the address of the first lookup table entry + all entries (Which are each 4 bytes)
+     452:	80 91 31 22 	lds	r24, 0x2231	; 0x802231 <_fileCount>
+     456:	90 91 32 22 	lds	r25, 0x2232	; 0x802232 <_fileCount+0x1>
+     45a:	88 0f       	add	r24, r24
+     45c:	99 1f       	adc	r25, r25
+     45e:	88 0f       	add	r24, r24
+     460:	99 1f       	adc	r25, r25
+     462:	a0 e0       	ldi	r26, 0x00	; 0
+     464:	b0 e0       	ldi	r27, 0x00	; 0
+     466:	8a 5f       	subi	r24, 0xFA	; 250
+     468:	9f 4e       	sbci	r25, 0xEF	; 239
+     46a:	af 4f       	sbci	r26, 0xFF	; 255
+     46c:	bf 4f       	sbci	r27, 0xFF	; 255
+     46e:	80 93 2b 22 	sts	0x222B, r24	; 0x80222b <_fileAddressOffset>
+     472:	90 93 2c 22 	sts	0x222C, r25	; 0x80222c <_fileAddressOffset+0x1>
+     476:	a0 93 2d 22 	sts	0x222D, r26	; 0x80222d <_fileAddressOffset+0x2>
+     47a:	b0 93 2e 22 	sts	0x222E, r27	; 0x80222e <_fileAddressOffset+0x3>
+	
+	//if the index we are looking for is 0 or the file count is 0, then we can leave the address we initialized _fileAddressOffset to
+	if (_fileIndex > 0 && _fileCount > 0)
+     47e:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+     482:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+     486:	89 2b       	or	r24, r25
+     488:	09 f4       	brne	.+2      	; 0x48c <moveToFile+0x56>
+     48a:	a2 c0       	rjmp	.+324    	; 0x5d0 <moveToFile+0x19a>
+     48c:	80 91 31 22 	lds	r24, 0x2231	; 0x802231 <_fileCount>
+     490:	90 91 32 22 	lds	r25, 0x2232	; 0x802232 <_fileCount+0x1>
+     494:	89 2b       	or	r24, r25
+     496:	09 f4       	brne	.+2      	; 0x49a <moveToFile+0x64>
+     498:	9b c0       	rjmp	.+310    	; 0x5d0 <moveToFile+0x19a>
+	{
+		//Make sure the index is not larger than the file count
+		if (_fileIndex >= _fileCount)
+     49a:	20 91 2f 22 	lds	r18, 0x222F	; 0x80222f <_fileIndex>
+     49e:	30 91 30 22 	lds	r19, 0x2230	; 0x802230 <_fileIndex+0x1>
+     4a2:	80 91 31 22 	lds	r24, 0x2231	; 0x802231 <_fileCount>
+     4a6:	90 91 32 22 	lds	r25, 0x2232	; 0x802232 <_fileCount+0x1>
+     4aa:	28 17       	cp	r18, r24
+     4ac:	39 07       	cpc	r19, r25
+     4ae:	48 f0       	brcs	.+18     	; 0x4c2 <moveToFile+0x8c>
+		{
+			_fileIndex = _fileCount - 1;
+     4b0:	80 91 31 22 	lds	r24, 0x2231	; 0x802231 <_fileCount>
+     4b4:	90 91 32 22 	lds	r25, 0x2232	; 0x802232 <_fileCount+0x1>
+     4b8:	01 97       	sbiw	r24, 0x01	; 1
+     4ba:	80 93 2f 22 	sts	0x222F, r24	; 0x80222f <_fileIndex>
+     4be:	90 93 30 22 	sts	0x2230, r25	; 0x802230 <_fileIndex+0x1>
+		}	
+		
+		//We are basically summing up all of the file sizes until we reach our file index
+		for(uint16_t i = 0; i < _fileIndex; i++)
+     4c2:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+     4c6:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+     4ca:	89 2b       	or	r24, r25
+     4cc:	09 f4       	brne	.+2      	; 0x4d0 <moveToFile+0x9a>
+     4ce:	80 c0       	rjmp	.+256    	; 0x5d0 <moveToFile+0x19a>
+     4d0:	00 e0       	ldi	r16, 0x00	; 0
+     4d2:	10 e0       	ldi	r17, 0x00	; 0
+     4d4:	0f 2e       	mov	r0, r31
+     4d6:	f6 e0       	ldi	r31, 0x06	; 6
+     4d8:	8f 2e       	mov	r8, r31
+     4da:	f0 e1       	ldi	r31, 0x10	; 16
+     4dc:	9f 2e       	mov	r9, r31
+     4de:	a1 2c       	mov	r10, r1
+     4e0:	b1 2c       	mov	r11, r1
+     4e2:	f0 2d       	mov	r31, r0
+		{
+			//read file sizes and add them too the offsets			
+			memReadToBuffer(address, data, 4);
+			address += 4;
+			_fileAddressOffset += ((uint32_t)data[0] << 24) + ((uint32_t)data[1] << 16) + ((uint32_t)data[2] << 8) + ((uint32_t)data[3] << 0);
+			printf("Index: %u New _fileAddressOffset 0x%08lx. %02x %02x %02x %02x\r\n",i, _fileAddressOffset, data[0], data[1], data[2], data[3]);
+     4e4:	0f 2e       	mov	r0, r31
+     4e6:	f4 e1       	ldi	r31, 0x14	; 20
+     4e8:	ef 2e       	mov	r14, r31
+     4ea:	f0 e2       	ldi	r31, 0x20	; 32
+     4ec:	ff 2e       	mov	r15, r31
+     4ee:	f0 2d       	mov	r31, r0
+		
+		//We are basically summing up all of the file sizes until we reach our file index
+		for(uint16_t i = 0; i < _fileIndex; i++)
+		{
+			//read file sizes and add them too the offsets			
+			memReadToBuffer(address, data, 4);
+     4f0:	24 e0       	ldi	r18, 0x04	; 4
+     4f2:	ae 01       	movw	r20, r28
+     4f4:	4f 5f       	subi	r20, 0xFF	; 255
+     4f6:	5f 4f       	sbci	r21, 0xFF	; 255
+     4f8:	c5 01       	movw	r24, r10
+     4fa:	b4 01       	movw	r22, r8
+     4fc:	0e 94 c3 01 	call	0x386	; 0x386 <memReadToBuffer>
+			address += 4;
+     500:	24 e0       	ldi	r18, 0x04	; 4
+     502:	82 0e       	add	r8, r18
+     504:	91 1c       	adc	r9, r1
+     506:	a1 1c       	adc	r10, r1
+     508:	b1 1c       	adc	r11, r1
+			_fileAddressOffset += ((uint32_t)data[0] << 24) + ((uint32_t)data[1] << 16) + ((uint32_t)data[2] << 8) + ((uint32_t)data[3] << 0);
+     50a:	29 81       	ldd	r18, Y+1	; 0x01
+     50c:	3a 81       	ldd	r19, Y+2	; 0x02
+     50e:	eb 81       	ldd	r30, Y+3	; 0x03
+     510:	fc 81       	ldd	r31, Y+4	; 0x04
+     512:	80 91 2b 22 	lds	r24, 0x222B	; 0x80222b <_fileAddressOffset>
+     516:	90 91 2c 22 	lds	r25, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     51a:	a0 91 2d 22 	lds	r26, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     51e:	b0 91 2e 22 	lds	r27, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     522:	ac 01       	movw	r20, r24
+     524:	bd 01       	movw	r22, r26
+     526:	4f 0f       	add	r20, r31
+     528:	51 1d       	adc	r21, r1
+     52a:	61 1d       	adc	r22, r1
+     52c:	71 1d       	adc	r23, r1
+     52e:	82 2f       	mov	r24, r18
+     530:	90 e0       	ldi	r25, 0x00	; 0
+     532:	a0 e0       	ldi	r26, 0x00	; 0
+     534:	b0 e0       	ldi	r27, 0x00	; 0
+     536:	b8 2f       	mov	r27, r24
+     538:	aa 27       	eor	r26, r26
+     53a:	99 27       	eor	r25, r25
+     53c:	88 27       	eor	r24, r24
+     53e:	84 0f       	add	r24, r20
+     540:	95 1f       	adc	r25, r21
+     542:	a6 1f       	adc	r26, r22
+     544:	b7 1f       	adc	r27, r23
+     546:	43 2f       	mov	r20, r19
+     548:	50 e0       	ldi	r21, 0x00	; 0
+     54a:	60 e0       	ldi	r22, 0x00	; 0
+     54c:	70 e0       	ldi	r23, 0x00	; 0
+     54e:	ba 01       	movw	r22, r20
+     550:	55 27       	eor	r21, r21
+     552:	44 27       	eor	r20, r20
+     554:	84 0f       	add	r24, r20
+     556:	95 1f       	adc	r25, r21
+     558:	a6 1f       	adc	r26, r22
+     55a:	b7 1f       	adc	r27, r23
+     55c:	4e 2f       	mov	r20, r30
+     55e:	50 e0       	ldi	r21, 0x00	; 0
+     560:	60 e0       	ldi	r22, 0x00	; 0
+     562:	70 e0       	ldi	r23, 0x00	; 0
+     564:	76 2f       	mov	r23, r22
+     566:	65 2f       	mov	r22, r21
+     568:	54 2f       	mov	r21, r20
+     56a:	44 27       	eor	r20, r20
+     56c:	84 0f       	add	r24, r20
+     56e:	95 1f       	adc	r25, r21
+     570:	a6 1f       	adc	r26, r22
+     572:	b7 1f       	adc	r27, r23
+     574:	80 93 2b 22 	sts	0x222B, r24	; 0x80222b <_fileAddressOffset>
+     578:	90 93 2c 22 	sts	0x222C, r25	; 0x80222c <_fileAddressOffset+0x1>
+     57c:	a0 93 2d 22 	sts	0x222D, r26	; 0x80222d <_fileAddressOffset+0x2>
+     580:	b0 93 2e 22 	sts	0x222E, r27	; 0x80222e <_fileAddressOffset+0x3>
+			printf("Index: %u New _fileAddressOffset 0x%08lx. %02x %02x %02x %02x\r\n",i, _fileAddressOffset, data[0], data[1], data[2], data[3]);
+     584:	80 91 2b 22 	lds	r24, 0x222B	; 0x80222b <_fileAddressOffset>
+     588:	90 91 2c 22 	lds	r25, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     58c:	a0 91 2d 22 	lds	r26, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     590:	b0 91 2e 22 	lds	r27, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     594:	1f 92       	push	r1
+     596:	ff 93       	push	r31
+     598:	1f 92       	push	r1
+     59a:	ef 93       	push	r30
+     59c:	1f 92       	push	r1
+     59e:	3f 93       	push	r19
+     5a0:	1f 92       	push	r1
+     5a2:	2f 93       	push	r18
+     5a4:	bf 93       	push	r27
+     5a6:	af 93       	push	r26
+     5a8:	9f 93       	push	r25
+     5aa:	8f 93       	push	r24
+     5ac:	1f 93       	push	r17
+     5ae:	0f 93       	push	r16
+     5b0:	ff 92       	push	r15
+     5b2:	ef 92       	push	r14
+     5b4:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+		{
+			_fileIndex = _fileCount - 1;
+		}	
+		
+		//We are basically summing up all of the file sizes until we reach our file index
+		for(uint16_t i = 0; i < _fileIndex; i++)
+     5b8:	0f 5f       	subi	r16, 0xFF	; 255
+     5ba:	1f 4f       	sbci	r17, 0xFF	; 255
+     5bc:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+     5c0:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+     5c4:	cd bf       	out	0x3d, r28	; 61
+     5c6:	de bf       	out	0x3e, r29	; 62
+     5c8:	08 17       	cp	r16, r24
+     5ca:	19 07       	cpc	r17, r25
+     5cc:	08 f4       	brcc	.+2      	; 0x5d0 <moveToFile+0x19a>
+     5ce:	90 cf       	rjmp	.-224    	; 0x4f0 <moveToFile+0xba>
+			printf("Index: %u New _fileAddressOffset 0x%08lx. %02x %02x %02x %02x\r\n",i, _fileAddressOffset, data[0], data[1], data[2], data[3]);
+		}
+	}
+	
+	//As a convenience, here we add file name length to offset.
+	memReadToBuffer(_fileAddressOffset, data, 2);
+     5d0:	60 91 2b 22 	lds	r22, 0x222B	; 0x80222b <_fileAddressOffset>
+     5d4:	70 91 2c 22 	lds	r23, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     5d8:	80 91 2d 22 	lds	r24, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     5dc:	90 91 2e 22 	lds	r25, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     5e0:	22 e0       	ldi	r18, 0x02	; 2
+     5e2:	ae 01       	movw	r20, r28
+     5e4:	4f 5f       	subi	r20, 0xFF	; 255
+     5e6:	5f 4f       	sbci	r21, 0xFF	; 255
+     5e8:	0e 94 c3 01 	call	0x386	; 0x386 <memReadToBuffer>
+	printf("Reading file name length from 0x%08lx. Len: %02x %02x\r\n", _fileAddressOffset, data[0] ,data[1]);
+     5ec:	80 91 2b 22 	lds	r24, 0x222B	; 0x80222b <_fileAddressOffset>
+     5f0:	90 91 2c 22 	lds	r25, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     5f4:	a0 91 2d 22 	lds	r26, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     5f8:	b0 91 2e 22 	lds	r27, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     5fc:	2a 81       	ldd	r18, Y+2	; 0x02
+     5fe:	1f 92       	push	r1
+     600:	2f 93       	push	r18
+     602:	29 81       	ldd	r18, Y+1	; 0x01
+     604:	1f 92       	push	r1
+     606:	2f 93       	push	r18
+     608:	bf 93       	push	r27
+     60a:	af 93       	push	r26
+     60c:	9f 93       	push	r25
+     60e:	8f 93       	push	r24
+     610:	84 e5       	ldi	r24, 0x54	; 84
+     612:	90 e2       	ldi	r25, 0x20	; 32
+     614:	9f 93       	push	r25
+     616:	8f 93       	push	r24
+     618:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+	_fileAddressOffset +=  ((uint32_t)data[0] << 8) + ((uint32_t)data[1] << 0) + 2; //+ 2 for the name length bytes
+     61c:	80 91 2b 22 	lds	r24, 0x222B	; 0x80222b <_fileAddressOffset>
+     620:	90 91 2c 22 	lds	r25, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     624:	a0 91 2d 22 	lds	r26, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     628:	b0 91 2e 22 	lds	r27, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     62c:	02 96       	adiw	r24, 0x02	; 2
+     62e:	a1 1d       	adc	r26, r1
+     630:	b1 1d       	adc	r27, r1
+     632:	2a 81       	ldd	r18, Y+2	; 0x02
+     634:	82 0f       	add	r24, r18
+     636:	91 1d       	adc	r25, r1
+     638:	a1 1d       	adc	r26, r1
+     63a:	b1 1d       	adc	r27, r1
+     63c:	49 81       	ldd	r20, Y+1	; 0x01
+     63e:	50 e0       	ldi	r21, 0x00	; 0
+     640:	60 e0       	ldi	r22, 0x00	; 0
+     642:	70 e0       	ldi	r23, 0x00	; 0
+     644:	76 2f       	mov	r23, r22
+     646:	65 2f       	mov	r22, r21
+     648:	54 2f       	mov	r21, r20
+     64a:	44 27       	eor	r20, r20
+     64c:	84 0f       	add	r24, r20
+     64e:	95 1f       	adc	r25, r21
+     650:	a6 1f       	adc	r26, r22
+     652:	b7 1f       	adc	r27, r23
+     654:	80 93 2b 22 	sts	0x222B, r24	; 0x80222b <_fileAddressOffset>
+     658:	90 93 2c 22 	sts	0x222C, r25	; 0x80222c <_fileAddressOffset+0x1>
+     65c:	a0 93 2d 22 	sts	0x222D, r26	; 0x80222d <_fileAddressOffset+0x2>
+     660:	b0 93 2e 22 	sts	0x222E, r27	; 0x80222e <_fileAddressOffset+0x3>
+	printf("New _fileAddressOffset: 0x%08lx	\r\n", _fileAddressOffset);
+     664:	80 91 2b 22 	lds	r24, 0x222B	; 0x80222b <_fileAddressOffset>
+     668:	90 91 2c 22 	lds	r25, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     66c:	a0 91 2d 22 	lds	r26, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     670:	b0 91 2e 22 	lds	r27, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     674:	bf 93       	push	r27
+     676:	af 93       	push	r26
+     678:	9f 93       	push	r25
+     67a:	8f 93       	push	r24
+     67c:	8c e8       	ldi	r24, 0x8C	; 140
+     67e:	90 e2       	ldi	r25, 0x20	; 32
+     680:	9f 93       	push	r25
+     682:	8f 93       	push	r24
+     684:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+     688:	cd bf       	out	0x3d, r28	; 61
+     68a:	de bf       	out	0x3e, r29	; 62
+	
+}
+     68c:	24 96       	adiw	r28, 0x04	; 4
+     68e:	cd bf       	out	0x3d, r28	; 61
+     690:	de bf       	out	0x3e, r29	; 62
+     692:	df 91       	pop	r29
+     694:	cf 91       	pop	r28
+     696:	1f 91       	pop	r17
+     698:	0f 91       	pop	r16
+     69a:	ff 90       	pop	r15
+     69c:	ef 90       	pop	r14
+     69e:	bf 90       	pop	r11
+     6a0:	af 90       	pop	r10
+     6a2:	9f 90       	pop	r9
+     6a4:	8f 90       	pop	r8
+     6a6:	08 95       	ret
+
+000006a8 <getTrackCount>:
+
+//Uses _fileAddressOffset
+//Sets _trackCount
+void getTrackCount()
+{
+     6a8:	cf 93       	push	r28
+     6aa:	df 93       	push	r29
+     6ac:	1f 92       	push	r1
+     6ae:	1f 92       	push	r1
+     6b0:	cd b7       	in	r28, 0x3d	; 61
+     6b2:	de b7       	in	r29, 0x3e	; 62
+	uint8_t data[2];
+
+	memReadToBuffer(_fileAddressOffset + MIDI_HEADER_TRACk_COUNT_OFFSET, data, 2);
+     6b4:	80 91 2b 22 	lds	r24, 0x222B	; 0x80222b <_fileAddressOffset>
+     6b8:	90 91 2c 22 	lds	r25, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     6bc:	a0 91 2d 22 	lds	r26, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     6c0:	b0 91 2e 22 	lds	r27, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     6c4:	bc 01       	movw	r22, r24
+     6c6:	cd 01       	movw	r24, r26
+     6c8:	66 5f       	subi	r22, 0xF6	; 246
+     6ca:	7f 4f       	sbci	r23, 0xFF	; 255
+     6cc:	8f 4f       	sbci	r24, 0xFF	; 255
+     6ce:	9f 4f       	sbci	r25, 0xFF	; 255
+     6d0:	22 e0       	ldi	r18, 0x02	; 2
+     6d2:	ae 01       	movw	r20, r28
+     6d4:	4f 5f       	subi	r20, 0xFF	; 255
+     6d6:	5f 4f       	sbci	r21, 0xFF	; 255
+     6d8:	0e 94 c3 01 	call	0x386	; 0x386 <memReadToBuffer>
+	printf("Track Count From 0x%08lx, 0x%02x, 0x%02x\r\n", _fileAddressOffset + MIDI_HEADER_TRACk_COUNT_OFFSET, data[0], data[1]);
+     6dc:	80 91 2b 22 	lds	r24, 0x222B	; 0x80222b <_fileAddressOffset>
+     6e0:	90 91 2c 22 	lds	r25, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     6e4:	a0 91 2d 22 	lds	r26, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     6e8:	b0 91 2e 22 	lds	r27, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     6ec:	2a 81       	ldd	r18, Y+2	; 0x02
+     6ee:	1f 92       	push	r1
+     6f0:	2f 93       	push	r18
+     6f2:	29 81       	ldd	r18, Y+1	; 0x01
+     6f4:	1f 92       	push	r1
+     6f6:	2f 93       	push	r18
+     6f8:	0a 96       	adiw	r24, 0x0a	; 10
+     6fa:	a1 1d       	adc	r26, r1
+     6fc:	b1 1d       	adc	r27, r1
+     6fe:	bf 93       	push	r27
+     700:	af 93       	push	r26
+     702:	9f 93       	push	r25
+     704:	8f 93       	push	r24
+     706:	8f ea       	ldi	r24, 0xAF	; 175
+     708:	90 e2       	ldi	r25, 0x20	; 32
+     70a:	9f 93       	push	r25
+     70c:	8f 93       	push	r24
+     70e:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+	_tractCount = ((uint16_t)data[0] << 8) + (uint16_t)data[1];	
+     712:	8a 81       	ldd	r24, Y+2	; 0x02
+     714:	80 93 2a 22 	sts	0x222A, r24	; 0x80222a <_tractCount>
+     718:	cd bf       	out	0x3d, r28	; 61
+     71a:	de bf       	out	0x3e, r29	; 62
+	
+}
+     71c:	0f 90       	pop	r0
+     71e:	0f 90       	pop	r0
+     720:	df 91       	pop	r29
+     722:	cf 91       	pop	r28
+     724:	08 95       	ret
+
+00000726 <getTimeDivision>:
+
+
+//Uses _fileAddressOffset
+//Sets _division
+void getTimeDivision()
+{
+     726:	cf 93       	push	r28
+     728:	df 93       	push	r29
+     72a:	1f 92       	push	r1
+     72c:	1f 92       	push	r1
+     72e:	cd b7       	in	r28, 0x3d	; 61
+     730:	de b7       	in	r29, 0x3e	; 62
+	//With this, an 8th note would have an even length (delta-time for the following Note-off event for that note) of 128 ticks, or a duration of 0.25 seconds.
+	//A change in Tempo (meta-event 0xFF with an arg of 51) would effectively change the BPM.
+	//For the SMPTE, the _division is calculated by multiplying the first byte by the second byte and then by -1. This means a value of 0xE7 0x28 would be the same as 0x03 0xE8 (or 1000uS, 1mS)	
+	uint8_t data[2];
+
+	memReadToBuffer(_fileAddressOffset + MIDI_HEADER_TIME_DIV_OFFSET, data, 2);
+     732:	80 91 2b 22 	lds	r24, 0x222B	; 0x80222b <_fileAddressOffset>
+     736:	90 91 2c 22 	lds	r25, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     73a:	a0 91 2d 22 	lds	r26, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     73e:	b0 91 2e 22 	lds	r27, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     742:	bc 01       	movw	r22, r24
+     744:	cd 01       	movw	r24, r26
+     746:	64 5f       	subi	r22, 0xF4	; 244
+     748:	7f 4f       	sbci	r23, 0xFF	; 255
+     74a:	8f 4f       	sbci	r24, 0xFF	; 255
+     74c:	9f 4f       	sbci	r25, 0xFF	; 255
+     74e:	22 e0       	ldi	r18, 0x02	; 2
+     750:	ae 01       	movw	r20, r28
+     752:	4f 5f       	subi	r20, 0xFF	; 255
+     754:	5f 4f       	sbci	r21, 0xFF	; 255
+     756:	0e 94 c3 01 	call	0x386	; 0x386 <memReadToBuffer>
+	_division = ((uint16_t)data[0] << 8) + (uint16_t)data[1];
+     75a:	29 81       	ldd	r18, Y+1	; 0x01
+     75c:	3a 81       	ldd	r19, Y+2	; 0x02
+     75e:	82 2f       	mov	r24, r18
+     760:	90 e0       	ldi	r25, 0x00	; 0
+     762:	98 2f       	mov	r25, r24
+     764:	88 27       	eor	r24, r24
+     766:	83 0f       	add	r24, r19
+     768:	91 1d       	adc	r25, r1
+     76a:	80 93 33 22 	sts	0x2233, r24	; 0x802233 <_division>
+     76e:	90 93 34 22 	sts	0x2234, r25	; 0x802234 <_division+0x1>
+	
+	
+	
+	if (_division < 0) //_division is negative so is in SMPTE format
+     772:	80 91 33 22 	lds	r24, 0x2233	; 0x802233 <_division>
+     776:	90 91 34 22 	lds	r25, 0x2234	; 0x802234 <_division+0x1>
+     77a:	99 23       	and	r25, r25
+     77c:	7c f4       	brge	.+30     	; 0x79c <getTimeDivision+0x76>
+	{
+		_division = -1 * (int8_t)data[0] * data[1];
+     77e:	82 2f       	mov	r24, r18
+     780:	99 27       	eor	r25, r25
+     782:	81 95       	neg	r24
+     784:	0c f4       	brge	.+2      	; 0x788 <getTimeDivision+0x62>
+     786:	90 95       	com	r25
+     788:	ac 01       	movw	r20, r24
+     78a:	34 9f       	mul	r19, r20
+     78c:	c0 01       	movw	r24, r0
+     78e:	35 9f       	mul	r19, r21
+     790:	90 0d       	add	r25, r0
+     792:	11 24       	eor	r1, r1
+     794:	80 93 33 22 	sts	0x2233, r24	; 0x802233 <_division>
+     798:	90 93 34 22 	sts	0x2234, r25	; 0x802234 <_division+0x1>
+	}	
+	
+	printf("Division From 0x%08lx, 0x%02x, 0x%02x (%d)\r\n", _fileAddressOffset + MIDI_HEADER_TIME_DIV_OFFSET, data[0], data[1], _division);
+     79c:	40 91 33 22 	lds	r20, 0x2233	; 0x802233 <_division>
+     7a0:	50 91 34 22 	lds	r21, 0x2234	; 0x802234 <_division+0x1>
+     7a4:	80 91 2b 22 	lds	r24, 0x222B	; 0x80222b <_fileAddressOffset>
+     7a8:	90 91 2c 22 	lds	r25, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     7ac:	a0 91 2d 22 	lds	r26, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     7b0:	b0 91 2e 22 	lds	r27, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     7b4:	5f 93       	push	r21
+     7b6:	4f 93       	push	r20
+     7b8:	1f 92       	push	r1
+     7ba:	3f 93       	push	r19
+     7bc:	1f 92       	push	r1
+     7be:	2f 93       	push	r18
+     7c0:	0c 96       	adiw	r24, 0x0c	; 12
+     7c2:	a1 1d       	adc	r26, r1
+     7c4:	b1 1d       	adc	r27, r1
+     7c6:	bf 93       	push	r27
+     7c8:	af 93       	push	r26
+     7ca:	9f 93       	push	r25
+     7cc:	8f 93       	push	r24
+     7ce:	8a ed       	ldi	r24, 0xDA	; 218
+     7d0:	90 e2       	ldi	r25, 0x20	; 32
+     7d2:	9f 93       	push	r25
+     7d4:	8f 93       	push	r24
+     7d6:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+     7da:	cd bf       	out	0x3d, r28	; 61
+     7dc:	de bf       	out	0x3e, r29	; 62
+}
+     7de:	0f 90       	pop	r0
+     7e0:	0f 90       	pop	r0
+     7e2:	df 91       	pop	r29
+     7e4:	cf 91       	pop	r28
+     7e6:	08 95       	ret
+
+000007e8 <getNextEvent>:
+
+
+
+uint8_t getNextEvent(uint8_t trackIndex)
+{
+     7e8:	2f 92       	push	r2
+     7ea:	3f 92       	push	r3
+     7ec:	4f 92       	push	r4
+     7ee:	5f 92       	push	r5
+     7f0:	6f 92       	push	r6
+     7f2:	7f 92       	push	r7
+     7f4:	8f 92       	push	r8
+     7f6:	9f 92       	push	r9
+     7f8:	af 92       	push	r10
+     7fa:	bf 92       	push	r11
+     7fc:	cf 92       	push	r12
+     7fe:	df 92       	push	r13
+     800:	ef 92       	push	r14
+     802:	ff 92       	push	r15
+     804:	0f 93       	push	r16
+     806:	1f 93       	push	r17
+     808:	cf 93       	push	r28
+     80a:	df 93       	push	r29
+     80c:	cd b7       	in	r28, 0x3d	; 61
+     80e:	de b7       	in	r29, 0x3e	; 62
+     810:	62 97       	sbiw	r28, 0x12	; 18
+     812:	cd bf       	out	0x3d, r28	; 61
+     814:	de bf       	out	0x3e, r29	; 62
+	uint8_t done = 0;
+	uint8_t data[4];
+	uint8_t i;
+	
+	_tracks[trackIndex].deltaTime = 0;
+     816:	08 2f       	mov	r16, r24
+     818:	10 e0       	ldi	r17, 0x00	; 0
+     81a:	09 87       	std	Y+9, r16	; 0x09
+     81c:	1a 87       	std	Y+10, r17	; 0x0a
+     81e:	1f e0       	ldi	r17, 0x0F	; 15
+     820:	81 9f       	mul	r24, r17
+     822:	f0 01       	movw	r30, r0
+     824:	11 24       	eor	r1, r1
+     826:	eb 5c       	subi	r30, 0xCB	; 203
+     828:	fd 4d       	sbci	r31, 0xDD	; 221
+     82a:	10 86       	std	Z+8, r1	; 0x08
+     82c:	11 86       	std	Z+9, r1	; 0x09
+     82e:	12 86       	std	Z+10, r1	; 0x0a
+     830:	13 86       	std	Z+11, r1	; 0x0b
+		data[3] = 0;
+
+		//The last byte will not have the MSB set.
+		data[0] = sendDummy();
+		        //printf("Track %u offset 0x%08lx, data[0]: 0x%02x\r\n", trackIndex, _tracks[trackIndex].addressOffset, data[0]);
+		_tracks[trackIndex].addressOffset++;
+     832:	4f e0       	ldi	r20, 0x0F	; 15
+     834:	29 85       	ldd	r18, Y+9	; 0x09
+     836:	3a 85       	ldd	r19, Y+10	; 0x0a
+     838:	42 9f       	mul	r20, r18
+     83a:	c0 01       	movw	r24, r0
+     83c:	43 9f       	mul	r20, r19
+     83e:	90 0d       	add	r25, r0
+     840:	11 24       	eor	r1, r1
+     842:	bc 01       	movw	r22, r24
+     844:	6b 5c       	subi	r22, 0xCB	; 203
+     846:	7d 4d       	sbci	r23, 0xDD	; 221
+     848:	2b 01       	movw	r4, r22
+     84a:	4e 01       	movw	r8, r28
+     84c:	75 e0       	ldi	r23, 0x05	; 5
+     84e:	87 0e       	add	r8, r23
+     850:	91 1c       	adc	r9, r1
+			}
+		}
+		//printf("Track %u offset 0x%08lx after d\r\n", trackIndex, _tracks[trackIndex].addressOffset);
+
+		//just using 'i' as a temp
+		_tracks[trackIndex].deltaTime += getVariableLengthValue(data, &i);
+     852:	12 01       	movw	r2, r4
+     854:	88 e0       	ldi	r24, 0x08	; 8
+     856:	28 0e       	add	r2, r24
+     858:	31 1c       	adc	r3, r1
+
+		i = 0;
+			
+		_tracks[trackIndex].eventByte = sendDummy(); // this should be the event byte
+     85a:	32 01       	movw	r6, r4
+     85c:	9c e0       	ldi	r25, 0x0C	; 12
+     85e:	69 0e       	add	r6, r25
+     860:	71 1c       	adc	r7, r1
+	uint8_t i;
+	
+	_tracks[trackIndex].deltaTime = 0;
+	
+	//printf("Getting next event\r\n");
+	while(!done) //(_tracks[usedTracks].addressOffset < _tracks[usedTracks].trackLength)
+     862:	0e c2       	rjmp	.+1052   	; 0xc80 <getNextEvent+0x498>
+		data[0] = sendDummy();
+		        //printf("Track %u offset 0x%08lx, data[0]: 0x%02x\r\n", trackIndex, _tracks[trackIndex].addressOffset, data[0]);
+		_tracks[trackIndex].addressOffset++;
+		if ((data[0] & 0x80))
+		{
+			data[1] = sendDummy();
+     864:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     868:	8a 83       	std	Y+2, r24	; 0x02
+			_tracks[trackIndex].addressOffset++;
+     86a:	d2 01       	movw	r26, r4
+     86c:	4d 91       	ld	r20, X+
+     86e:	5d 91       	ld	r21, X+
+     870:	6d 91       	ld	r22, X+
+     872:	7c 91       	ld	r23, X
+     874:	4f 5f       	subi	r20, 0xFF	; 255
+     876:	5f 4f       	sbci	r21, 0xFF	; 255
+     878:	6f 4f       	sbci	r22, 0xFF	; 255
+     87a:	7f 4f       	sbci	r23, 0xFF	; 255
+     87c:	f2 01       	movw	r30, r4
+     87e:	40 83       	st	Z, r20
+     880:	51 83       	std	Z+1, r21	; 0x01
+     882:	62 83       	std	Z+2, r22	; 0x02
+     884:	73 83       	std	Z+3, r23	; 0x03
+			if ((data[1] & 0x80))
+     886:	88 23       	and	r24, r24
+     888:	0c f0       	brlt	.+2      	; 0x88c <getNextEvent+0xa4>
+     88a:	11 c2       	rjmp	.+1058   	; 0xcae <getNextEvent+0x4c6>
+			{
+				data[2] = sendDummy();
+     88c:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     890:	8b 83       	std	Y+3, r24	; 0x03
+				_tracks[trackIndex].addressOffset++;
+     892:	d2 01       	movw	r26, r4
+     894:	4d 91       	ld	r20, X+
+     896:	5d 91       	ld	r21, X+
+     898:	6d 91       	ld	r22, X+
+     89a:	7c 91       	ld	r23, X
+     89c:	4f 5f       	subi	r20, 0xFF	; 255
+     89e:	5f 4f       	sbci	r21, 0xFF	; 255
+     8a0:	6f 4f       	sbci	r22, 0xFF	; 255
+     8a2:	7f 4f       	sbci	r23, 0xFF	; 255
+     8a4:	f2 01       	movw	r30, r4
+     8a6:	40 83       	st	Z, r20
+     8a8:	51 83       	std	Z+1, r21	; 0x01
+     8aa:	62 83       	std	Z+2, r22	; 0x02
+     8ac:	73 83       	std	Z+3, r23	; 0x03
+				if ((data[2] & 0x80))
+     8ae:	88 23       	and	r24, r24
+     8b0:	0c f0       	brlt	.+2      	; 0x8b4 <getNextEvent+0xcc>
+     8b2:	fd c1       	rjmp	.+1018   	; 0xcae <getNextEvent+0x4c6>
+				{
+					data[3] = sendDummy();
+     8b4:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     8b8:	8c 83       	std	Y+4, r24	; 0x04
+					_tracks[trackIndex].addressOffset++;
+     8ba:	f2 01       	movw	r30, r4
+     8bc:	80 81       	ld	r24, Z
+     8be:	91 81       	ldd	r25, Z+1	; 0x01
+     8c0:	a2 81       	ldd	r26, Z+2	; 0x02
+     8c2:	b3 81       	ldd	r27, Z+3	; 0x03
+     8c4:	01 96       	adiw	r24, 0x01	; 1
+     8c6:	a1 1d       	adc	r26, r1
+     8c8:	b1 1d       	adc	r27, r1
+     8ca:	80 83       	st	Z, r24
+     8cc:	91 83       	std	Z+1, r25	; 0x01
+     8ce:	a2 83       	std	Z+2, r26	; 0x02
+     8d0:	b3 83       	std	Z+3, r27	; 0x03
+     8d2:	ed c1       	rjmp	.+986    	; 0xcae <getNextEvent+0x4c6>
+	*out_numBytesUsed = 0;
+	
+	while(*out_numBytesUsed < 4)
+	{
+		
+		value <<= 7;
+     8d4:	88 0f       	add	r24, r24
+     8d6:	99 1f       	adc	r25, r25
+     8d8:	aa 1f       	adc	r26, r26
+     8da:	bb 1f       	adc	r27, r27
+     8dc:	88 0f       	add	r24, r24
+     8de:	99 1f       	adc	r25, r25
+     8e0:	aa 1f       	adc	r26, r26
+     8e2:	bb 1f       	adc	r27, r27
+     8e4:	88 0f       	add	r24, r24
+     8e6:	99 1f       	adc	r25, r25
+     8e8:	aa 1f       	adc	r26, r26
+     8ea:	bb 1f       	adc	r27, r27
+     8ec:	88 0f       	add	r24, r24
+     8ee:	99 1f       	adc	r25, r25
+     8f0:	aa 1f       	adc	r26, r26
+     8f2:	bb 1f       	adc	r27, r27
+     8f4:	88 0f       	add	r24, r24
+     8f6:	99 1f       	adc	r25, r25
+     8f8:	aa 1f       	adc	r26, r26
+     8fa:	bb 1f       	adc	r27, r27
+     8fc:	88 0f       	add	r24, r24
+     8fe:	99 1f       	adc	r25, r25
+     900:	aa 1f       	adc	r26, r26
+     902:	bb 1f       	adc	r27, r27
+     904:	88 0f       	add	r24, r24
+     906:	99 1f       	adc	r25, r25
+     908:	aa 1f       	adc	r26, r26
+     90a:	bb 1f       	adc	r27, r27
+		//printf("byte %u = %u\r\n", *out_numBytesUsed, *(first4bytes + *out_numBytesUsed));
+		if ((*(first4bytes + *out_numBytesUsed) & 0x80))
+     90c:	21 91       	ld	r18, Z+
+     90e:	22 23       	and	r18, r18
+     910:	4c f4       	brge	.+18     	; 0x924 <getNextEvent+0x13c>
+		{
+			value += ((uint32_t)(*(first4bytes + *out_numBytesUsed) & 0x7F));
+     912:	2f 77       	andi	r18, 0x7F	; 127
+     914:	82 0f       	add	r24, r18
+     916:	91 1d       	adc	r25, r1
+     918:	a1 1d       	adc	r26, r1
+     91a:	b1 1d       	adc	r27, r1
+{
+	uint32_t value = 0;
+	
+	*out_numBytesUsed = 0;
+	
+	while(*out_numBytesUsed < 4)
+     91c:	e8 15       	cp	r30, r8
+     91e:	f9 05       	cpc	r31, r9
+     920:	c9 f6       	brne	.-78     	; 0x8d4 <getNextEvent+0xec>
+     922:	0a c0       	rjmp	.+20     	; 0x938 <getNextEvent+0x150>
+		{
+			value += ((uint32_t)(*(first4bytes + *out_numBytesUsed) & 0x7F));
+		}
+		else
+		{
+			value += *(first4bytes + *out_numBytesUsed);
+     924:	ac 01       	movw	r20, r24
+     926:	bd 01       	movw	r22, r26
+     928:	42 0f       	add	r20, r18
+     92a:	51 1d       	adc	r21, r1
+     92c:	61 1d       	adc	r22, r1
+     92e:	71 1d       	adc	r23, r1
+     930:	4d 83       	std	Y+5, r20	; 0x05
+     932:	5e 83       	std	Y+6, r21	; 0x06
+     934:	6f 83       	std	Y+7, r22	; 0x07
+     936:	78 87       	std	Y+8, r23	; 0x08
+			}
+		}
+		//printf("Track %u offset 0x%08lx after d\r\n", trackIndex, _tracks[trackIndex].addressOffset);
+
+		//just using 'i' as a temp
+		_tracks[trackIndex].deltaTime += getVariableLengthValue(data, &i);
+     938:	f1 01       	movw	r30, r2
+     93a:	80 81       	ld	r24, Z
+     93c:	91 81       	ldd	r25, Z+1	; 0x01
+     93e:	a2 81       	ldd	r26, Z+2	; 0x02
+     940:	b3 81       	ldd	r27, Z+3	; 0x03
+     942:	0d 81       	ldd	r16, Y+5	; 0x05
+     944:	1e 81       	ldd	r17, Y+6	; 0x06
+     946:	2f 81       	ldd	r18, Y+7	; 0x07
+     948:	38 85       	ldd	r19, Y+8	; 0x08
+     94a:	80 0f       	add	r24, r16
+     94c:	91 1f       	adc	r25, r17
+     94e:	a2 1f       	adc	r26, r18
+     950:	b3 1f       	adc	r27, r19
+     952:	80 83       	st	Z, r24
+     954:	91 83       	std	Z+1, r25	; 0x01
+     956:	a2 83       	std	Z+2, r26	; 0x02
+     958:	b3 83       	std	Z+3, r27	; 0x03
+
+		i = 0;
+			
+		_tracks[trackIndex].eventByte = sendDummy(); // this should be the event byte
+     95a:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     95e:	d3 01       	movw	r26, r6
+     960:	8c 93       	st	X, r24
+		
+		//printf("Evaluating tract %u event 0x%02x: dt: %lu (%02x %02x %02x %02x) \r\n", trackIndex, _tracks[trackIndex].eventByte, _tracks[trackIndex].deltaTime, data[0], data[1], data[2], data[3]);
+		
+		_tracks[trackIndex].addressOffset++;
+     962:	f2 01       	movw	r30, r4
+     964:	80 81       	ld	r24, Z
+     966:	91 81       	ldd	r25, Z+1	; 0x01
+     968:	a2 81       	ldd	r26, Z+2	; 0x02
+     96a:	b3 81       	ldd	r27, Z+3	; 0x03
+     96c:	01 96       	adiw	r24, 0x01	; 1
+     96e:	a1 1d       	adc	r26, r1
+     970:	b1 1d       	adc	r27, r1
+     972:	80 83       	st	Z, r24
+     974:	91 83       	std	Z+1, r25	; 0x01
+     976:	a2 83       	std	Z+2, r26	; 0x02
+     978:	b3 83       	std	Z+3, r27	; 0x03
+			
+		//printf("dt: %lu, event: 0x%02x, offset: %lu\r\n", _tracks[trackIndex].deltaTime, _tracks[trackIndex].eventByte, _tracks[trackIndex].addressOffset);
+
+		if ((_tracks[trackIndex].eventByte & 0xF0) == MIDI_NOTE_ON_MASK || (_tracks[trackIndex].eventByte & 0xF0) == MIDI_NOTE_OFF_MASK || (_tracks[trackIndex].eventByte & 0xF0) == MIDI_PITCH_BEND_MASK)
+     97a:	d3 01       	movw	r26, r6
+     97c:	8c 91       	ld	r24, X
+     97e:	80 7f       	andi	r24, 0xF0	; 240
+     980:	80 39       	cpi	r24, 0x90	; 144
+     982:	41 f0       	breq	.+16     	; 0x994 <getNextEvent+0x1ac>
+     984:	8c 91       	ld	r24, X
+     986:	80 7f       	andi	r24, 0xF0	; 240
+     988:	80 38       	cpi	r24, 0x80	; 128
+     98a:	21 f0       	breq	.+8      	; 0x994 <getNextEvent+0x1ac>
+     98c:	8c 91       	ld	r24, X
+     98e:	80 7f       	andi	r24, 0xF0	; 240
+     990:	80 3e       	cpi	r24, 0xE0	; 224
+     992:	01 f5       	brne	.+64     	; 0x9d4 <getNextEvent+0x1ec>
+		{
+			//These are valid events that we want to handle, so capture the next two bytes and move to the next track
+				
+			_tracks[trackIndex].eventData1 = sendDummy();
+     994:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     998:	9f e0       	ldi	r25, 0x0F	; 15
+     99a:	e9 85       	ldd	r30, Y+9	; 0x09
+     99c:	fa 85       	ldd	r31, Y+10	; 0x0a
+     99e:	9e 9f       	mul	r25, r30
+     9a0:	80 01       	movw	r16, r0
+     9a2:	9f 9f       	mul	r25, r31
+     9a4:	10 0d       	add	r17, r0
+     9a6:	11 24       	eor	r1, r1
+     9a8:	0b 5c       	subi	r16, 0xCB	; 203
+     9aa:	1d 4d       	sbci	r17, 0xDD	; 221
+     9ac:	d8 01       	movw	r26, r16
+     9ae:	1d 96       	adiw	r26, 0x0d	; 13
+     9b0:	8c 93       	st	X, r24
+			_tracks[trackIndex].eventData2 = sendDummy();
+     9b2:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     9b6:	f8 01       	movw	r30, r16
+     9b8:	86 87       	std	Z+14, r24	; 0x0e
+			_tracks[trackIndex].addressOffset += 2;
+     9ba:	80 81       	ld	r24, Z
+     9bc:	91 81       	ldd	r25, Z+1	; 0x01
+     9be:	a2 81       	ldd	r26, Z+2	; 0x02
+     9c0:	b3 81       	ldd	r27, Z+3	; 0x03
+     9c2:	02 96       	adiw	r24, 0x02	; 2
+     9c4:	a1 1d       	adc	r26, r1
+     9c6:	b1 1d       	adc	r27, r1
+     9c8:	80 83       	st	Z, r24
+     9ca:	91 83       	std	Z+1, r25	; 0x01
+     9cc:	a2 83       	std	Z+2, r26	; 0x02
+     9ce:	b3 83       	std	Z+3, r27	; 0x03
+
+			//printf("Event 0x%02x found for track %u\r\n", _tracks[trackIndex].eventByte, trackIndex);
+			return 0xFF; 			
+     9d0:	8f ef       	ldi	r24, 0xFF	; 255
+     9d2:	98 c1       	rjmp	.+816    	; 0xd04 <getNextEvent+0x51c>
+		}
+		if ((_tracks[trackIndex].eventByte & 0xF0) == MIDI_POLY_KEY_MASK || (_tracks[trackIndex].eventByte & 0xF0) == MIDI_CTRL_CHANGE_MASK)//if the event is one of these, skip the next two bytes and continue.
+     9d4:	d3 01       	movw	r26, r6
+     9d6:	8c 91       	ld	r24, X
+     9d8:	80 7f       	andi	r24, 0xF0	; 240
+     9da:	80 3a       	cpi	r24, 0xA0	; 160
+     9dc:	21 f0       	breq	.+8      	; 0x9e6 <getNextEvent+0x1fe>
+     9de:	8c 91       	ld	r24, X
+     9e0:	80 7f       	andi	r24, 0xF0	; 240
+     9e2:	80 3b       	cpi	r24, 0xB0	; 176
+     9e4:	81 f4       	brne	.+32     	; 0xa06 <getNextEvent+0x21e>
+		{
+			sendDummy();
+     9e6:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+			sendDummy();
+     9ea:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+			_tracks[trackIndex].addressOffset += 2;
+     9ee:	f2 01       	movw	r30, r4
+     9f0:	80 81       	ld	r24, Z
+     9f2:	91 81       	ldd	r25, Z+1	; 0x01
+     9f4:	a2 81       	ldd	r26, Z+2	; 0x02
+     9f6:	b3 81       	ldd	r27, Z+3	; 0x03
+     9f8:	02 96       	adiw	r24, 0x02	; 2
+     9fa:	a1 1d       	adc	r26, r1
+     9fc:	b1 1d       	adc	r27, r1
+     9fe:	80 83       	st	Z, r24
+     a00:	91 83       	std	Z+1, r25	; 0x01
+     a02:	a2 83       	std	Z+2, r26	; 0x02
+     a04:	b3 83       	std	Z+3, r27	; 0x03
+		}
+		if ( (_tracks[trackIndex].eventByte & 0xF0) == MIDI_PROG_CHANGE_MASK || (_tracks[trackIndex].eventByte & 0xF0) == MIDI_CH_PRESSURE_MASK) //if the event is one of these, skip the next byte and continue.
+     a06:	d3 01       	movw	r26, r6
+     a08:	8c 91       	ld	r24, X
+     a0a:	80 7f       	andi	r24, 0xF0	; 240
+     a0c:	80 3c       	cpi	r24, 0xC0	; 192
+     a0e:	21 f0       	breq	.+8      	; 0xa18 <getNextEvent+0x230>
+     a10:	8c 91       	ld	r24, X
+     a12:	80 7f       	andi	r24, 0xF0	; 240
+     a14:	80 3d       	cpi	r24, 0xD0	; 208
+     a16:	79 f4       	brne	.+30     	; 0xa36 <getNextEvent+0x24e>
+		{
+			sendDummy();
+     a18:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+			_tracks[trackIndex].addressOffset++;
+     a1c:	f2 01       	movw	r30, r4
+     a1e:	80 81       	ld	r24, Z
+     a20:	91 81       	ldd	r25, Z+1	; 0x01
+     a22:	a2 81       	ldd	r26, Z+2	; 0x02
+     a24:	b3 81       	ldd	r27, Z+3	; 0x03
+     a26:	01 96       	adiw	r24, 0x01	; 1
+     a28:	a1 1d       	adc	r26, r1
+     a2a:	b1 1d       	adc	r27, r1
+     a2c:	80 83       	st	Z, r24
+     a2e:	91 83       	std	Z+1, r25	; 0x01
+     a30:	a2 83       	std	Z+2, r26	; 0x02
+     a32:	b3 83       	std	Z+3, r27	; 0x03
+     a34:	25 c1       	rjmp	.+586    	; 0xc80 <getNextEvent+0x498>
+		}
+		//Now we have to check other event types to know how far to skip ahead
+		else if(_tracks[trackIndex].eventByte == 0xFF) //Meta-Events
+     a36:	d3 01       	movw	r26, r6
+     a38:	8c 91       	ld	r24, X
+     a3a:	8f 3f       	cpi	r24, 0xFF	; 255
+     a3c:	09 f0       	breq	.+2      	; 0xa40 <getNextEvent+0x258>
+     a3e:	20 c1       	rjmp	.+576    	; 0xc80 <getNextEvent+0x498>
+		{
+			data[0] = sendDummy(); //Get the event type
+     a40:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     a44:	89 83       	std	Y+1, r24	; 0x01
+			_tracks[trackIndex].addressOffset++;
+     a46:	f2 01       	movw	r30, r4
+     a48:	40 81       	ld	r20, Z
+     a4a:	51 81       	ldd	r21, Z+1	; 0x01
+     a4c:	62 81       	ldd	r22, Z+2	; 0x02
+     a4e:	73 81       	ldd	r23, Z+3	; 0x03
+     a50:	4f 5f       	subi	r20, 0xFF	; 255
+     a52:	5f 4f       	sbci	r21, 0xFF	; 255
+     a54:	6f 4f       	sbci	r22, 0xFF	; 255
+     a56:	7f 4f       	sbci	r23, 0xFF	; 255
+     a58:	40 83       	st	Z, r20
+     a5a:	51 83       	std	Z+1, r21	; 0x01
+     a5c:	62 83       	std	Z+2, r22	; 0x02
+     a5e:	73 83       	std	Z+3, r23	; 0x03
+			//Here we are just looking for the number of bytes to jump, except for in the case of FF 51 03 (Tempo)
+			switch(data[0])
+     a60:	8f 32       	cpi	r24, 0x2F	; 47
+     a62:	09 f4       	brne	.+2      	; 0xa66 <getNextEvent+0x27e>
+     a64:	4f c1       	rjmp	.+670    	; 0xd04 <getNextEvent+0x51c>
+     a66:	48 f4       	brcc	.+18     	; 0xa7a <getNextEvent+0x292>
+     a68:	8a 30       	cpi	r24, 0x0A	; 10
+     a6a:	20 f4       	brcc	.+8      	; 0xa74 <getNextEvent+0x28c>
+     a6c:	81 30       	cpi	r24, 0x01	; 1
+     a6e:	08 f4       	brcc	.+2      	; 0xa72 <getNextEvent+0x28a>
+     a70:	25 c1       	rjmp	.+586    	; 0xcbc <getNextEvent+0x4d4>
+     a72:	16 c0       	rjmp	.+44     	; 0xaa0 <getNextEvent+0x2b8>
+     a74:	80 32       	cpi	r24, 0x20	; 32
+     a76:	91 f0       	breq	.+36     	; 0xa9c <getNextEvent+0x2b4>
+     a78:	ea c0       	rjmp	.+468    	; 0xc4e <getNextEvent+0x466>
+     a7a:	88 35       	cpi	r24, 0x58	; 88
+     a7c:	09 f4       	brne	.+2      	; 0xa80 <getNextEvent+0x298>
+     a7e:	d2 c0       	rjmp	.+420    	; 0xc24 <getNextEvent+0x43c>
+     a80:	30 f4       	brcc	.+12     	; 0xa8e <getNextEvent+0x2a6>
+     a82:	81 35       	cpi	r24, 0x51	; 81
+     a84:	e9 f0       	breq	.+58     	; 0xac0 <getNextEvent+0x2d8>
+     a86:	84 35       	cpi	r24, 0x54	; 84
+     a88:	09 f4       	brne	.+2      	; 0xa8c <getNextEvent+0x2a4>
+     a8a:	1a c1       	rjmp	.+564    	; 0xcc0 <getNextEvent+0x4d8>
+     a8c:	e0 c0       	rjmp	.+448    	; 0xc4e <getNextEvent+0x466>
+     a8e:	89 35       	cpi	r24, 0x59	; 89
+     a90:	09 f4       	brne	.+2      	; 0xa94 <getNextEvent+0x2ac>
+     a92:	ca c0       	rjmp	.+404    	; 0xc28 <getNextEvent+0x440>
+     a94:	87 3f       	cpi	r24, 0xF7	; 247
+     a96:	09 f4       	brne	.+2      	; 0xa9a <getNextEvent+0x2b2>
+     a98:	c9 c0       	rjmp	.+402    	; 0xc2c <getNextEvent+0x444>
+     a9a:	d9 c0       	rjmp	.+434    	; 0xc4e <getNextEvent+0x466>
+				case 0x09:
+					i = sendDummy(); //next byte is len of text
+					_tracks[trackIndex].addressOffset++;
+					break;
+				case 0x20:
+					i = 2;
+     a9c:	12 e0       	ldi	r17, 0x02	; 2
+     a9e:	11 c1       	rjmp	.+546    	; 0xcc2 <getNextEvent+0x4da>
+				case 0x05:
+				case 0x06:
+				case 0x07:
+				case 0x08:
+				case 0x09:
+					i = sendDummy(); //next byte is len of text
+     aa0:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+					_tracks[trackIndex].addressOffset++;
+     aa4:	f2 01       	movw	r30, r4
+     aa6:	40 81       	ld	r20, Z
+     aa8:	51 81       	ldd	r21, Z+1	; 0x01
+     aaa:	62 81       	ldd	r22, Z+2	; 0x02
+     aac:	73 81       	ldd	r23, Z+3	; 0x03
+     aae:	4f 5f       	subi	r20, 0xFF	; 255
+     ab0:	5f 4f       	sbci	r21, 0xFF	; 255
+     ab2:	6f 4f       	sbci	r22, 0xFF	; 255
+     ab4:	7f 4f       	sbci	r23, 0xFF	; 255
+     ab6:	40 83       	st	Z, r20
+     ab8:	51 83       	std	Z+1, r21	; 0x01
+     aba:	62 83       	std	Z+2, r22	; 0x02
+     abc:	73 83       	std	Z+3, r23	; 0x03
+					break;
+     abe:	c8 c0       	rjmp	.+400    	; 0xc50 <getNextEvent+0x468>
+					//_tracks[trackIndex].eventByte = 0x2F;
+					//i = 1;
+					//break;
+				case 0x51:
+					// skip the 0x03 control byte
+					sendDummy();
+     ac0:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+					//read in the data bytes for the tempo
+					data[0] = sendDummy();
+     ac4:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     ac8:	08 2f       	mov	r16, r24
+     aca:	89 83       	std	Y+1, r24	; 0x01
+					data[1] = sendDummy();
+     acc:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     ad0:	18 2f       	mov	r17, r24
+     ad2:	8a 83       	std	Y+2, r24	; 0x02
+					data[2] = sendDummy();
+     ad4:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     ad8:	28 2f       	mov	r18, r24
+     ada:	8b 83       	std	Y+3, r24	; 0x03
+					//This is all used to calculate the period value for the timer to correctly set the tempo
+					_tempo = ((uint32_t)data[0] << 16) + ((uint32_t)data[1] << 8) + data[2];
+     adc:	80 2f       	mov	r24, r16
+     ade:	90 e0       	ldi	r25, 0x00	; 0
+     ae0:	a0 e0       	ldi	r26, 0x00	; 0
+     ae2:	b0 e0       	ldi	r27, 0x00	; 0
+     ae4:	dc 01       	movw	r26, r24
+     ae6:	99 27       	eor	r25, r25
+     ae8:	88 27       	eor	r24, r24
+     aea:	41 2f       	mov	r20, r17
+     aec:	50 e0       	ldi	r21, 0x00	; 0
+     aee:	60 e0       	ldi	r22, 0x00	; 0
+     af0:	70 e0       	ldi	r23, 0x00	; 0
+     af2:	76 2f       	mov	r23, r22
+     af4:	65 2f       	mov	r22, r21
+     af6:	54 2f       	mov	r21, r20
+     af8:	44 27       	eor	r20, r20
+     afa:	84 0f       	add	r24, r20
+     afc:	95 1f       	adc	r25, r21
+     afe:	a6 1f       	adc	r26, r22
+     b00:	b7 1f       	adc	r27, r23
+     b02:	82 0f       	add	r24, r18
+     b04:	91 1d       	adc	r25, r1
+     b06:	a1 1d       	adc	r26, r1
+     b08:	b1 1d       	adc	r27, r1
+     b0a:	80 93 ad 22 	sts	0x22AD, r24	; 0x8022ad <_tempo>
+     b0e:	90 93 ae 22 	sts	0x22AE, r25	; 0x8022ae <_tempo+0x1>
+     b12:	a0 93 af 22 	sts	0x22AF, r26	; 0x8022af <_tempo+0x2>
+     b16:	b0 93 b0 22 	sts	0x22B0, r27	; 0x8022b0 <_tempo+0x3>
+					_tempo = ((uint64_t)F_CPU * _tempo) / 1000000;
+     b1a:	80 91 ad 22 	lds	r24, 0x22AD	; 0x8022ad <_tempo>
+     b1e:	90 91 ae 22 	lds	r25, 0x22AE	; 0x8022ae <_tempo+0x1>
+     b22:	a0 91 af 22 	lds	r26, 0x22AF	; 0x8022af <_tempo+0x2>
+     b26:	b0 91 b0 22 	lds	r27, 0x22B0	; 0x8022b0 <_tempo+0x3>
+     b2a:	8c 01       	movw	r16, r24
+     b2c:	9d 01       	movw	r18, r26
+     b2e:	40 e0       	ldi	r20, 0x00	; 0
+     b30:	50 e0       	ldi	r21, 0x00	; 0
+     b32:	ba 01       	movw	r22, r20
+     b34:	8b 87       	std	Y+11, r24	; 0x0b
+     b36:	1c 87       	std	Y+12, r17	; 0x0c
+     b38:	2d 87       	std	Y+13, r18	; 0x0d
+     b3a:	3e 87       	std	Y+14, r19	; 0x0e
+     b3c:	4f 87       	std	Y+15, r20	; 0x0f
+     b3e:	58 8b       	std	Y+16, r21	; 0x10
+     b40:	69 8b       	std	Y+17, r22	; 0x11
+     b42:	7a 8b       	std	Y+18, r23	; 0x12
+     b44:	a1 2c       	mov	r10, r1
+     b46:	0f 2e       	mov	r0, r31
+     b48:	f8 e4       	ldi	r31, 0x48	; 72
+     b4a:	bf 2e       	mov	r11, r31
+     b4c:	f0 2d       	mov	r31, r0
+     b4e:	0f 2e       	mov	r0, r31
+     b50:	f8 ee       	ldi	r31, 0xE8	; 232
+     b52:	cf 2e       	mov	r12, r31
+     b54:	f0 2d       	mov	r31, r0
+     b56:	dd 24       	eor	r13, r13
+     b58:	d3 94       	inc	r13
+     b5a:	e1 2c       	mov	r14, r1
+     b5c:	f1 2c       	mov	r15, r1
+     b5e:	00 e0       	ldi	r16, 0x00	; 0
+     b60:	10 e0       	ldi	r17, 0x00	; 0
+     b62:	2b 85       	ldd	r18, Y+11	; 0x0b
+     b64:	3c 85       	ldd	r19, Y+12	; 0x0c
+     b66:	4d 85       	ldd	r20, Y+13	; 0x0d
+     b68:	5e 85       	ldd	r21, Y+14	; 0x0e
+     b6a:	60 e0       	ldi	r22, 0x00	; 0
+     b6c:	70 e0       	ldi	r23, 0x00	; 0
+     b6e:	80 e0       	ldi	r24, 0x00	; 0
+     b70:	90 e0       	ldi	r25, 0x00	; 0
+     b72:	0e 94 78 0b 	call	0x16f0	; 0x16f0 <__muldi3>
+     b76:	68 94       	set
+     b78:	aa 24       	eor	r10, r10
+     b7a:	a6 f8       	bld	r10, 6
+     b7c:	0f 2e       	mov	r0, r31
+     b7e:	f2 e4       	ldi	r31, 0x42	; 66
+     b80:	bf 2e       	mov	r11, r31
+     b82:	f0 2d       	mov	r31, r0
+     b84:	0f 2e       	mov	r0, r31
+     b86:	ff e0       	ldi	r31, 0x0F	; 15
+     b88:	cf 2e       	mov	r12, r31
+     b8a:	f0 2d       	mov	r31, r0
+     b8c:	d1 2c       	mov	r13, r1
+     b8e:	0e 94 d3 0b 	call	0x17a6	; 0x17a6 <__udivdi3>
+     b92:	82 2f       	mov	r24, r18
+     b94:	93 2f       	mov	r25, r19
+     b96:	a4 2f       	mov	r26, r20
+     b98:	b5 2f       	mov	r27, r21
+     b9a:	80 93 ad 22 	sts	0x22AD, r24	; 0x8022ad <_tempo>
+     b9e:	90 93 ae 22 	sts	0x22AE, r25	; 0x8022ae <_tempo+0x1>
+     ba2:	a0 93 af 22 	sts	0x22AF, r26	; 0x8022af <_tempo+0x2>
+     ba6:	b0 93 b0 22 	sts	0x22B0, r27	; 0x8022b0 <_tempo+0x3>
+					TCC0.PER = (_tempo/(uint32_t)_division) / 4; //Divided by 4 so we can fit larger values. Timer clock also div4
+     baa:	60 91 ad 22 	lds	r22, 0x22AD	; 0x8022ad <_tempo>
+     bae:	70 91 ae 22 	lds	r23, 0x22AE	; 0x8022ae <_tempo+0x1>
+     bb2:	80 91 af 22 	lds	r24, 0x22AF	; 0x8022af <_tempo+0x2>
+     bb6:	90 91 b0 22 	lds	r25, 0x22B0	; 0x8022b0 <_tempo+0x3>
+     bba:	20 91 33 22 	lds	r18, 0x2233	; 0x802233 <_division>
+     bbe:	30 91 34 22 	lds	r19, 0x2234	; 0x802234 <_division+0x1>
+     bc2:	03 2e       	mov	r0, r19
+     bc4:	00 0c       	add	r0, r0
+     bc6:	44 0b       	sbc	r20, r20
+     bc8:	55 0b       	sbc	r21, r21
+     bca:	0e 94 56 0b 	call	0x16ac	; 0x16ac <__udivmodsi4>
+     bce:	da 01       	movw	r26, r20
+     bd0:	c9 01       	movw	r24, r18
+     bd2:	b6 95       	lsr	r27
+     bd4:	a7 95       	ror	r26
+     bd6:	97 95       	ror	r25
+     bd8:	87 95       	ror	r24
+     bda:	b6 95       	lsr	r27
+     bdc:	a7 95       	ror	r26
+     bde:	97 95       	ror	r25
+     be0:	87 95       	ror	r24
+     be2:	80 93 26 08 	sts	0x0826, r24	; 0x800826 <__TEXT_REGION_LENGTH__+0x700826>
+     be6:	90 93 27 08 	sts	0x0827, r25	; 0x800827 <__TEXT_REGION_LENGTH__+0x700827>
+					printf("PER: %u\r\n", TCC0.PER);
+     bea:	80 91 26 08 	lds	r24, 0x0826	; 0x800826 <__TEXT_REGION_LENGTH__+0x700826>
+     bee:	90 91 27 08 	lds	r25, 0x0827	; 0x800827 <__TEXT_REGION_LENGTH__+0x700827>
+     bf2:	9f 93       	push	r25
+     bf4:	8f 93       	push	r24
+     bf6:	a7 e0       	ldi	r26, 0x07	; 7
+     bf8:	b1 e2       	ldi	r27, 0x21	; 33
+     bfa:	bf 93       	push	r27
+     bfc:	af 93       	push	r26
+     bfe:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+					_tracks[trackIndex].addressOffset += 4;
+     c02:	f2 01       	movw	r30, r4
+     c04:	80 81       	ld	r24, Z
+     c06:	91 81       	ldd	r25, Z+1	; 0x01
+     c08:	a2 81       	ldd	r26, Z+2	; 0x02
+     c0a:	b3 81       	ldd	r27, Z+3	; 0x03
+     c0c:	04 96       	adiw	r24, 0x04	; 4
+     c0e:	a1 1d       	adc	r26, r1
+     c10:	b1 1d       	adc	r27, r1
+     c12:	80 83       	st	Z, r24
+     c14:	91 83       	std	Z+1, r25	; 0x01
+     c16:	a2 83       	std	Z+2, r26	; 0x02
+     c18:	b3 83       	std	Z+3, r27	; 0x03
+					i = 0;
+					break;
+     c1a:	0f 90       	pop	r0
+     c1c:	0f 90       	pop	r0
+     c1e:	0f 90       	pop	r0
+     c20:	0f 90       	pop	r0
+     c22:	5e c0       	rjmp	.+188    	; 0xce0 <getNextEvent+0x4f8>
+				case 0x54:
+					i = 6;
+					break;
+				case 0x58:
+				i = 5;
+     c24:	15 e0       	ldi	r17, 0x05	; 5
+				break;
+     c26:	4d c0       	rjmp	.+154    	; 0xcc2 <getNextEvent+0x4da>
+				case 0x59:
+				i = 3;
+     c28:	13 e0       	ldi	r17, 0x03	; 3
+				break;
+     c2a:	4b c0       	rjmp	.+150    	; 0xcc2 <getNextEvent+0x4da>
+				case 0xF7:
+				//TODO: Finish looking at this length
+				while(1)
+				{
+					_tracks[trackIndex].addressOffset++;
+     c2c:	f2 01       	movw	r30, r4
+     c2e:	80 81       	ld	r24, Z
+     c30:	91 81       	ldd	r25, Z+1	; 0x01
+     c32:	a2 81       	ldd	r26, Z+2	; 0x02
+     c34:	b3 81       	ldd	r27, Z+3	; 0x03
+     c36:	01 96       	adiw	r24, 0x01	; 1
+     c38:	a1 1d       	adc	r26, r1
+     c3a:	b1 1d       	adc	r27, r1
+     c3c:	80 83       	st	Z, r24
+     c3e:	91 83       	std	Z+1, r25	; 0x01
+     c40:	a2 83       	std	Z+2, r26	; 0x02
+     c42:	b3 83       	std	Z+3, r27	; 0x03
+					if (sendDummy() == 0xF7)
+     c44:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     c48:	87 3f       	cpi	r24, 0xF7	; 247
+     c4a:	81 f7       	brne	.-32     	; 0xc2c <getNextEvent+0x444>
+     c4c:	49 c0       	rjmp	.+146    	; 0xce0 <getNextEvent+0x4f8>
+		//printf("Track %u offset 0x%08lx after d\r\n", trackIndex, _tracks[trackIndex].addressOffset);
+
+		//just using 'i' as a temp
+		_tracks[trackIndex].deltaTime += getVariableLengthValue(data, &i);
+
+		i = 0;
+     c4e:	80 e0       	ldi	r24, 0x00	; 0
+				}
+				i = 0;
+				break;
+			}
+				
+			_tracks[trackIndex].addressOffset += i;
+     c50:	d2 01       	movw	r26, r4
+     c52:	4d 91       	ld	r20, X+
+     c54:	5d 91       	ld	r21, X+
+     c56:	6d 91       	ld	r22, X+
+     c58:	7c 91       	ld	r23, X
+     c5a:	48 0f       	add	r20, r24
+     c5c:	51 1d       	adc	r21, r1
+     c5e:	61 1d       	adc	r22, r1
+     c60:	71 1d       	adc	r23, r1
+     c62:	f2 01       	movw	r30, r4
+     c64:	40 83       	st	Z, r20
+     c66:	51 83       	std	Z+1, r21	; 0x01
+     c68:	62 83       	std	Z+2, r22	; 0x02
+     c6a:	73 83       	std	Z+3, r23	; 0x03
+			//skip some bytes
+			while(i--)
+     c6c:	1f ef       	ldi	r17, 0xFF	; 255
+     c6e:	18 0f       	add	r17, r24
+     c70:	88 23       	and	r24, r24
+     c72:	31 f0       	breq	.+12     	; 0xc80 <getNextEvent+0x498>
+			{
+				sendDummy();
+     c74:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     c78:	81 2f       	mov	r24, r17
+				break;
+			}
+				
+			_tracks[trackIndex].addressOffset += i;
+			//skip some bytes
+			while(i--)
+     c7a:	11 50       	subi	r17, 0x01	; 1
+     c7c:	81 11       	cpse	r24, r1
+     c7e:	fa cf       	rjmp	.-12     	; 0xc74 <getNextEvent+0x48c>
+	{
+
+			
+		//Clear data buff and determine the variable length time
+		data[0] = 0;
+		data[1] = 0;
+     c80:	1a 82       	std	Y+2, r1	; 0x02
+		data[2] = 0;
+     c82:	1b 82       	std	Y+3, r1	; 0x03
+		data[3] = 0;
+     c84:	1c 82       	std	Y+4, r1	; 0x04
+
+		//The last byte will not have the MSB set.
+		data[0] = sendDummy();
+     c86:	0e 94 99 01 	call	0x332	; 0x332 <sendDummy>
+     c8a:	89 83       	std	Y+1, r24	; 0x01
+		        //printf("Track %u offset 0x%08lx, data[0]: 0x%02x\r\n", trackIndex, _tracks[trackIndex].addressOffset, data[0]);
+		_tracks[trackIndex].addressOffset++;
+     c8c:	d2 01       	movw	r26, r4
+     c8e:	4d 91       	ld	r20, X+
+     c90:	5d 91       	ld	r21, X+
+     c92:	6d 91       	ld	r22, X+
+     c94:	7c 91       	ld	r23, X
+     c96:	4f 5f       	subi	r20, 0xFF	; 255
+     c98:	5f 4f       	sbci	r21, 0xFF	; 255
+     c9a:	6f 4f       	sbci	r22, 0xFF	; 255
+     c9c:	7f 4f       	sbci	r23, 0xFF	; 255
+     c9e:	f2 01       	movw	r30, r4
+     ca0:	40 83       	st	Z, r20
+     ca2:	51 83       	std	Z+1, r21	; 0x01
+     ca4:	62 83       	std	Z+2, r22	; 0x02
+     ca6:	73 83       	std	Z+3, r23	; 0x03
+		if ((data[0] & 0x80))
+     ca8:	88 23       	and	r24, r24
+     caa:	0c f4       	brge	.+2      	; 0xcae <getNextEvent+0x4c6>
+     cac:	db cd       	rjmp	.-1098   	; 0x864 <getNextEvent+0x7c>
+	while(*out_numBytesUsed < 4)
+	{
+		
+		value <<= 7;
+		//printf("byte %u = %u\r\n", *out_numBytesUsed, *(first4bytes + *out_numBytesUsed));
+		if ((*(first4bytes + *out_numBytesUsed) & 0x80))
+     cae:	29 81       	ldd	r18, Y+1	; 0x01
+     cb0:	22 23       	and	r18, r18
+     cb2:	04 f1       	brlt	.+64     	; 0xcf4 <getNextEvent+0x50c>
+	*out_numBytesUsed = 0;
+	
+	while(*out_numBytesUsed < 4)
+	{
+		
+		value <<= 7;
+     cb4:	80 e0       	ldi	r24, 0x00	; 0
+     cb6:	90 e0       	ldi	r25, 0x00	; 0
+     cb8:	dc 01       	movw	r26, r24
+     cba:	34 ce       	rjmp	.-920    	; 0x924 <getNextEvent+0x13c>
+			_tracks[trackIndex].addressOffset++;
+			//Here we are just looking for the number of bytes to jump, except for in the case of FF 51 03 (Tempo)
+			switch(data[0])
+			{
+				case 0x00:
+					i = 1;
+     cbc:	11 e0       	ldi	r17, 0x01	; 1
+     cbe:	01 c0       	rjmp	.+2      	; 0xcc2 <getNextEvent+0x4da>
+					printf("PER: %u\r\n", TCC0.PER);
+					_tracks[trackIndex].addressOffset += 4;
+					i = 0;
+					break;
+				case 0x54:
+					i = 6;
+     cc0:	16 e0       	ldi	r17, 0x06	; 6
+				}
+				i = 0;
+				break;
+			}
+				
+			_tracks[trackIndex].addressOffset += i;
+     cc2:	f2 01       	movw	r30, r4
+     cc4:	80 81       	ld	r24, Z
+     cc6:	91 81       	ldd	r25, Z+1	; 0x01
+     cc8:	a2 81       	ldd	r26, Z+2	; 0x02
+     cca:	b3 81       	ldd	r27, Z+3	; 0x03
+     ccc:	81 0f       	add	r24, r17
+     cce:	91 1d       	adc	r25, r1
+     cd0:	a1 1d       	adc	r26, r1
+     cd2:	b1 1d       	adc	r27, r1
+     cd4:	80 83       	st	Z, r24
+     cd6:	91 83       	std	Z+1, r25	; 0x01
+     cd8:	a2 83       	std	Z+2, r26	; 0x02
+     cda:	b3 83       	std	Z+3, r27	; 0x03
+			//skip some bytes
+			while(i--)
+     cdc:	11 50       	subi	r17, 0x01	; 1
+     cde:	ca cf       	rjmp	.-108    	; 0xc74 <getNextEvent+0x48c>
+				}
+				i = 0;
+				break;
+			}
+				
+			_tracks[trackIndex].addressOffset += i;
+     ce0:	f2 01       	movw	r30, r4
+     ce2:	80 81       	ld	r24, Z
+     ce4:	91 81       	ldd	r25, Z+1	; 0x01
+     ce6:	a2 81       	ldd	r26, Z+2	; 0x02
+     ce8:	b3 81       	ldd	r27, Z+3	; 0x03
+     cea:	80 83       	st	Z, r24
+     cec:	91 83       	std	Z+1, r25	; 0x01
+     cee:	a2 83       	std	Z+2, r26	; 0x02
+     cf0:	b3 83       	std	Z+3, r27	; 0x03
+     cf2:	c6 cf       	rjmp	.-116    	; 0xc80 <getNextEvent+0x498>
+		
+		value <<= 7;
+		//printf("byte %u = %u\r\n", *out_numBytesUsed, *(first4bytes + *out_numBytesUsed));
+		if ((*(first4bytes + *out_numBytesUsed) & 0x80))
+		{
+			value += ((uint32_t)(*(first4bytes + *out_numBytesUsed) & 0x7F));
+     cf4:	82 2f       	mov	r24, r18
+     cf6:	8f 77       	andi	r24, 0x7F	; 127
+     cf8:	90 e0       	ldi	r25, 0x00	; 0
+     cfa:	a0 e0       	ldi	r26, 0x00	; 0
+     cfc:	b0 e0       	ldi	r27, 0x00	; 0
+     cfe:	fe 01       	movw	r30, r28
+     d00:	32 96       	adiw	r30, 0x02	; 2
+     d02:	e8 cd       	rjmp	.-1072   	; 0x8d4 <getNextEvent+0xec>
+		}
+			
+	}
+	
+	return 0x00;
+}
+     d04:	62 96       	adiw	r28, 0x12	; 18
+     d06:	cd bf       	out	0x3d, r28	; 61
+     d08:	de bf       	out	0x3e, r29	; 62
+     d0a:	df 91       	pop	r29
+     d0c:	cf 91       	pop	r28
+     d0e:	1f 91       	pop	r17
+     d10:	0f 91       	pop	r16
+     d12:	ff 90       	pop	r15
+     d14:	ef 90       	pop	r14
+     d16:	df 90       	pop	r13
+     d18:	cf 90       	pop	r12
+     d1a:	bf 90       	pop	r11
+     d1c:	af 90       	pop	r10
+     d1e:	9f 90       	pop	r9
+     d20:	8f 90       	pop	r8
+     d22:	7f 90       	pop	r7
+     d24:	6f 90       	pop	r6
+     d26:	5f 90       	pop	r5
+     d28:	4f 90       	pop	r4
+     d2a:	3f 90       	pop	r3
+     d2c:	2f 90       	pop	r2
+     d2e:	08 95       	ret
+
+00000d30 <getFirstEvent>:
+
+
+uint8_t getFirstEvent(uint8_t *trackIndex, uint32_t trackStart)
+{
+     d30:	ef 92       	push	r14
+     d32:	ff 92       	push	r15
+     d34:	0f 93       	push	r16
+     d36:	1f 93       	push	r17
+     d38:	cf 93       	push	r28
+     d3a:	df 93       	push	r29
+     d3c:	7c 01       	movw	r14, r24
+     d3e:	c4 2f       	mov	r28, r20
+     d40:	d5 2f       	mov	r29, r21
+     d42:	16 2f       	mov	r17, r22
+     d44:	07 2f       	mov	r16, r23
+	waitForNotBusy();
+     d46:	0e 94 be 01 	call	0x37c	; 0x37c <waitForNotBusy>
+	
+	CS_DISABLE();
+     d4a:	e0 e4       	ldi	r30, 0x40	; 64
+     d4c:	f6 e0       	ldi	r31, 0x06	; 6
+     d4e:	80 e1       	ldi	r24, 0x10	; 16
+     d50:	85 83       	std	Z+5, r24	; 0x05
+	CS_ENABLE();
+     d52:	86 83       	std	Z+6, r24	; 0x06
+	sendSPI(MEM_READ);
+     d54:	83 e0       	ldi	r24, 0x03	; 3
+     d56:	0e 94 8f 01 	call	0x31e	; 0x31e <sendSPI>
+	memSendAddress(trackStart);
+     d5a:	6c 2f       	mov	r22, r28
+     d5c:	7d 2f       	mov	r23, r29
+     d5e:	81 2f       	mov	r24, r17
+     d60:	90 2f       	mov	r25, r16
+     d62:	0e 94 9d 01 	call	0x33a	; 0x33a <memSendAddress>
+
+	
+	printf("Next track start 0x%08lx\r\n", trackStart);
+     d66:	0f 93       	push	r16
+     d68:	1f 93       	push	r17
+     d6a:	df 93       	push	r29
+     d6c:	cf 93       	push	r28
+     d6e:	21 e1       	ldi	r18, 0x11	; 17
+     d70:	31 e2       	ldi	r19, 0x21	; 33
+     d72:	3f 93       	push	r19
+     d74:	2f 93       	push	r18
+     d76:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+	
+	if (getNextEvent(*trackIndex) == 0xFF) //Checking 0xFF explicitly because there might be a 0x2F returned.
+     d7a:	f7 01       	movw	r30, r14
+     d7c:	80 81       	ld	r24, Z
+     d7e:	0e 94 f4 03 	call	0x7e8	; 0x7e8 <getNextEvent>
+     d82:	0f 90       	pop	r0
+     d84:	0f 90       	pop	r0
+     d86:	0f 90       	pop	r0
+     d88:	0f 90       	pop	r0
+     d8a:	0f 90       	pop	r0
+     d8c:	0f 90       	pop	r0
+     d8e:	8f 3f       	cpi	r24, 0xFF	; 255
+     d90:	21 f4       	brne	.+8      	; 0xd9a <getFirstEvent+0x6a>
+	{
+		(*trackIndex)++;
+     d92:	f7 01       	movw	r30, r14
+     d94:	80 81       	ld	r24, Z
+     d96:	8f 5f       	subi	r24, 0xFF	; 255
+     d98:	80 83       	st	Z, r24
+	}
+	
+	CS_DISABLE();
+     d9a:	80 e1       	ldi	r24, 0x10	; 16
+     d9c:	80 93 45 06 	sts	0x0645, r24	; 0x800645 <__TEXT_REGION_LENGTH__+0x700645>
+	
+	return 0x00;
+}
+     da0:	80 e0       	ldi	r24, 0x00	; 0
+     da2:	df 91       	pop	r29
+     da4:	cf 91       	pop	r28
+     da6:	1f 91       	pop	r17
+     da8:	0f 91       	pop	r16
+     daa:	ff 90       	pop	r15
+     dac:	ef 90       	pop	r14
+     dae:	08 95       	ret
+
+00000db0 <getMidiTracks>:
+
+//Gets up to the max number of MIDI tracks. Scans each track for notes. Ignores if no notes found
+//Uses _trackCount 
+//Sets _trackCount, _tracks
+uint8_t getMidiTracks()
+{
+     db0:	4f 92       	push	r4
+     db2:	5f 92       	push	r5
+     db4:	6f 92       	push	r6
+     db6:	7f 92       	push	r7
+     db8:	8f 92       	push	r8
+     dba:	9f 92       	push	r9
+     dbc:	af 92       	push	r10
+     dbe:	bf 92       	push	r11
+     dc0:	cf 92       	push	r12
+     dc2:	df 92       	push	r13
+     dc4:	ef 92       	push	r14
+     dc6:	ff 92       	push	r15
+     dc8:	0f 93       	push	r16
+     dca:	1f 93       	push	r17
+     dcc:	cf 93       	push	r28
+     dce:	df 93       	push	r29
+     dd0:	cd b7       	in	r28, 0x3d	; 61
+     dd2:	de b7       	in	r29, 0x3e	; 62
+     dd4:	25 97       	sbiw	r28, 0x05	; 5
+     dd6:	cd bf       	out	0x3d, r28	; 61
+     dd8:	de bf       	out	0x3e, r29	; 62
+	uint8_t i = 0;
+	uint8_t cnt = 0;
+	uint8_t usedTracks = 0;
+     dda:	19 82       	std	Y+1, r1	; 0x01
+	uint32_t trackStart = (uint32_t)MIDI_FIRST_TRACK_OFFSET + _fileAddressOffset + 4;// + 4 to skip the track header	
+     ddc:	40 90 2b 22 	lds	r4, 0x222B	; 0x80222b <_fileAddressOffset>
+     de0:	50 90 2c 22 	lds	r5, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     de4:	60 90 2d 22 	lds	r6, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     de8:	70 90 2e 22 	lds	r7, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     dec:	22 e1       	ldi	r18, 0x12	; 18
+     dee:	42 0e       	add	r4, r18
+     df0:	51 1c       	adc	r5, r1
+     df2:	61 1c       	adc	r6, r1
+     df4:	71 1c       	adc	r7, r1
+	uint8_t data[4];
+	uint8_t done = 0;
+	uint32_t trackLen = 0;
+	
+	
+	 while (cnt < _tractCount && usedTracks < MIDI_MAX_MIDI_TRACKS) 
+     df6:	80 91 2a 22 	lds	r24, 0x222A	; 0x80222a <_tractCount>
+     dfa:	88 23       	and	r24, r24
+     dfc:	09 f4       	brne	.+2      	; 0xe00 <getMidiTracks+0x50>
+     dfe:	96 c0       	rjmp	.+300    	; 0xf2c <getMidiTracks+0x17c>
+     e00:	e0 e0       	ldi	r30, 0x00	; 0
+     e02:	91 2c       	mov	r9, r1
+	{
+		//Clear the track data
+		_tracks[cnt].eventByte = 0;
+     e04:	0f 2e       	mov	r0, r31
+     e06:	ff e0       	ldi	r31, 0x0F	; 15
+     e08:	8f 2e       	mov	r8, r31
+     e0a:	f0 2d       	mov	r31, r0
+		_tracks[usedTracks].eventData1 = 0;
+		_tracks[usedTracks].eventData2 = 0;
+		_tracks[usedTracks].addressOffset = 0;
+		_tracks[usedTracks].startAddress = 0;
+
+		printf("trackStart: 0x%08lx \r\n", trackStart);
+     e0c:	0f 2e       	mov	r0, r31
+     e0e:	fc e2       	ldi	r31, 0x2C	; 44
+     e10:	af 2e       	mov	r10, r31
+     e12:	f1 e2       	ldi	r31, 0x21	; 33
+     e14:	bf 2e       	mov	r11, r31
+     e16:	f0 2d       	mov	r31, r0
+		memReadToBuffer(trackStart, data, 4); 
+		//printf("trackStart: 0x%08lx \r\n", trackStart);
+
+		//_tracks[usedTracks].trackLength = ((uint32_t)data[0] << 24) + ((uint32_t)data[1] << 16) + ((uint32_t)data[2] << 8) + ((uint32_t)data[3] << 0);
+		trackLen = ((uint32_t)data[0] << 24) + ((uint32_t)data[1] << 16) + ((uint32_t)data[2] << 8) + ((uint32_t)data[3] << 0);
+		printf("len: %02x %02x %02x %02x (%lu)\r\n", data[0], data[1], data[2], data[3], trackLen);
+     e18:	03 e4       	ldi	r16, 0x43	; 67
+     e1a:	11 e2       	ldi	r17, 0x21	; 33
+	
+	
+	 while (cnt < _tractCount && usedTracks < MIDI_MAX_MIDI_TRACKS) 
+	{
+		//Clear the track data
+		_tracks[cnt].eventByte = 0;
+     e1c:	89 9c       	mul	r8, r9
+     e1e:	d0 01       	movw	r26, r0
+     e20:	11 24       	eor	r1, r1
+     e22:	ab 5c       	subi	r26, 0xCB	; 203
+     e24:	bd 4d       	sbci	r27, 0xDD	; 221
+     e26:	1c 96       	adiw	r26, 0x0c	; 12
+     e28:	1c 92       	st	X, r1
+		_tracks[usedTracks].eventData1 = 0;
+     e2a:	8e 9e       	mul	r8, r30
+     e2c:	f0 01       	movw	r30, r0
+     e2e:	11 24       	eor	r1, r1
+     e30:	eb 5c       	subi	r30, 0xCB	; 203
+     e32:	fd 4d       	sbci	r31, 0xDD	; 221
+     e34:	15 86       	std	Z+13, r1	; 0x0d
+		_tracks[usedTracks].eventData2 = 0;
+     e36:	16 86       	std	Z+14, r1	; 0x0e
+		_tracks[usedTracks].addressOffset = 0;
+     e38:	10 82       	st	Z, r1
+     e3a:	11 82       	std	Z+1, r1	; 0x01
+     e3c:	12 82       	std	Z+2, r1	; 0x02
+     e3e:	13 82       	std	Z+3, r1	; 0x03
+		_tracks[usedTracks].startAddress = 0;
+     e40:	14 82       	std	Z+4, r1	; 0x04
+     e42:	15 82       	std	Z+5, r1	; 0x05
+     e44:	16 82       	std	Z+6, r1	; 0x06
+     e46:	17 82       	std	Z+7, r1	; 0x07
+
+		printf("trackStart: 0x%08lx \r\n", trackStart);
+     e48:	7f 92       	push	r7
+     e4a:	6f 92       	push	r6
+     e4c:	5f 92       	push	r5
+     e4e:	4f 92       	push	r4
+     e50:	bf 92       	push	r11
+     e52:	af 92       	push	r10
+     e54:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+		//Get the length of the track
+		memReadToBuffer(trackStart, data, 4); 
+     e58:	24 e0       	ldi	r18, 0x04	; 4
+     e5a:	ae 01       	movw	r20, r28
+     e5c:	4e 5f       	subi	r20, 0xFE	; 254
+     e5e:	5f 4f       	sbci	r21, 0xFF	; 255
+     e60:	c3 01       	movw	r24, r6
+     e62:	b2 01       	movw	r22, r4
+     e64:	0e 94 c3 01 	call	0x386	; 0x386 <memReadToBuffer>
+		//printf("trackStart: 0x%08lx \r\n", trackStart);
+
+		//_tracks[usedTracks].trackLength = ((uint32_t)data[0] << 24) + ((uint32_t)data[1] << 16) + ((uint32_t)data[2] << 8) + ((uint32_t)data[3] << 0);
+		trackLen = ((uint32_t)data[0] << 24) + ((uint32_t)data[1] << 16) + ((uint32_t)data[2] << 8) + ((uint32_t)data[3] << 0);
+     e68:	2a 81       	ldd	r18, Y+2	; 0x02
+     e6a:	3b 81       	ldd	r19, Y+3	; 0x03
+     e6c:	4c 81       	ldd	r20, Y+4	; 0x04
+     e6e:	5d 81       	ldd	r21, Y+5	; 0x05
+     e70:	c2 2e       	mov	r12, r18
+     e72:	d1 2c       	mov	r13, r1
+     e74:	e1 2c       	mov	r14, r1
+     e76:	f1 2c       	mov	r15, r1
+     e78:	fc 2c       	mov	r15, r12
+     e7a:	ee 24       	eor	r14, r14
+     e7c:	dd 24       	eor	r13, r13
+     e7e:	cc 24       	eor	r12, r12
+     e80:	83 2f       	mov	r24, r19
+     e82:	90 e0       	ldi	r25, 0x00	; 0
+     e84:	a0 e0       	ldi	r26, 0x00	; 0
+     e86:	b0 e0       	ldi	r27, 0x00	; 0
+     e88:	dc 01       	movw	r26, r24
+     e8a:	99 27       	eor	r25, r25
+     e8c:	88 27       	eor	r24, r24
+     e8e:	c8 0e       	add	r12, r24
+     e90:	d9 1e       	adc	r13, r25
+     e92:	ea 1e       	adc	r14, r26
+     e94:	fb 1e       	adc	r15, r27
+     e96:	d7 01       	movw	r26, r14
+     e98:	c6 01       	movw	r24, r12
+     e9a:	85 0f       	add	r24, r21
+     e9c:	91 1d       	adc	r25, r1
+     e9e:	a1 1d       	adc	r26, r1
+     ea0:	b1 1d       	adc	r27, r1
+     ea2:	c4 2e       	mov	r12, r20
+     ea4:	d1 2c       	mov	r13, r1
+     ea6:	e1 2c       	mov	r14, r1
+     ea8:	f1 2c       	mov	r15, r1
+     eaa:	fe 2c       	mov	r15, r14
+     eac:	ed 2c       	mov	r14, r13
+     eae:	dc 2c       	mov	r13, r12
+     eb0:	cc 24       	eor	r12, r12
+     eb2:	c8 0e       	add	r12, r24
+     eb4:	d9 1e       	adc	r13, r25
+     eb6:	ea 1e       	adc	r14, r26
+     eb8:	fb 1e       	adc	r15, r27
+		printf("len: %02x %02x %02x %02x (%lu)\r\n", data[0], data[1], data[2], data[3], trackLen);
+     eba:	ff 92       	push	r15
+     ebc:	ef 92       	push	r14
+     ebe:	df 92       	push	r13
+     ec0:	cf 92       	push	r12
+     ec2:	1f 92       	push	r1
+     ec4:	5f 93       	push	r21
+     ec6:	1f 92       	push	r1
+     ec8:	4f 93       	push	r20
+     eca:	1f 92       	push	r1
+     ecc:	3f 93       	push	r19
+     ece:	1f 92       	push	r1
+     ed0:	2f 93       	push	r18
+     ed2:	1f 93       	push	r17
+     ed4:	0f 93       	push	r16
+     ed6:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+		
+		trackStart += 4; //move the trackStart to after the length
+     eda:	34 e0       	ldi	r19, 0x04	; 4
+     edc:	43 0e       	add	r4, r19
+     ede:	51 1c       	adc	r5, r1
+     ee0:	61 1c       	adc	r6, r1
+     ee2:	71 1c       	adc	r7, r1
+		//set the start of the track
+		_tracks[usedTracks].startAddress = trackStart;
+     ee4:	e9 81       	ldd	r30, Y+1	; 0x01
+     ee6:	8e 9e       	mul	r8, r30
+     ee8:	f0 01       	movw	r30, r0
+     eea:	11 24       	eor	r1, r1
+     eec:	eb 5c       	subi	r30, 0xCB	; 203
+     eee:	fd 4d       	sbci	r31, 0xDD	; 221
+     ef0:	44 82       	std	Z+4, r4	; 0x04
+     ef2:	55 82       	std	Z+5, r5	; 0x05
+     ef4:	66 82       	std	Z+6, r6	; 0x06
+     ef6:	77 82       	std	Z+7, r7	; 0x07
+		
+		//TODO: Later we will need a way to scan to the next note. See if the following code can be refactored into it's own method
+	
+		//trackLen = _tracks[usedTracks].trackLength + 4;// + 4 to skip the track header
+	 
+		getFirstEvent(&usedTracks, trackStart);
+     ef8:	b3 01       	movw	r22, r6
+     efa:	a2 01       	movw	r20, r4
+     efc:	ce 01       	movw	r24, r28
+     efe:	01 96       	adiw	r24, 0x01	; 1
+     f00:	0e 94 98 06 	call	0xd30	; 0xd30 <getFirstEvent>
+     f04:	84 e0       	ldi	r24, 0x04	; 4
+     f06:	c8 0e       	add	r12, r24
+     f08:	d1 1c       	adc	r13, r1
+     f0a:	e1 1c       	adc	r14, r1
+     f0c:	f1 1c       	adc	r15, r1
+
+		//Update the trackStart here because we will need it later.
+		trackStart += trackLen + 4;
+     f0e:	4c 0c       	add	r4, r12
+     f10:	5d 1c       	adc	r5, r13
+     f12:	6e 1c       	adc	r6, r14
+     f14:	7f 1c       	adc	r7, r15
+				
+		cnt++;
+     f16:	93 94       	inc	r9
+	uint8_t data[4];
+	uint8_t done = 0;
+	uint32_t trackLen = 0;
+	
+	
+	 while (cnt < _tractCount && usedTracks < MIDI_MAX_MIDI_TRACKS) 
+     f18:	80 91 2a 22 	lds	r24, 0x222A	; 0x80222a <_tractCount>
+     f1c:	cd bf       	out	0x3d, r28	; 61
+     f1e:	de bf       	out	0x3e, r29	; 62
+     f20:	98 16       	cp	r9, r24
+     f22:	20 f4       	brcc	.+8      	; 0xf2c <getMidiTracks+0x17c>
+     f24:	e9 81       	ldd	r30, Y+1	; 0x01
+     f26:	e8 30       	cpi	r30, 0x08	; 8
+     f28:	08 f4       	brcc	.+2      	; 0xf2c <getMidiTracks+0x17c>
+     f2a:	78 cf       	rjmp	.-272    	; 0xe1c <getMidiTracks+0x6c>
+		cnt++;
+		
+	}
+	
+	return usedTracks;
+}
+     f2c:	89 81       	ldd	r24, Y+1	; 0x01
+     f2e:	25 96       	adiw	r28, 0x05	; 5
+     f30:	cd bf       	out	0x3d, r28	; 61
+     f32:	de bf       	out	0x3e, r29	; 62
+     f34:	df 91       	pop	r29
+     f36:	cf 91       	pop	r28
+     f38:	1f 91       	pop	r17
+     f3a:	0f 91       	pop	r16
+     f3c:	ff 90       	pop	r15
+     f3e:	ef 90       	pop	r14
+     f40:	df 90       	pop	r13
+     f42:	cf 90       	pop	r12
+     f44:	bf 90       	pop	r11
+     f46:	af 90       	pop	r10
+     f48:	9f 90       	pop	r9
+     f4a:	8f 90       	pop	r8
+     f4c:	7f 90       	pop	r7
+     f4e:	6f 90       	pop	r6
+     f50:	5f 90       	pop	r5
+     f52:	4f 90       	pop	r4
+     f54:	08 95       	ret
+
+00000f56 <initMemory>:
+
+void initMemory()
+{
+
+	getFileCount();
+     f56:	0e 94 fb 01 	call	0x3f6	; 0x3f6 <getFileCount>
+	_fileAddressOffset = FILE_COUNT_ADDR + 2 + (_fileCount * 4);
+     f5a:	80 91 31 22 	lds	r24, 0x2231	; 0x802231 <_fileCount>
+     f5e:	90 91 32 22 	lds	r25, 0x2232	; 0x802232 <_fileCount+0x1>
+     f62:	88 0f       	add	r24, r24
+     f64:	99 1f       	adc	r25, r25
+     f66:	88 0f       	add	r24, r24
+     f68:	99 1f       	adc	r25, r25
+     f6a:	8a 5f       	subi	r24, 0xFA	; 250
+     f6c:	9f 4e       	sbci	r25, 0xEF	; 239
+     f6e:	a0 e0       	ldi	r26, 0x00	; 0
+     f70:	b0 e0       	ldi	r27, 0x00	; 0
+     f72:	80 93 2b 22 	sts	0x222B, r24	; 0x80222b <_fileAddressOffset>
+     f76:	90 93 2c 22 	sts	0x222C, r25	; 0x80222c <_fileAddressOffset+0x1>
+     f7a:	a0 93 2d 22 	sts	0x222D, r26	; 0x80222d <_fileAddressOffset+0x2>
+     f7e:	b0 93 2e 22 	sts	0x222E, r27	; 0x80222e <_fileAddressOffset+0x3>
+	
+	printf("File Count: %u, Starting Address 0x%08lx\r\n", _fileCount, _fileAddressOffset);
+     f82:	80 91 2b 22 	lds	r24, 0x222B	; 0x80222b <_fileAddressOffset>
+     f86:	90 91 2c 22 	lds	r25, 0x222C	; 0x80222c <_fileAddressOffset+0x1>
+     f8a:	a0 91 2d 22 	lds	r26, 0x222D	; 0x80222d <_fileAddressOffset+0x2>
+     f8e:	b0 91 2e 22 	lds	r27, 0x222E	; 0x80222e <_fileAddressOffset+0x3>
+     f92:	20 91 31 22 	lds	r18, 0x2231	; 0x802231 <_fileCount>
+     f96:	30 91 32 22 	lds	r19, 0x2232	; 0x802232 <_fileCount+0x1>
+     f9a:	bf 93       	push	r27
+     f9c:	af 93       	push	r26
+     f9e:	9f 93       	push	r25
+     fa0:	8f 93       	push	r24
+     fa2:	3f 93       	push	r19
+     fa4:	2f 93       	push	r18
+     fa6:	84 e6       	ldi	r24, 0x64	; 100
+     fa8:	91 e2       	ldi	r25, 0x21	; 33
+     faa:	9f 93       	push	r25
+     fac:	8f 93       	push	r24
+     fae:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+     fb2:	8d b7       	in	r24, 0x3d	; 61
+     fb4:	9e b7       	in	r25, 0x3e	; 62
+     fb6:	08 96       	adiw	r24, 0x08	; 8
+     fb8:	8d bf       	out	0x3d, r24	; 61
+     fba:	9e bf       	out	0x3e, r25	; 62
+     fbc:	08 95       	ret
+
+00000fbe <loadFile>:
+
+}
+
+uint8_t loadFile(uint16_t index)
+{
+	_fileIndex = index;
+     fbe:	80 93 2f 22 	sts	0x222F, r24	; 0x80222f <_fileIndex>
+     fc2:	90 93 30 22 	sts	0x2230, r25	; 0x802230 <_fileIndex+0x1>
+	moveToFile();
+     fc6:	0e 94 1b 02 	call	0x436	; 0x436 <moveToFile>
+	getTrackCount();
+     fca:	0e 94 54 03 	call	0x6a8	; 0x6a8 <getTrackCount>
+	getTimeDivision();
+     fce:	0e 94 93 03 	call	0x726	; 0x726 <getTimeDivision>
+	_tractCount = getMidiTracks();
+     fd2:	0e 94 d8 06 	call	0xdb0	; 0xdb0 <getMidiTracks>
+     fd6:	80 93 2a 22 	sts	0x222A, r24	; 0x80222a <_tractCount>
+	_activeTracks = _tractCount;
+     fda:	80 91 2a 22 	lds	r24, 0x222A	; 0x80222a <_tractCount>
+     fde:	80 93 29 22 	sts	0x2229, r24	; 0x802229 <_activeTracks>
+	printf("Used tracks %u\r\n", _tractCount);
+     fe2:	80 91 2a 22 	lds	r24, 0x222A	; 0x80222a <_tractCount>
+     fe6:	1f 92       	push	r1
+     fe8:	8f 93       	push	r24
+     fea:	8f e8       	ldi	r24, 0x8F	; 143
+     fec:	91 e2       	ldi	r25, 0x21	; 33
+     fee:	9f 93       	push	r25
+     ff0:	8f 93       	push	r24
+     ff2:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+     ff6:	0f 90       	pop	r0
+     ff8:	0f 90       	pop	r0
+     ffa:	0f 90       	pop	r0
+     ffc:	0f 90       	pop	r0
+}
+     ffe:	08 95       	ret
+
+00001000 <main>:
+int main(void)
+{
+	uint8_t data[2];
+	uint8_t usedTracks;
+	
+	cli();
+    1000:	f8 94       	cli
+	
+	initClk();	
+    1002:	0e 94 30 01 	call	0x260	; 0x260 <initClk>
+	initSPI();
+    1006:	0e 94 3e 01 	call	0x27c	; 0x27c <initSPI>
+	initDebugUART();
+    100a:	0e 94 48 01 	call	0x290	; 0x290 <initDebugUART>
+	initMidiUART();
+    100e:	0e 94 51 01 	call	0x2a2	; 0x2a2 <initMidiUART>
+	initInterrupts();
+    1012:	0e 94 81 01 	call	0x302	; 0x302 <initInterrupts>
+	initMidiTimer();
+    1016:	0e 94 5e 01 	call	0x2bc	; 0x2bc <initMidiTimer>
+	initInputTimer();
+    101a:	0e 94 69 01 	call	0x2d2	; 0x2d2 <initInputTimer>
+	initInputADC();
+    101e:	0e 94 73 01 	call	0x2e6	; 0x2e6 <initInputADC>
+	
+	sei();
+    1022:	78 94       	sei
+	
+	stdout = &mystdout;
+    1024:	80 e0       	ldi	r24, 0x00	; 0
+    1026:	90 e2       	ldi	r25, 0x20	; 32
+    1028:	80 93 b6 22 	sts	0x22B6, r24	; 0x8022b6 <__iob+0x2>
+    102c:	90 93 b7 22 	sts	0x22B7, r25	; 0x8022b7 <__iob+0x3>
+	
+	printf("started\r\n");
+    1030:	80 ea       	ldi	r24, 0xA0	; 160
+    1032:	91 e2       	ldi	r25, 0x21	; 33
+    1034:	0e 94 53 0c 	call	0x18a6	; 0x18a6 <puts>
+	
+	initMemory();
+    1038:	0e 94 ab 07 	call	0xf56	; 0xf56 <initMemory>
+	
+	//TODO: Remove
+	PORTA.DIRSET = PIN5_bm;
+    103c:	80 e2       	ldi	r24, 0x20	; 32
+    103e:	80 93 01 06 	sts	0x0601, r24	; 0x800601 <__TEXT_REGION_LENGTH__+0x700601>
+		
+	_fileIndex = 0xFFFFFF; //so it rolls over to the correct file with the very first button click.
+    1042:	8f ef       	ldi	r24, 0xFF	; 255
+    1044:	9f ef       	ldi	r25, 0xFF	; 255
+    1046:	80 93 2f 22 	sts	0x222F, r24	; 0x80222f <_fileIndex>
+    104a:	90 93 30 22 	sts	0x2230, r25	; 0x802230 <_fileIndex+0x1>
+	for(uint16_t i = 0; i < _tractCount; i++)
+	{
+
+		//getNextEvent requires the memory to be in continuous read mode. This is an optimization to speed up reading the next event
+		waitForNotBusy();	
+		CS_DISABLE();
+    104e:	0f 2e       	mov	r0, r31
+    1050:	f0 e4       	ldi	r31, 0x40	; 64
+    1052:	6f 2e       	mov	r6, r31
+    1054:	f6 e0       	ldi	r31, 0x06	; 6
+    1056:	7f 2e       	mov	r7, r31
+    1058:	f0 2d       	mov	r31, r0
+		CS_ENABLE();
+		sendSPI(MEM_READ);
+		memSendAddress(_tracks[i].startAddress + _tracks[i].addressOffset);
+    105a:	0f 2e       	mov	r0, r31
+    105c:	ff e0       	ldi	r31, 0x0F	; 15
+    105e:	2f 2e       	mov	r2, r31
+    1060:	f0 2d       	mov	r31, r0
+			}
+							
+			if (!_tracks[i].deltaTime) //A DeltaTime has reached 0;
+			{
+					
+				printf("Track %u send 0x%02x %u %u\r\n", i, _tracks[i].eventByte, _tracks[i].eventData1, _tracks[i].eventData2);
+    1062:	0f 2e       	mov	r0, r31
+    1064:	f9 ea       	ldi	r31, 0xA9	; 169
+    1066:	8f 2e       	mov	r8, r31
+    1068:	f1 e2       	ldi	r31, 0x21	; 33
+    106a:	9f 2e       	mov	r9, r31
+    106c:	f0 2d       	mov	r31, r0
+		
+	_fileIndex = 0xFFFFFF; //so it rolls over to the correct file with the very first button click.
+	
+    while (1) 
+    {
+		if (_clockTickFlag)
+    106e:	80 91 28 22 	lds	r24, 0x2228	; 0x802228 <__data_end>
+    1072:	88 23       	and	r24, r24
+    1074:	09 f4       	brne	.+2      	; 0x1078 <main+0x78>
+    1076:	5c c1       	rjmp	.+696    	; 0x1330 <main+0x330>
+	//3: goto 1.
+	uint8_t prevEventByte;
+	uint8_t prevNote;
+	uint8_t out = 0;
+
+	for(uint16_t i = 0; i < _tractCount; i++)
+    1078:	80 91 2a 22 	lds	r24, 0x222A	; 0x80222a <_tractCount>
+    107c:	88 23       	and	r24, r24
+    107e:	09 f4       	brne	.+2      	; 0x1082 <main+0x82>
+    1080:	55 c1       	rjmp	.+682    	; 0x132c <main+0x32c>
+    1082:	e1 2c       	mov	r14, r1
+    1084:	f1 2c       	mov	r15, r1
+	{
+
+		//getNextEvent requires the memory to be in continuous read mode. This is an optimization to speed up reading the next event
+		waitForNotBusy();	
+    1086:	0e 94 be 01 	call	0x37c	; 0x37c <waitForNotBusy>
+		CS_DISABLE();
+    108a:	e0 e1       	ldi	r30, 0x10	; 16
+    108c:	d3 01       	movw	r26, r6
+    108e:	15 96       	adiw	r26, 0x05	; 5
+    1090:	ec 93       	st	X, r30
+    1092:	15 97       	sbiw	r26, 0x05	; 5
+		CS_ENABLE();
+    1094:	f0 e1       	ldi	r31, 0x10	; 16
+    1096:	16 96       	adiw	r26, 0x06	; 6
+    1098:	fc 93       	st	X, r31
+		sendSPI(MEM_READ);
+    109a:	83 e0       	ldi	r24, 0x03	; 3
+    109c:	0e 94 8f 01 	call	0x31e	; 0x31e <sendSPI>
+		memSendAddress(_tracks[i].startAddress + _tracks[i].addressOffset);
+    10a0:	2e 9c       	mul	r2, r14
+    10a2:	f0 01       	movw	r30, r0
+    10a4:	2f 9c       	mul	r2, r15
+    10a6:	f0 0d       	add	r31, r0
+    10a8:	11 24       	eor	r1, r1
+    10aa:	eb 5c       	subi	r30, 0xCB	; 203
+    10ac:	fd 4d       	sbci	r31, 0xDD	; 221
+    10ae:	84 81       	ldd	r24, Z+4	; 0x04
+    10b0:	95 81       	ldd	r25, Z+5	; 0x05
+    10b2:	a6 81       	ldd	r26, Z+6	; 0x06
+    10b4:	b7 81       	ldd	r27, Z+7	; 0x07
+    10b6:	40 81       	ld	r20, Z
+    10b8:	51 81       	ldd	r21, Z+1	; 0x01
+    10ba:	62 81       	ldd	r22, Z+2	; 0x02
+    10bc:	73 81       	ldd	r23, Z+3	; 0x03
+    10be:	8a 01       	movw	r16, r20
+    10c0:	9b 01       	movw	r18, r22
+    10c2:	08 0f       	add	r16, r24
+    10c4:	19 1f       	adc	r17, r25
+    10c6:	2a 1f       	adc	r18, r26
+    10c8:	3b 1f       	adc	r19, r27
+    10ca:	c9 01       	movw	r24, r18
+    10cc:	b8 01       	movw	r22, r16
+    10ce:	0e 94 9d 01 	call	0x33a	; 0x33a <memSendAddress>
+												
+		//Get the next event and keep sending as long as the deltatime is 0										
+		while(1)
+		{	
+			if (!_tracks[i].eventByte) //if there is no event, skip ahead
+    10d2:	2e 9c       	mul	r2, r14
+    10d4:	80 01       	movw	r16, r0
+    10d6:	2f 9c       	mul	r2, r15
+    10d8:	10 0d       	add	r17, r0
+    10da:	11 24       	eor	r1, r1
+    10dc:	0b 5c       	subi	r16, 0xCB	; 203
+    10de:	1d 4d       	sbci	r17, 0xDD	; 221
+    10e0:	e8 01       	movw	r28, r16
+    10e2:	2c 96       	adiw	r28, 0x0c	; 12
+			{
+				break;
+			}
+							
+			if (!_tracks[i].deltaTime) //A DeltaTime has reached 0;
+    10e4:	58 01       	movw	r10, r16
+    10e6:	28 e0       	ldi	r18, 0x08	; 8
+    10e8:	a2 0e       	add	r10, r18
+    10ea:	b1 1c       	adc	r11, r1
+			{
+					
+				printf("Track %u send 0x%02x %u %u\r\n", i, _tracks[i].eventByte, _tracks[i].eventData1, _tracks[i].eventData2);
+    10ec:	68 01       	movw	r12, r16
+    10ee:	3e e0       	ldi	r19, 0x0E	; 14
+    10f0:	c3 0e       	add	r12, r19
+    10f2:	d1 1c       	adc	r13, r1
+    10f4:	03 5f       	subi	r16, 0xF3	; 243
+    10f6:	1f 4f       	sbci	r17, 0xFF	; 255
+				prevNote = _tracks[i].eventData1;
+				sendMidi(_tracks[i].eventByte);
+				sendMidi(_tracks[i].eventData1);
+				sendMidi(_tracks[i].eventData2);
+				
+				out = getNextEvent(i);
+    10f8:	4e 2c       	mov	r4, r14
+		memSendAddress(_tracks[i].startAddress + _tracks[i].addressOffset);
+												
+		//Get the next event and keep sending as long as the deltatime is 0										
+		while(1)
+		{	
+			if (!_tracks[i].eventByte) //if there is no event, skip ahead
+    10fa:	88 81       	ld	r24, Y
+    10fc:	88 23       	and	r24, r24
+    10fe:	09 f4       	brne	.+2      	; 0x1102 <main+0x102>
+    1100:	79 c0       	rjmp	.+242    	; 0x11f4 <main+0x1f4>
+			{
+				break;
+			}
+							
+			if (!_tracks[i].deltaTime) //A DeltaTime has reached 0;
+    1102:	f5 01       	movw	r30, r10
+    1104:	80 81       	ld	r24, Z
+    1106:	91 81       	ldd	r25, Z+1	; 0x01
+    1108:	a2 81       	ldd	r26, Z+2	; 0x02
+    110a:	b3 81       	ldd	r27, Z+3	; 0x03
+    110c:	89 2b       	or	r24, r25
+    110e:	8a 2b       	or	r24, r26
+    1110:	8b 2b       	or	r24, r27
+    1112:	09 f0       	breq	.+2      	; 0x1116 <main+0x116>
+    1114:	6f c0       	rjmp	.+222    	; 0x11f4 <main+0x1f4>
+			{
+					
+				printf("Track %u send 0x%02x %u %u\r\n", i, _tracks[i].eventByte, _tracks[i].eventData1, _tracks[i].eventData2);
+    1116:	d6 01       	movw	r26, r12
+    1118:	2c 91       	ld	r18, X
+    111a:	f8 01       	movw	r30, r16
+    111c:	90 81       	ld	r25, Z
+    111e:	88 81       	ld	r24, Y
+    1120:	1f 92       	push	r1
+    1122:	2f 93       	push	r18
+    1124:	1f 92       	push	r1
+    1126:	9f 93       	push	r25
+    1128:	1f 92       	push	r1
+    112a:	8f 93       	push	r24
+    112c:	ff 92       	push	r15
+    112e:	ef 92       	push	r14
+    1130:	9f 92       	push	r9
+    1132:	8f 92       	push	r8
+    1134:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+				prevEventByte = _tracks[i].eventByte;
+    1138:	58 80       	ld	r5, Y
+				prevNote = _tracks[i].eventData1;
+    113a:	d8 01       	movw	r26, r16
+    113c:	3c 90       	ld	r3, X
+				sendMidi(_tracks[i].eventByte);
+    113e:	88 81       	ld	r24, Y
+    1140:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+				sendMidi(_tracks[i].eventData1);
+    1144:	f8 01       	movw	r30, r16
+    1146:	80 81       	ld	r24, Z
+    1148:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+				sendMidi(_tracks[i].eventData2);
+    114c:	d6 01       	movw	r26, r12
+    114e:	8c 91       	ld	r24, X
+    1150:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+				
+				out = getNextEvent(i);
+    1154:	84 2d       	mov	r24, r4
+    1156:	0e 94 f4 03 	call	0x7e8	; 0x7e8 <getNextEvent>
+				if (out == 0)
+    115a:	ed b7       	in	r30, 0x3d	; 61
+    115c:	fe b7       	in	r31, 0x3e	; 62
+    115e:	3a 96       	adiw	r30, 0x0a	; 10
+    1160:	ed bf       	out	0x3d, r30	; 61
+    1162:	fe bf       	out	0x3e, r31	; 62
+    1164:	88 23       	and	r24, r24
+    1166:	09 f4       	brne	.+2      	; 0x116a <main+0x16a>
+    1168:	45 c0       	rjmp	.+138    	; 0x11f4 <main+0x1f4>
+				{
+					break;
+				}		
+				
+				if (out == 0x2F)
+    116a:	8f 32       	cpi	r24, 0x2F	; 47
+    116c:	91 f4       	brne	.+36     	; 0x1192 <main+0x192>
+				{
+					printf("End of track %u\r\n", i);
+    116e:	ff 92       	push	r15
+    1170:	ef 92       	push	r14
+    1172:	a6 ec       	ldi	r26, 0xC6	; 198
+    1174:	b1 e2       	ldi	r27, 0x21	; 33
+    1176:	bf 93       	push	r27
+    1178:	af 93       	push	r26
+    117a:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+					_activeTracks--;
+    117e:	80 91 29 22 	lds	r24, 0x2229	; 0x802229 <_activeTracks>
+    1182:	81 50       	subi	r24, 0x01	; 1
+    1184:	80 93 29 22 	sts	0x2229, r24	; 0x802229 <_activeTracks>
+    1188:	0f 90       	pop	r0
+    118a:	0f 90       	pop	r0
+    118c:	0f 90       	pop	r0
+    118e:	0f 90       	pop	r0
+    1190:	31 c0       	rjmp	.+98     	; 0x11f4 <main+0x1f4>
+					break;
+				}
+				//printf("prev %02x next %02x prev note %u next note %u next track len %lu\r\n",prevEventByte, _tracks[i].eventByte,  prevNote, _tracks[i].eventData1, _tracks[i].deltaTime);
+				if ((prevEventByte & 0xF0) == MIDI_NOTE_ON_MASK && (_tracks[i].eventByte & 0xF0) == MIDI_NOTE_OFF_MASK && _tracks[i].deltaTime == 0 && prevNote == _tracks[i].eventData1) // Skipping a note off if it was 0 length since the last.
+    1192:	85 2d       	mov	r24, r5
+    1194:	80 7f       	andi	r24, 0xF0	; 240
+    1196:	80 39       	cpi	r24, 0x90	; 144
+    1198:	09 f0       	breq	.+2      	; 0x119c <main+0x19c>
+    119a:	af cf       	rjmp	.-162    	; 0x10fa <main+0xfa>
+    119c:	88 81       	ld	r24, Y
+    119e:	80 7f       	andi	r24, 0xF0	; 240
+    11a0:	80 38       	cpi	r24, 0x80	; 128
+    11a2:	09 f0       	breq	.+2      	; 0x11a6 <main+0x1a6>
+    11a4:	aa cf       	rjmp	.-172    	; 0x10fa <main+0xfa>
+    11a6:	f5 01       	movw	r30, r10
+    11a8:	80 81       	ld	r24, Z
+    11aa:	91 81       	ldd	r25, Z+1	; 0x01
+    11ac:	a2 81       	ldd	r26, Z+2	; 0x02
+    11ae:	b3 81       	ldd	r27, Z+3	; 0x03
+    11b0:	89 2b       	or	r24, r25
+    11b2:	8a 2b       	or	r24, r26
+    11b4:	8b 2b       	or	r24, r27
+    11b6:	09 f0       	breq	.+2      	; 0x11ba <main+0x1ba>
+    11b8:	a0 cf       	rjmp	.-192    	; 0x10fa <main+0xfa>
+    11ba:	d8 01       	movw	r26, r16
+    11bc:	8c 91       	ld	r24, X
+    11be:	38 12       	cpse	r3, r24
+    11c0:	9c cf       	rjmp	.-200    	; 0x10fa <main+0xfa>
+				{
+
+					//printf("Note %u Off removed ", prevNote);
+					//printf("Event was: Track %u send 0x%02x %u %u\r\n", i, _tracks[i].eventByte, _tracks[i].eventData1, _tracks[i].eventData2);
+					out = getNextEvent(i);
+    11c2:	84 2d       	mov	r24, r4
+    11c4:	0e 94 f4 03 	call	0x7e8	; 0x7e8 <getNextEvent>
+					if (out == 0)
+    11c8:	88 23       	and	r24, r24
+    11ca:	a1 f0       	breq	.+40     	; 0x11f4 <main+0x1f4>
+					{
+						break;
+					}
+					
+					if (out == 0x2F)
+    11cc:	8f 32       	cpi	r24, 0x2F	; 47
+    11ce:	09 f0       	breq	.+2      	; 0x11d2 <main+0x1d2>
+    11d0:	94 cf       	rjmp	.-216    	; 0x10fa <main+0xfa>
+					{
+						printf("End of track %u\r\n", i);
+    11d2:	ff 92       	push	r15
+    11d4:	ef 92       	push	r14
+    11d6:	a6 ec       	ldi	r26, 0xC6	; 198
+    11d8:	b1 e2       	ldi	r27, 0x21	; 33
+    11da:	bf 93       	push	r27
+    11dc:	af 93       	push	r26
+    11de:	0e 94 3f 0c 	call	0x187e	; 0x187e <printf>
+						_activeTracks--;
+    11e2:	80 91 29 22 	lds	r24, 0x2229	; 0x802229 <_activeTracks>
+    11e6:	81 50       	subi	r24, 0x01	; 1
+    11e8:	80 93 29 22 	sts	0x2229, r24	; 0x802229 <_activeTracks>
+    11ec:	0f 90       	pop	r0
+    11ee:	0f 90       	pop	r0
+    11f0:	0f 90       	pop	r0
+    11f2:	0f 90       	pop	r0
+			{
+				break;
+			}
+		}
+			//printf("offset: %lu, lenght %lu\r\n", _tracks[i].addressOffset , _tracks[i].trackLength);
+		CS_DISABLE();
+    11f4:	e0 e1       	ldi	r30, 0x10	; 16
+    11f6:	d3 01       	movw	r26, r6
+    11f8:	15 96       	adiw	r26, 0x05	; 5
+    11fa:	ec 93       	st	X, r30
+
+		//Just to avoid overflowing deltatime (since it's a 32 bit number). This may actually be slower and it may not matter in the end
+		if(_tracks[i].deltaTime)						
+    11fc:	2e 9c       	mul	r2, r14
+    11fe:	f0 01       	movw	r30, r0
+    1200:	2f 9c       	mul	r2, r15
+    1202:	f0 0d       	add	r31, r0
+    1204:	11 24       	eor	r1, r1
+    1206:	eb 5c       	subi	r30, 0xCB	; 203
+    1208:	fd 4d       	sbci	r31, 0xDD	; 221
+    120a:	80 85       	ldd	r24, Z+8	; 0x08
+    120c:	91 85       	ldd	r25, Z+9	; 0x09
+    120e:	a2 85       	ldd	r26, Z+10	; 0x0a
+    1210:	b3 85       	ldd	r27, Z+11	; 0x0b
+    1212:	89 2b       	or	r24, r25
+    1214:	8a 2b       	or	r24, r26
+    1216:	8b 2b       	or	r24, r27
+    1218:	91 f0       	breq	.+36     	; 0x123e <main+0x23e>
+		{
+			_tracks[i].deltaTime--;	
+    121a:	2e 9c       	mul	r2, r14
+    121c:	f0 01       	movw	r30, r0
+    121e:	2f 9c       	mul	r2, r15
+    1220:	f0 0d       	add	r31, r0
+    1222:	11 24       	eor	r1, r1
+    1224:	eb 5c       	subi	r30, 0xCB	; 203
+    1226:	fd 4d       	sbci	r31, 0xDD	; 221
+    1228:	80 85       	ldd	r24, Z+8	; 0x08
+    122a:	91 85       	ldd	r25, Z+9	; 0x09
+    122c:	a2 85       	ldd	r26, Z+10	; 0x0a
+    122e:	b3 85       	ldd	r27, Z+11	; 0x0b
+    1230:	01 97       	sbiw	r24, 0x01	; 1
+    1232:	a1 09       	sbc	r26, r1
+    1234:	b1 09       	sbc	r27, r1
+    1236:	80 87       	std	Z+8, r24	; 0x08
+    1238:	91 87       	std	Z+9, r25	; 0x09
+    123a:	a2 87       	std	Z+10, r26	; 0x0a
+    123c:	b3 87       	std	Z+11, r27	; 0x0b
+		}	
+		
+		//Here we are checking to see if any tracks are left playing and disabling the timer if there are none.
+		//This also handles what to do next for play modes.
+		if (!_activeTracks)
+    123e:	80 91 29 22 	lds	r24, 0x2229	; 0x802229 <_activeTracks>
+    1242:	81 11       	cpse	r24, r1
+    1244:	69 c0       	rjmp	.+210    	; 0x1318 <main+0x318>
+		{
+			TIMER_DISABLE();
+    1246:	a0 e0       	ldi	r26, 0x00	; 0
+    1248:	b8 e0       	ldi	r27, 0x08	; 8
+    124a:	1c 92       	st	X, r1
+	TIMER_ENABLE();
+}
+
+static inline void  stopMidi()
+{
+	sendMidi(MIDI_STOP);
+    124c:	8c ef       	ldi	r24, 0xFC	; 252
+    124e:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_DISABLE();
+    1252:	e0 e0       	ldi	r30, 0x00	; 0
+    1254:	f8 e0       	ldi	r31, 0x08	; 8
+    1256:	10 82       	st	Z, r1
+		{
+			TIMER_DISABLE();
+			//If mode 2, we just stop
+			stopMidi();
+			
+			if (((_statusFlags >> 2) & INPUT_PLAY_MODE_SHIFTED_MAKS) == 1) //Loop mode
+    1258:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    125c:	86 95       	lsr	r24
+    125e:	86 95       	lsr	r24
+    1260:	83 70       	andi	r24, 0x03	; 3
+    1262:	81 30       	cpi	r24, 0x01	; 1
+    1264:	d9 f4       	brne	.+54     	; 0x129c <main+0x29c>
+			{
+				loadFile(_fileIndex);
+    1266:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    126a:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    126e:	0e 94 df 07 	call	0xfbe	; 0xfbe <loadFile>
+
+//The following static inline methods are made inline so less stack space is used, better performance, and have no internal variables. They are broken out for readability. May have to remove inline if code space is needed
+
+static inline void  startMidi()
+{
+	sendMidi(MIDI_START);
+    1272:	8a ef       	ldi	r24, 0xFA	; 250
+    1274:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	sendMidi((_fileIndex >> 8));
+    1278:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    127c:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    1280:	89 2f       	mov	r24, r25
+    1282:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	sendMidi(_fileIndex);
+    1286:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    128a:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    128e:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_ENABLE();
+    1292:	83 e0       	ldi	r24, 0x03	; 3
+    1294:	a0 e0       	ldi	r26, 0x00	; 0
+    1296:	b8 e0       	ldi	r27, 0x08	; 8
+    1298:	8c 93       	st	X, r24
+    129a:	3e c0       	rjmp	.+124    	; 0x1318 <main+0x318>
+			if (((_statusFlags >> 2) & INPUT_PLAY_MODE_SHIFTED_MAKS) == 1) //Loop mode
+			{
+				loadFile(_fileIndex);
+				startMidi();						
+			}
+			else if (((_statusFlags >> 2) & INPUT_PLAY_MODE_SHIFTED_MAKS) == 0) //Continuous mode
+    129c:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    12a0:	86 95       	lsr	r24
+    12a2:	86 95       	lsr	r24
+    12a4:	83 70       	andi	r24, 0x03	; 3
+    12a6:	c1 f5       	brne	.+112    	; 0x1318 <main+0x318>
+	TIMER_DISABLE();
+}
+
+static inline void  moveToNext()
+{
+	_fileIndex++;
+    12a8:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    12ac:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    12b0:	01 96       	adiw	r24, 0x01	; 1
+    12b2:	80 93 2f 22 	sts	0x222F, r24	; 0x80222f <_fileIndex>
+    12b6:	90 93 30 22 	sts	0x2230, r25	; 0x802230 <_fileIndex+0x1>
+	if (_fileIndex >= _fileCount)
+    12ba:	20 91 2f 22 	lds	r18, 0x222F	; 0x80222f <_fileIndex>
+    12be:	30 91 30 22 	lds	r19, 0x2230	; 0x802230 <_fileIndex+0x1>
+    12c2:	80 91 31 22 	lds	r24, 0x2231	; 0x802231 <_fileCount>
+    12c6:	90 91 32 22 	lds	r25, 0x2232	; 0x802232 <_fileCount+0x1>
+    12ca:	28 17       	cp	r18, r24
+    12cc:	39 07       	cpc	r19, r25
+    12ce:	20 f0       	brcs	.+8      	; 0x12d8 <main+0x2d8>
+	{
+		_fileIndex = 0;
+    12d0:	10 92 2f 22 	sts	0x222F, r1	; 0x80222f <_fileIndex>
+    12d4:	10 92 30 22 	sts	0x2230, r1	; 0x802230 <_fileIndex+0x1>
+	TIMER_ENABLE();
+}
+
+static inline void  stopMidi()
+{
+	sendMidi(MIDI_STOP);
+    12d8:	8c ef       	ldi	r24, 0xFC	; 252
+    12da:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_DISABLE();
+    12de:	e0 e0       	ldi	r30, 0x00	; 0
+    12e0:	f8 e0       	ldi	r31, 0x08	; 8
+    12e2:	10 82       	st	Z, r1
+	{
+		_fileIndex = 0;
+	}
+			
+	stopMidi(); //to stop the current notes that are playing
+	loadFile(_fileIndex);
+    12e4:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    12e8:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    12ec:	0e 94 df 07 	call	0xfbe	; 0xfbe <loadFile>
+
+//The following static inline methods are made inline so less stack space is used, better performance, and have no internal variables. They are broken out for readability. May have to remove inline if code space is needed
+
+static inline void  startMidi()
+{
+	sendMidi(MIDI_START);
+    12f0:	8a ef       	ldi	r24, 0xFA	; 250
+    12f2:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	sendMidi((_fileIndex >> 8));
+    12f6:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    12fa:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    12fe:	89 2f       	mov	r24, r25
+    1300:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	sendMidi(_fileIndex);
+    1304:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    1308:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    130c:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_ENABLE();
+    1310:	83 e0       	ldi	r24, 0x03	; 3
+    1312:	a0 e0       	ldi	r26, 0x00	; 0
+    1314:	b8 e0       	ldi	r27, 0x08	; 8
+    1316:	8c 93       	st	X, r24
+	//3: goto 1.
+	uint8_t prevEventByte;
+	uint8_t prevNote;
+	uint8_t out = 0;
+
+	for(uint16_t i = 0; i < _tractCount; i++)
+    1318:	bf ef       	ldi	r27, 0xFF	; 255
+    131a:	eb 1a       	sub	r14, r27
+    131c:	fb 0a       	sbc	r15, r27
+    131e:	80 91 2a 22 	lds	r24, 0x222A	; 0x80222a <_tractCount>
+    1322:	90 e0       	ldi	r25, 0x00	; 0
+    1324:	e8 16       	cp	r14, r24
+    1326:	f9 06       	cpc	r15, r25
+    1328:	08 f4       	brcc	.+2      	; 0x132c <main+0x32c>
+    132a:	ad ce       	rjmp	.-678    	; 0x1086 <main+0x86>
+    while (1) 
+    {
+		if (_clockTickFlag)
+		{
+			handleClockTick();
+			_clockTickFlag = 0x00;
+    132c:	10 92 28 22 	sts	0x2228, r1	; 0x802228 <__data_end>
+
+static inline void checkButtons()
+{
+				
+	//NOTE: Counts are guaranteed not to roll over
+	if (_input0Counts >= 100) //approx 1000ms hold
+    1330:	80 91 b2 22 	lds	r24, 0x22B2	; 0x8022b2 <_input0Counts>
+    1334:	84 36       	cpi	r24, 0x64	; 100
+    1336:	08 f4       	brcc	.+2      	; 0x133a <main+0x33a>
+    1338:	4c c0       	rjmp	.+152    	; 0x13d2 <main+0x3d2>
+	{
+		if (!(_statusFlags & INPUT_PLAY_MODE_UPDATING_MASK)) //If already in updating mode, do nothing. Basically if the button is still being held, don't try to update play mode again.
+    133a:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    133e:	86 fd       	sbrc	r24, 6
+    1340:	bd c0       	rjmp	.+378    	; 0x14bc <main+0x4bc>
+		{
+			printf("Update midi play mode\r\n");
+    1342:	88 ed       	ldi	r24, 0xD8	; 216
+    1344:	91 e2       	ldi	r25, 0x21	; 33
+    1346:	0e 94 53 0c 	call	0x18a6	; 0x18a6 <puts>
+			_statusFlags &= ~INPUT_BUTTON_0_MASK; //Clear the button 0 flag to ensure this does not allow the midi to become immediately unpaused
+    134a:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    134e:	8e 7f       	andi	r24, 0xFE	; 254
+    1350:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+			_statusFlags |= INPUT_PLAY_MODE_UPDATING_MASK;
+    1354:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    1358:	80 64       	ori	r24, 0x40	; 64
+    135a:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+
+//Three play modes: 0 = continuous play, 1 = repeat, 2 = stop after finished with current
+//Updates bits 3:2 of the status
+static inline void  updateMidiPlayMode()
+{
+	if (((_statusFlags >> 2) & INPUT_PLAY_MODE_SHIFTED_MAKS) == 2)
+    135e:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    1362:	86 95       	lsr	r24
+    1364:	86 95       	lsr	r24
+    1366:	83 70       	andi	r24, 0x03	; 3
+    1368:	82 30       	cpi	r24, 0x02	; 2
+    136a:	31 f4       	brne	.+12     	; 0x1378 <main+0x378>
+	{
+		_statusFlags &= 0xF3; //Set the play mode to 0
+    136c:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    1370:	83 7f       	andi	r24, 0xF3	; 243
+    1372:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+    1376:	22 c0       	rjmp	.+68     	; 0x13bc <main+0x3bc>
+	}
+	else if (((_statusFlags >> 2) & INPUT_PLAY_MODE_SHIFTED_MAKS) == 1)
+    1378:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    137c:	86 95       	lsr	r24
+    137e:	86 95       	lsr	r24
+    1380:	83 70       	andi	r24, 0x03	; 3
+    1382:	81 30       	cpi	r24, 0x01	; 1
+    1384:	59 f4       	brne	.+22     	; 0x139c <main+0x39c>
+	{
+		//first reset to 0
+		_statusFlags &= 0xF3; //Clear the play mode bits
+    1386:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    138a:	83 7f       	andi	r24, 0xF3	; 243
+    138c:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+		_statusFlags |= 0x08; //Set the play mode to 2
+    1390:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    1394:	88 60       	ori	r24, 0x08	; 8
+    1396:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+    139a:	10 c0       	rjmp	.+32     	; 0x13bc <main+0x3bc>
+		
+	}
+	else if (((_statusFlags >> 2) & INPUT_PLAY_MODE_SHIFTED_MAKS) == 0)
+    139c:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    13a0:	86 95       	lsr	r24
+    13a2:	86 95       	lsr	r24
+    13a4:	83 70       	andi	r24, 0x03	; 3
+    13a6:	51 f4       	brne	.+20     	; 0x13bc <main+0x3bc>
+	{
+		_statusFlags &= 0xF3; //Clear the play mode bits
+    13a8:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    13ac:	83 7f       	andi	r24, 0xF3	; 243
+    13ae:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+		_statusFlags |= 0x04; //Set the play mode to 1
+    13b2:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    13b6:	84 60       	ori	r24, 0x04	; 4
+    13b8:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+	}
+	
+	sendMidi(MIDI_UPDATE_MODE);
+    13bc:	8d ef       	ldi	r24, 0xFD	; 253
+    13be:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	sendMidi(((_statusFlags >> 2) & 0x3));
+    13c2:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    13c6:	86 95       	lsr	r24
+    13c8:	86 95       	lsr	r24
+    13ca:	83 70       	andi	r24, 0x03	; 3
+    13cc:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+    13d0:	75 c0       	rjmp	.+234    	; 0x14bc <main+0x4bc>
+			_statusFlags &= ~INPUT_BUTTON_0_MASK; //Clear the button 0 flag to ensure this does not allow the midi to become immediately unpaused
+			_statusFlags |= INPUT_PLAY_MODE_UPDATING_MASK;
+			updateMidiPlayMode();
+		}
+	}
+	else if (_input0Counts > 5 && _input1Counts < 100) //approx 50ms hold
+    13d2:	80 91 b2 22 	lds	r24, 0x22B2	; 0x8022b2 <_input0Counts>
+    13d6:	86 30       	cpi	r24, 0x06	; 6
+    13d8:	50 f0       	brcs	.+20     	; 0x13ee <main+0x3ee>
+    13da:	80 91 b1 22 	lds	r24, 0x22B1	; 0x8022b1 <_input1Counts>
+    13de:	84 36       	cpi	r24, 0x64	; 100
+    13e0:	30 f4       	brcc	.+12     	; 0x13ee <main+0x3ee>
+	{
+		_statusFlags |= INPUT_BUTTON_0_MASK; //second bit indicate button 0 is pressed
+    13e2:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    13e6:	81 60       	ori	r24, 0x01	; 1
+    13e8:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+    13ec:	67 c0       	rjmp	.+206    	; 0x14bc <main+0x4bc>
+
+	}
+	else if (_input0Counts == 0)
+    13ee:	80 91 b2 22 	lds	r24, 0x22B2	; 0x8022b2 <_input0Counts>
+    13f2:	81 11       	cpse	r24, r1
+    13f4:	63 c0       	rjmp	.+198    	; 0x14bc <main+0x4bc>
+	{
+		if ((_statusFlags & INPUT_BUTTON_0_MASK) && !(_statusFlags & INPUT_PLAY_MODE_UPDATING_MASK)) //Only want to move forward or unpause if we didn't just release from a long button 0 hold to update play mode
+    13f6:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    13fa:	80 ff       	sbrs	r24, 0
+    13fc:	55 c0       	rjmp	.+170    	; 0x14a8 <main+0x4a8>
+    13fe:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    1402:	86 fd       	sbrc	r24, 6
+    1404:	51 c0       	rjmp	.+162    	; 0x14a8 <main+0x4a8>
+		{
+			if ((_statusFlags & INPUT_PAUSE_MASK)) //In pause mode and button was pressed and released quickly so unpause instead of moving forward
+    1406:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    140a:	88 23       	and	r24, r24
+    140c:	8c f4       	brge	.+34     	; 0x1430 <main+0x430>
+			{
+				printf("Continue midi\r\n");
+    140e:	8f ee       	ldi	r24, 0xEF	; 239
+    1410:	91 e2       	ldi	r25, 0x21	; 33
+    1412:	0e 94 53 0c 	call	0x18a6	; 0x18a6 <puts>
+				_statusFlags &= ~INPUT_PAUSE_MASK; //clear midi flag
+    1416:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    141a:	8f 77       	andi	r24, 0x7F	; 127
+    141c:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+	TIMER_ENABLE();
+}
+
+static inline void  continueMidi()
+{
+	sendMidi(MIDI_CONTINUE);
+    1420:	8b ef       	ldi	r24, 0xFB	; 251
+    1422:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_ENABLE();
+    1426:	83 e0       	ldi	r24, 0x03	; 3
+    1428:	e0 e0       	ldi	r30, 0x00	; 0
+    142a:	f8 e0       	ldi	r31, 0x08	; 8
+    142c:	80 83       	st	Z, r24
+    142e:	3c c0       	rjmp	.+120    	; 0x14a8 <main+0x4a8>
+				_statusFlags &= ~INPUT_PAUSE_MASK; //clear midi flag
+				continueMidi();
+			}
+			else
+			{
+				printf("Move Forward\r\n");
+    1430:	8e ef       	ldi	r24, 0xFE	; 254
+    1432:	91 e2       	ldi	r25, 0x21	; 33
+    1434:	0e 94 53 0c 	call	0x18a6	; 0x18a6 <puts>
+	TIMER_DISABLE();
+}
+
+static inline void  moveToNext()
+{
+	_fileIndex++;
+    1438:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    143c:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    1440:	01 96       	adiw	r24, 0x01	; 1
+    1442:	80 93 2f 22 	sts	0x222F, r24	; 0x80222f <_fileIndex>
+    1446:	90 93 30 22 	sts	0x2230, r25	; 0x802230 <_fileIndex+0x1>
+	if (_fileIndex >= _fileCount)
+    144a:	20 91 2f 22 	lds	r18, 0x222F	; 0x80222f <_fileIndex>
+    144e:	30 91 30 22 	lds	r19, 0x2230	; 0x802230 <_fileIndex+0x1>
+    1452:	80 91 31 22 	lds	r24, 0x2231	; 0x802231 <_fileCount>
+    1456:	90 91 32 22 	lds	r25, 0x2232	; 0x802232 <_fileCount+0x1>
+    145a:	28 17       	cp	r18, r24
+    145c:	39 07       	cpc	r19, r25
+    145e:	20 f0       	brcs	.+8      	; 0x1468 <main+0x468>
+	{
+		_fileIndex = 0;
+    1460:	10 92 2f 22 	sts	0x222F, r1	; 0x80222f <_fileIndex>
+    1464:	10 92 30 22 	sts	0x2230, r1	; 0x802230 <_fileIndex+0x1>
+	TIMER_ENABLE();
+}
+
+static inline void  stopMidi()
+{
+	sendMidi(MIDI_STOP);
+    1468:	8c ef       	ldi	r24, 0xFC	; 252
+    146a:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_DISABLE();
+    146e:	a0 e0       	ldi	r26, 0x00	; 0
+    1470:	b8 e0       	ldi	r27, 0x08	; 8
+    1472:	1c 92       	st	X, r1
+	{
+		_fileIndex = 0;
+	}
+			
+	stopMidi(); //to stop the current notes that are playing
+	loadFile(_fileIndex);
+    1474:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    1478:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    147c:	0e 94 df 07 	call	0xfbe	; 0xfbe <loadFile>
+
+//The following static inline methods are made inline so less stack space is used, better performance, and have no internal variables. They are broken out for readability. May have to remove inline if code space is needed
+
+static inline void  startMidi()
+{
+	sendMidi(MIDI_START);
+    1480:	8a ef       	ldi	r24, 0xFA	; 250
+    1482:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	sendMidi((_fileIndex >> 8));
+    1486:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    148a:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    148e:	89 2f       	mov	r24, r25
+    1490:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	sendMidi(_fileIndex);
+    1494:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    1498:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    149c:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_ENABLE();
+    14a0:	83 e0       	ldi	r24, 0x03	; 3
+    14a2:	e0 e0       	ldi	r30, 0x00	; 0
+    14a4:	f8 e0       	ldi	r31, 0x08	; 8
+    14a6:	80 83       	st	Z, r24
+				moveToNext();
+			}
+		}
+			
+		//Always reset button down status
+		_statusFlags &= ~INPUT_BUTTON_0_MASK; //Clear the button 0 flag
+    14a8:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    14ac:	8e 7f       	andi	r24, 0xFE	; 254
+    14ae:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+		//Always reset play mode update status
+		_statusFlags &= ~INPUT_PLAY_MODE_UPDATING_MASK;
+    14b2:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    14b6:	8f 7b       	andi	r24, 0xBF	; 191
+    14b8:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+		
+		
+		
+		
+	//NOTE: Counts are guaranteed not to roll over
+	if (_input1Counts >= 100) //approx 1000ms hold
+    14bc:	80 91 b1 22 	lds	r24, 0x22B1	; 0x8022b1 <_input1Counts>
+    14c0:	84 36       	cpi	r24, 0x64	; 100
+    14c2:	d0 f0       	brcs	.+52     	; 0x14f8 <main+0x4f8>
+	{
+		if (!(_statusFlags & INPUT_PAUSE_MASK))	//If already in pause mode, don't pause again
+    14c4:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    14c8:	88 23       	and	r24, r24
+    14ca:	0c f4       	brge	.+2      	; 0x14ce <main+0x4ce>
+    14cc:	d0 cd       	rjmp	.-1120   	; 0x106e <main+0x6e>
+		{
+			printf("Pause midi play\r\n");
+    14ce:	8c e0       	ldi	r24, 0x0C	; 12
+    14d0:	92 e2       	ldi	r25, 0x22	; 34
+    14d2:	0e 94 53 0c 	call	0x18a6	; 0x18a6 <puts>
+			_statusFlags |= INPUT_PAUSE_MASK; //set pause status
+    14d6:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    14da:	80 68       	ori	r24, 0x80	; 128
+    14dc:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+			_statusFlags &= ~INPUT_BUTTON_1_MASK; //Clear the button 1 flag to ensure this does not allow the midi to become immediately unpaused
+    14e0:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    14e4:	8d 7f       	andi	r24, 0xFD	; 253
+    14e6:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+	TIMER_ENABLE();
+}
+
+static inline void  stopMidi()
+{
+	sendMidi(MIDI_STOP);
+    14ea:	8c ef       	ldi	r24, 0xFC	; 252
+    14ec:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_DISABLE();
+    14f0:	a0 e0       	ldi	r26, 0x00	; 0
+    14f2:	b8 e0       	ldi	r27, 0x08	; 8
+    14f4:	1c 92       	st	X, r1
+    14f6:	bb cd       	rjmp	.-1162   	; 0x106e <main+0x6e>
+			_statusFlags |= INPUT_PAUSE_MASK; //set pause status
+			_statusFlags &= ~INPUT_BUTTON_1_MASK; //Clear the button 1 flag to ensure this does not allow the midi to become immediately unpaused
+			stopMidi();
+		}
+	}
+	else if (_input1Counts > 5 && _input1Counts < 100) //approx 50ms hold
+    14f8:	80 91 b1 22 	lds	r24, 0x22B1	; 0x8022b1 <_input1Counts>
+    14fc:	86 30       	cpi	r24, 0x06	; 6
+    14fe:	50 f0       	brcs	.+20     	; 0x1514 <main+0x514>
+    1500:	80 91 b1 22 	lds	r24, 0x22B1	; 0x8022b1 <_input1Counts>
+    1504:	84 36       	cpi	r24, 0x64	; 100
+    1506:	30 f4       	brcc	.+12     	; 0x1514 <main+0x514>
+	{
+		_statusFlags |= INPUT_BUTTON_1_MASK; //second bit indicate button 1 is pressed
+    1508:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    150c:	82 60       	ori	r24, 0x02	; 2
+    150e:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+    1512:	ad cd       	rjmp	.-1190   	; 0x106e <main+0x6e>
+
+	}
+	else if (_input1Counts == 0)
+    1514:	80 91 b1 22 	lds	r24, 0x22B1	; 0x8022b1 <_input1Counts>
+    1518:	81 11       	cpse	r24, r1
+    151a:	a9 cd       	rjmp	.-1198   	; 0x106e <main+0x6e>
+	{
+		if ( (_statusFlags & INPUT_BUTTON_1_MASK))
+    151c:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    1520:	81 ff       	sbrs	r24, 1
+    1522:	5d c0       	rjmp	.+186    	; 0x15de <main+0x5de>
+		{
+			if ((_statusFlags & INPUT_PAUSE_MASK)) //In pause mode and button was pressed and released quickly so unpause instead of moving forward
+    1524:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    1528:	88 23       	and	r24, r24
+    152a:	8c f4       	brge	.+34     	; 0x154e <main+0x54e>
+			{
+				printf("Continue midi\r\n");
+    152c:	8f ee       	ldi	r24, 0xEF	; 239
+    152e:	91 e2       	ldi	r25, 0x21	; 33
+    1530:	0e 94 53 0c 	call	0x18a6	; 0x18a6 <puts>
+				_statusFlags &= ~INPUT_PAUSE_MASK; //clear midi flag
+    1534:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    1538:	8f 77       	andi	r24, 0x7F	; 127
+    153a:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+	TIMER_ENABLE();
+}
+
+static inline void  continueMidi()
+{
+	sendMidi(MIDI_CONTINUE);
+    153e:	8b ef       	ldi	r24, 0xFB	; 251
+    1540:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_ENABLE();
+    1544:	83 e0       	ldi	r24, 0x03	; 3
+    1546:	e0 e0       	ldi	r30, 0x00	; 0
+    1548:	f8 e0       	ldi	r31, 0x08	; 8
+    154a:	80 83       	st	Z, r24
+    154c:	48 c0       	rjmp	.+144    	; 0x15de <main+0x5de>
+				_statusFlags &= ~INPUT_PAUSE_MASK; //clear midi flag
+				continueMidi();
+			}
+			else
+			{
+				printf("Move Back\r\n");
+    154e:	8d e1       	ldi	r24, 0x1D	; 29
+    1550:	92 e2       	ldi	r25, 0x22	; 34
+    1552:	0e 94 53 0c 	call	0x18a6	; 0x18a6 <puts>
+	startMidi();	
+}
+
+static inline void  moveToPrevious()
+{
+	if (_fileIndex == 0 || _fileIndex >= _fileCount)
+    1556:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    155a:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    155e:	89 2b       	or	r24, r25
+    1560:	59 f0       	breq	.+22     	; 0x1578 <main+0x578>
+    1562:	20 91 2f 22 	lds	r18, 0x222F	; 0x80222f <_fileIndex>
+    1566:	30 91 30 22 	lds	r19, 0x2230	; 0x802230 <_fileIndex+0x1>
+    156a:	80 91 31 22 	lds	r24, 0x2231	; 0x802231 <_fileCount>
+    156e:	90 91 32 22 	lds	r25, 0x2232	; 0x802232 <_fileCount+0x1>
+    1572:	28 17       	cp	r18, r24
+    1574:	39 07       	cpc	r19, r25
+    1576:	50 f0       	brcs	.+20     	; 0x158c <main+0x58c>
+	{
+		_fileIndex = _fileCount - 1;
+    1578:	80 91 31 22 	lds	r24, 0x2231	; 0x802231 <_fileCount>
+    157c:	90 91 32 22 	lds	r25, 0x2232	; 0x802232 <_fileCount+0x1>
+    1580:	01 97       	sbiw	r24, 0x01	; 1
+    1582:	80 93 2f 22 	sts	0x222F, r24	; 0x80222f <_fileIndex>
+    1586:	90 93 30 22 	sts	0x2230, r25	; 0x802230 <_fileIndex+0x1>
+    158a:	09 c0       	rjmp	.+18     	; 0x159e <main+0x59e>
+	}
+	else
+	{
+		_fileIndex--;
+    158c:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    1590:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    1594:	01 97       	sbiw	r24, 0x01	; 1
+    1596:	80 93 2f 22 	sts	0x222F, r24	; 0x80222f <_fileIndex>
+    159a:	90 93 30 22 	sts	0x2230, r25	; 0x802230 <_fileIndex+0x1>
+	TIMER_ENABLE();
+}
+
+static inline void  stopMidi()
+{
+	sendMidi(MIDI_STOP);
+    159e:	8c ef       	ldi	r24, 0xFC	; 252
+    15a0:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_DISABLE();
+    15a4:	a0 e0       	ldi	r26, 0x00	; 0
+    15a6:	b8 e0       	ldi	r27, 0x08	; 8
+    15a8:	1c 92       	st	X, r1
+	{
+		_fileIndex--;
+	}
+			
+	stopMidi(); //to stop the current notes that are playing
+	loadFile(_fileIndex);
+    15aa:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    15ae:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    15b2:	0e 94 df 07 	call	0xfbe	; 0xfbe <loadFile>
+
+//The following static inline methods are made inline so less stack space is used, better performance, and have no internal variables. They are broken out for readability. May have to remove inline if code space is needed
+
+static inline void  startMidi()
+{
+	sendMidi(MIDI_START);
+    15b6:	8a ef       	ldi	r24, 0xFA	; 250
+    15b8:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	sendMidi((_fileIndex >> 8));
+    15bc:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    15c0:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    15c4:	89 2f       	mov	r24, r25
+    15c6:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	sendMidi(_fileIndex);
+    15ca:	80 91 2f 22 	lds	r24, 0x222F	; 0x80222f <_fileIndex>
+    15ce:	90 91 30 22 	lds	r25, 0x2230	; 0x802230 <_fileIndex+0x1>
+    15d2:	0e 94 87 01 	call	0x30e	; 0x30e <sendMidi>
+	TIMER_ENABLE();
+    15d6:	83 e0       	ldi	r24, 0x03	; 3
+    15d8:	e0 e0       	ldi	r30, 0x00	; 0
+    15da:	f8 e0       	ldi	r31, 0x08	; 8
+    15dc:	80 83       	st	Z, r24
+				printf("Move Back\r\n");
+				moveToPrevious();
+			}
+		}
+		//Always reset button down status
+		_statusFlags &= ~INPUT_BUTTON_1_MASK; //Clear the button 1 flag
+    15de:	80 91 b3 22 	lds	r24, 0x22B3	; 0x8022b3 <_statusFlags>
+    15e2:	8d 7f       	andi	r24, 0xFD	; 253
+    15e4:	80 93 b3 22 	sts	0x22B3, r24	; 0x8022b3 <_statusFlags>
+    15e8:	42 cd       	rjmp	.-1404   	; 0x106e <main+0x6e>
+
+000015ea <__vector_14>:
+	
+    }
+}
+
+ISR(TCC0_OVF_vect)
+{
+    15ea:	1f 92       	push	r1
+    15ec:	0f 92       	push	r0
+    15ee:	0f b6       	in	r0, 0x3f	; 63
+    15f0:	0f 92       	push	r0
+    15f2:	11 24       	eor	r1, r1
+    15f4:	08 b6       	in	r0, 0x38	; 56
+    15f6:	0f 92       	push	r0
+    15f8:	18 be       	out	0x38, r1	; 56
+    15fa:	8f 93       	push	r24
+	PORTA.OUTTGL = PIN5_bm;
+    15fc:	80 e2       	ldi	r24, 0x20	; 32
+    15fe:	80 93 07 06 	sts	0x0607, r24	; 0x800607 <__TEXT_REGION_LENGTH__+0x700607>
+	_clockTickFlag = 0xFF;
+    1602:	8f ef       	ldi	r24, 0xFF	; 255
+    1604:	80 93 28 22 	sts	0x2228, r24	; 0x802228 <__data_end>
+}
+    1608:	8f 91       	pop	r24
+    160a:	0f 90       	pop	r0
+    160c:	08 be       	out	0x38, r0	; 56
+    160e:	0f 90       	pop	r0
+    1610:	0f be       	out	0x3f, r0	; 63
+    1612:	0f 90       	pop	r0
+    1614:	1f 90       	pop	r1
+    1616:	18 95       	reti
+
+00001618 <__vector_20>:
+
+ISR(TCC1_OVF_vect)
+{
+    1618:	1f 92       	push	r1
+    161a:	0f 92       	push	r0
+    161c:	0f b6       	in	r0, 0x3f	; 63
+    161e:	0f 92       	push	r0
+    1620:	11 24       	eor	r1, r1
+    1622:	08 b6       	in	r0, 0x38	; 56
+    1624:	0f 92       	push	r0
+    1626:	18 be       	out	0x38, r1	; 56
+    1628:	0b b6       	in	r0, 0x3b	; 59
+    162a:	0f 92       	push	r0
+    162c:	1b be       	out	0x3b, r1	; 59
+    162e:	8f 93       	push	r24
+    1630:	9f 93       	push	r25
+    1632:	ef 93       	push	r30
+    1634:	ff 93       	push	r31
+	uint8_t res;
+	ADCA.CH1.CTRL |= ADC_CH_START_bm;
+    1636:	e0 e0       	ldi	r30, 0x00	; 0
+    1638:	f2 e0       	ldi	r31, 0x02	; 2
+    163a:	80 a5       	ldd	r24, Z+40	; 0x28
+    163c:	80 68       	ori	r24, 0x80	; 128
+    163e:	80 a7       	std	Z+40, r24	; 0x28
+	
+	while ((ADCA.CH1.CTRL & ADC_CH_START_bm)) {}
+    1640:	80 a5       	ldd	r24, Z+40	; 0x28
+    1642:	88 23       	and	r24, r24
+    1644:	ec f3       	brlt	.-6      	; 0x1640 <__vector_20+0x28>
+	
+	res = 	ADCA.CH1.RES;
+    1646:	80 91 2c 02 	lds	r24, 0x022C	; 0x80022c <__TEXT_REGION_LENGTH__+0x70022c>
+    164a:	90 91 2d 02 	lds	r25, 0x022D	; 0x80022d <__TEXT_REGION_LENGTH__+0x70022d>
+    164e:	98 2f       	mov	r25, r24
+	//printf("ADC: %u\r\n", ADCA.CH1.RES);
+	
+	
+	
+	if (res > 120 && res < 250)
+    1650:	89 57       	subi	r24, 0x79	; 121
+    1652:	81 38       	cpi	r24, 0x81	; 129
+    1654:	60 f4       	brcc	.+24     	; 0x166e <__vector_20+0x56>
+	{
+		
+		if(_input0Counts < 255)
+    1656:	80 91 b2 22 	lds	r24, 0x22B2	; 0x8022b2 <_input0Counts>
+    165a:	8f 3f       	cpi	r24, 0xFF	; 255
+    165c:	29 f0       	breq	.+10     	; 0x1668 <__vector_20+0x50>
+		{
+
+			_input0Counts++;
+    165e:	80 91 b2 22 	lds	r24, 0x22B2	; 0x8022b2 <_input0Counts>
+    1662:	8f 5f       	subi	r24, 0xFF	; 255
+    1664:	80 93 b2 22 	sts	0x22B2, r24	; 0x8022b2 <_input0Counts>
+						//printf("Button 0 held: %u\r\n", _input0Counts);
+		}
+		_input1Counts = 0;
+    1668:	10 92 b1 22 	sts	0x22B1, r1	; 0x8022b1 <_input1Counts>
+    166c:	12 c0       	rjmp	.+36     	; 0x1692 <__vector_20+0x7a>
+	}
+	else if (res >= 250)
+    166e:	9a 3f       	cpi	r25, 0xFA	; 250
+    1670:	60 f0       	brcs	.+24     	; 0x168a <__vector_20+0x72>
+	{
+		
+		if(_input1Counts < 255)
+    1672:	80 91 b1 22 	lds	r24, 0x22B1	; 0x8022b1 <_input1Counts>
+    1676:	8f 3f       	cpi	r24, 0xFF	; 255
+    1678:	29 f0       	breq	.+10     	; 0x1684 <__vector_20+0x6c>
+		{
+
+		  _input1Counts++;
+    167a:	80 91 b1 22 	lds	r24, 0x22B1	; 0x8022b1 <_input1Counts>
+    167e:	8f 5f       	subi	r24, 0xFF	; 255
+    1680:	80 93 b1 22 	sts	0x22B1, r24	; 0x8022b1 <_input1Counts>
+		  			//printf("Button 1 held %u\r\n", _input1Counts);
+		}
+		_input0Counts = 0;
+    1684:	10 92 b2 22 	sts	0x22B2, r1	; 0x8022b2 <_input0Counts>
+    1688:	04 c0       	rjmp	.+8      	; 0x1692 <__vector_20+0x7a>
+	}
+	else
+	{
+		_input0Counts = 0;
+    168a:	10 92 b2 22 	sts	0x22B2, r1	; 0x8022b2 <_input0Counts>
+		_input1Counts = 0;		
+    168e:	10 92 b1 22 	sts	0x22B1, r1	; 0x8022b1 <_input1Counts>
+	}
+    1692:	ff 91       	pop	r31
+    1694:	ef 91       	pop	r30
+    1696:	9f 91       	pop	r25
+    1698:	8f 91       	pop	r24
+    169a:	0f 90       	pop	r0
+    169c:	0b be       	out	0x3b, r0	; 59
+    169e:	0f 90       	pop	r0
+    16a0:	08 be       	out	0x38, r0	; 56
+    16a2:	0f 90       	pop	r0
+    16a4:	0f be       	out	0x3f, r0	; 63
+    16a6:	0f 90       	pop	r0
+    16a8:	1f 90       	pop	r1
+    16aa:	18 95       	reti
+
+000016ac <__udivmodsi4>:
+    16ac:	a1 e2       	ldi	r26, 0x21	; 33
+    16ae:	1a 2e       	mov	r1, r26
+    16b0:	aa 1b       	sub	r26, r26
+    16b2:	bb 1b       	sub	r27, r27
+    16b4:	fd 01       	movw	r30, r26
+    16b6:	0d c0       	rjmp	.+26     	; 0x16d2 <__udivmodsi4_ep>
+
+000016b8 <__udivmodsi4_loop>:
+    16b8:	aa 1f       	adc	r26, r26
+    16ba:	bb 1f       	adc	r27, r27
+    16bc:	ee 1f       	adc	r30, r30
+    16be:	ff 1f       	adc	r31, r31
+    16c0:	a2 17       	cp	r26, r18
+    16c2:	b3 07       	cpc	r27, r19
+    16c4:	e4 07       	cpc	r30, r20
+    16c6:	f5 07       	cpc	r31, r21
+    16c8:	20 f0       	brcs	.+8      	; 0x16d2 <__udivmodsi4_ep>
+    16ca:	a2 1b       	sub	r26, r18
+    16cc:	b3 0b       	sbc	r27, r19
+    16ce:	e4 0b       	sbc	r30, r20
+    16d0:	f5 0b       	sbc	r31, r21
+
+000016d2 <__udivmodsi4_ep>:
+    16d2:	66 1f       	adc	r22, r22
+    16d4:	77 1f       	adc	r23, r23
+    16d6:	88 1f       	adc	r24, r24
+    16d8:	99 1f       	adc	r25, r25
+    16da:	1a 94       	dec	r1
+    16dc:	69 f7       	brne	.-38     	; 0x16b8 <__udivmodsi4_loop>
+    16de:	60 95       	com	r22
+    16e0:	70 95       	com	r23
+    16e2:	80 95       	com	r24
+    16e4:	90 95       	com	r25
+    16e6:	9b 01       	movw	r18, r22
+    16e8:	ac 01       	movw	r20, r24
+    16ea:	bd 01       	movw	r22, r26
+    16ec:	cf 01       	movw	r24, r30
+    16ee:	08 95       	ret
+
+000016f0 <__muldi3>:
+    16f0:	df 93       	push	r29
+    16f2:	cf 93       	push	r28
+    16f4:	1f 93       	push	r17
+    16f6:	0f 93       	push	r16
+    16f8:	9a 9d       	mul	r25, r10
+    16fa:	f0 2d       	mov	r31, r0
+    16fc:	21 9f       	mul	r18, r17
+    16fe:	f0 0d       	add	r31, r0
+    1700:	8b 9d       	mul	r24, r11
+    1702:	f0 0d       	add	r31, r0
+    1704:	8a 9d       	mul	r24, r10
+    1706:	e0 2d       	mov	r30, r0
+    1708:	f1 0d       	add	r31, r1
+    170a:	03 9f       	mul	r16, r19
+    170c:	f0 0d       	add	r31, r0
+    170e:	02 9f       	mul	r16, r18
+    1710:	e0 0d       	add	r30, r0
+    1712:	f1 1d       	adc	r31, r1
+    1714:	4e 9d       	mul	r20, r14
+    1716:	e0 0d       	add	r30, r0
+    1718:	f1 1d       	adc	r31, r1
+    171a:	5e 9d       	mul	r21, r14
+    171c:	f0 0d       	add	r31, r0
+    171e:	4f 9d       	mul	r20, r15
+    1720:	f0 0d       	add	r31, r0
+    1722:	7f 93       	push	r23
+    1724:	6f 93       	push	r22
+    1726:	bf 92       	push	r11
+    1728:	af 92       	push	r10
+    172a:	5f 93       	push	r21
+    172c:	4f 93       	push	r20
+    172e:	d5 01       	movw	r26, r10
+    1730:	0e 94 30 0c 	call	0x1860	; 0x1860 <__umulhisi3>
+    1734:	8b 01       	movw	r16, r22
+    1736:	ac 01       	movw	r20, r24
+    1738:	d7 01       	movw	r26, r14
+    173a:	0e 94 30 0c 	call	0x1860	; 0x1860 <__umulhisi3>
+    173e:	eb 01       	movw	r28, r22
+    1740:	e8 0f       	add	r30, r24
+    1742:	f9 1f       	adc	r31, r25
+    1744:	d6 01       	movw	r26, r12
+    1746:	0e 94 c8 0b 	call	0x1790	; 0x1790 <__muldi3_6>
+    174a:	2f 91       	pop	r18
+    174c:	3f 91       	pop	r19
+    174e:	d6 01       	movw	r26, r12
+    1750:	0e 94 30 0c 	call	0x1860	; 0x1860 <__umulhisi3>
+    1754:	c6 0f       	add	r28, r22
+    1756:	d7 1f       	adc	r29, r23
+    1758:	e8 1f       	adc	r30, r24
+    175a:	f9 1f       	adc	r31, r25
+    175c:	af 91       	pop	r26
+    175e:	bf 91       	pop	r27
+    1760:	0e 94 c8 0b 	call	0x1790	; 0x1790 <__muldi3_6>
+    1764:	2f 91       	pop	r18
+    1766:	3f 91       	pop	r19
+    1768:	0e 94 30 0c 	call	0x1860	; 0x1860 <__umulhisi3>
+    176c:	c6 0f       	add	r28, r22
+    176e:	d7 1f       	adc	r29, r23
+    1770:	e8 1f       	adc	r30, r24
+    1772:	f9 1f       	adc	r31, r25
+    1774:	d6 01       	movw	r26, r12
+    1776:	0e 94 30 0c 	call	0x1860	; 0x1860 <__umulhisi3>
+    177a:	e6 0f       	add	r30, r22
+    177c:	f7 1f       	adc	r31, r23
+    177e:	98 01       	movw	r18, r16
+    1780:	be 01       	movw	r22, r28
+    1782:	cf 01       	movw	r24, r30
+    1784:	11 24       	eor	r1, r1
+    1786:	0f 91       	pop	r16
+    1788:	1f 91       	pop	r17
+    178a:	cf 91       	pop	r28
+    178c:	df 91       	pop	r29
+    178e:	08 95       	ret
+
+00001790 <__muldi3_6>:
+    1790:	0e 94 30 0c 	call	0x1860	; 0x1860 <__umulhisi3>
+    1794:	46 0f       	add	r20, r22
+    1796:	57 1f       	adc	r21, r23
+    1798:	c8 1f       	adc	r28, r24
+    179a:	d9 1f       	adc	r29, r25
+    179c:	08 f4       	brcc	.+2      	; 0x17a0 <__muldi3_6+0x10>
+    179e:	31 96       	adiw	r30, 0x01	; 1
+    17a0:	08 95       	ret
+
+000017a2 <__umoddi3>:
+    17a2:	68 94       	set
+    17a4:	01 c0       	rjmp	.+2      	; 0x17a8 <__udivdi3_umoddi3>
+
+000017a6 <__udivdi3>:
+    17a6:	e8 94       	clt
+
+000017a8 <__udivdi3_umoddi3>:
+    17a8:	8f 92       	push	r8
+    17aa:	9f 92       	push	r9
+    17ac:	cf 93       	push	r28
+    17ae:	df 93       	push	r29
+    17b0:	0e 94 df 0b 	call	0x17be	; 0x17be <__udivmod64>
+    17b4:	df 91       	pop	r29
+    17b6:	cf 91       	pop	r28
+    17b8:	9f 90       	pop	r9
+    17ba:	8f 90       	pop	r8
+    17bc:	08 95       	ret
+
+000017be <__udivmod64>:
+    17be:	88 24       	eor	r8, r8
+    17c0:	99 24       	eor	r9, r9
+    17c2:	f4 01       	movw	r30, r8
+    17c4:	e4 01       	movw	r28, r8
+    17c6:	b0 e4       	ldi	r27, 0x40	; 64
+    17c8:	9f 93       	push	r25
+    17ca:	aa 27       	eor	r26, r26
+    17cc:	9a 15       	cp	r25, r10
+    17ce:	8b 04       	cpc	r8, r11
+    17d0:	9c 04       	cpc	r9, r12
+    17d2:	ed 05       	cpc	r30, r13
+    17d4:	fe 05       	cpc	r31, r14
+    17d6:	cf 05       	cpc	r28, r15
+    17d8:	d0 07       	cpc	r29, r16
+    17da:	a1 07       	cpc	r26, r17
+    17dc:	98 f4       	brcc	.+38     	; 0x1804 <__udivmod64+0x46>
+    17de:	ad 2f       	mov	r26, r29
+    17e0:	dc 2f       	mov	r29, r28
+    17e2:	cf 2f       	mov	r28, r31
+    17e4:	fe 2f       	mov	r31, r30
+    17e6:	e9 2d       	mov	r30, r9
+    17e8:	98 2c       	mov	r9, r8
+    17ea:	89 2e       	mov	r8, r25
+    17ec:	98 2f       	mov	r25, r24
+    17ee:	87 2f       	mov	r24, r23
+    17f0:	76 2f       	mov	r23, r22
+    17f2:	65 2f       	mov	r22, r21
+    17f4:	54 2f       	mov	r21, r20
+    17f6:	43 2f       	mov	r20, r19
+    17f8:	32 2f       	mov	r19, r18
+    17fa:	22 27       	eor	r18, r18
+    17fc:	b8 50       	subi	r27, 0x08	; 8
+    17fe:	31 f7       	brne	.-52     	; 0x17cc <__udivmod64+0xe>
+    1800:	bf 91       	pop	r27
+    1802:	27 c0       	rjmp	.+78     	; 0x1852 <__udivmod64+0x94>
+    1804:	1b 2e       	mov	r1, r27
+    1806:	bf 91       	pop	r27
+    1808:	bb 27       	eor	r27, r27
+    180a:	22 0f       	add	r18, r18
+    180c:	33 1f       	adc	r19, r19
+    180e:	44 1f       	adc	r20, r20
+    1810:	55 1f       	adc	r21, r21
+    1812:	66 1f       	adc	r22, r22
+    1814:	77 1f       	adc	r23, r23
+    1816:	88 1f       	adc	r24, r24
+    1818:	99 1f       	adc	r25, r25
+    181a:	88 1c       	adc	r8, r8
+    181c:	99 1c       	adc	r9, r9
+    181e:	ee 1f       	adc	r30, r30
+    1820:	ff 1f       	adc	r31, r31
+    1822:	cc 1f       	adc	r28, r28
+    1824:	dd 1f       	adc	r29, r29
+    1826:	aa 1f       	adc	r26, r26
+    1828:	bb 1f       	adc	r27, r27
+    182a:	8a 14       	cp	r8, r10
+    182c:	9b 04       	cpc	r9, r11
+    182e:	ec 05       	cpc	r30, r12
+    1830:	fd 05       	cpc	r31, r13
+    1832:	ce 05       	cpc	r28, r14
+    1834:	df 05       	cpc	r29, r15
+    1836:	a0 07       	cpc	r26, r16
+    1838:	b1 07       	cpc	r27, r17
+    183a:	48 f0       	brcs	.+18     	; 0x184e <__udivmod64+0x90>
+    183c:	8a 18       	sub	r8, r10
+    183e:	9b 08       	sbc	r9, r11
+    1840:	ec 09       	sbc	r30, r12
+    1842:	fd 09       	sbc	r31, r13
+    1844:	ce 09       	sbc	r28, r14
+    1846:	df 09       	sbc	r29, r15
+    1848:	a0 0b       	sbc	r26, r16
+    184a:	b1 0b       	sbc	r27, r17
+    184c:	21 60       	ori	r18, 0x01	; 1
+    184e:	1a 94       	dec	r1
+    1850:	e1 f6       	brne	.-72     	; 0x180a <__udivmod64+0x4c>
+    1852:	2e f4       	brtc	.+10     	; 0x185e <__udivmod64+0xa0>
+    1854:	94 01       	movw	r18, r8
+    1856:	af 01       	movw	r20, r30
+    1858:	be 01       	movw	r22, r28
+    185a:	cd 01       	movw	r24, r26
+    185c:	00 0c       	add	r0, r0
+    185e:	08 95       	ret
+
+00001860 <__umulhisi3>:
+    1860:	a2 9f       	mul	r26, r18
+    1862:	b0 01       	movw	r22, r0
+    1864:	b3 9f       	mul	r27, r19
+    1866:	c0 01       	movw	r24, r0
+    1868:	a3 9f       	mul	r26, r19
+    186a:	70 0d       	add	r23, r0
+    186c:	81 1d       	adc	r24, r1
+    186e:	11 24       	eor	r1, r1
+    1870:	91 1d       	adc	r25, r1
+    1872:	b2 9f       	mul	r27, r18
+    1874:	70 0d       	add	r23, r0
+    1876:	81 1d       	adc	r24, r1
+    1878:	11 24       	eor	r1, r1
+    187a:	91 1d       	adc	r25, r1
+    187c:	08 95       	ret
+
+0000187e <printf>:
+    187e:	cf 93       	push	r28
+    1880:	df 93       	push	r29
+    1882:	cd b7       	in	r28, 0x3d	; 61
+    1884:	de b7       	in	r29, 0x3e	; 62
+    1886:	ae 01       	movw	r20, r28
+    1888:	4a 5f       	subi	r20, 0xFA	; 250
+    188a:	5f 4f       	sbci	r21, 0xFF	; 255
+    188c:	fa 01       	movw	r30, r20
+    188e:	61 91       	ld	r22, Z+
+    1890:	71 91       	ld	r23, Z+
+    1892:	af 01       	movw	r20, r30
+    1894:	80 91 b6 22 	lds	r24, 0x22B6	; 0x8022b6 <__iob+0x2>
+    1898:	90 91 b7 22 	lds	r25, 0x22B7	; 0x8022b7 <__iob+0x3>
+    189c:	0e 94 83 0c 	call	0x1906	; 0x1906 <vfprintf>
+    18a0:	df 91       	pop	r29
+    18a2:	cf 91       	pop	r28
+    18a4:	08 95       	ret
+
+000018a6 <puts>:
+    18a6:	0f 93       	push	r16
+    18a8:	1f 93       	push	r17
+    18aa:	cf 93       	push	r28
+    18ac:	df 93       	push	r29
+    18ae:	e0 91 b6 22 	lds	r30, 0x22B6	; 0x8022b6 <__iob+0x2>
+    18b2:	f0 91 b7 22 	lds	r31, 0x22B7	; 0x8022b7 <__iob+0x3>
+    18b6:	23 81       	ldd	r18, Z+3	; 0x03
+    18b8:	21 ff       	sbrs	r18, 1
+    18ba:	1b c0       	rjmp	.+54     	; 0x18f2 <puts+0x4c>
+    18bc:	8c 01       	movw	r16, r24
+    18be:	d0 e0       	ldi	r29, 0x00	; 0
+    18c0:	c0 e0       	ldi	r28, 0x00	; 0
+    18c2:	f8 01       	movw	r30, r16
+    18c4:	81 91       	ld	r24, Z+
+    18c6:	8f 01       	movw	r16, r30
+    18c8:	60 91 b6 22 	lds	r22, 0x22B6	; 0x8022b6 <__iob+0x2>
+    18cc:	70 91 b7 22 	lds	r23, 0x22B7	; 0x8022b7 <__iob+0x3>
+    18d0:	db 01       	movw	r26, r22
+    18d2:	18 96       	adiw	r26, 0x08	; 8
+    18d4:	ed 91       	ld	r30, X+
+    18d6:	fc 91       	ld	r31, X
+    18d8:	19 97       	sbiw	r26, 0x09	; 9
+    18da:	88 23       	and	r24, r24
+    18dc:	31 f0       	breq	.+12     	; 0x18ea <puts+0x44>
+    18de:	19 95       	eicall
+    18e0:	89 2b       	or	r24, r25
+    18e2:	79 f3       	breq	.-34     	; 0x18c2 <puts+0x1c>
+    18e4:	df ef       	ldi	r29, 0xFF	; 255
+    18e6:	cf ef       	ldi	r28, 0xFF	; 255
+    18e8:	ec cf       	rjmp	.-40     	; 0x18c2 <puts+0x1c>
+    18ea:	8a e0       	ldi	r24, 0x0A	; 10
+    18ec:	19 95       	eicall
+    18ee:	89 2b       	or	r24, r25
+    18f0:	19 f0       	breq	.+6      	; 0x18f8 <puts+0x52>
+    18f2:	8f ef       	ldi	r24, 0xFF	; 255
+    18f4:	9f ef       	ldi	r25, 0xFF	; 255
+    18f6:	02 c0       	rjmp	.+4      	; 0x18fc <puts+0x56>
+    18f8:	8d 2f       	mov	r24, r29
+    18fa:	9c 2f       	mov	r25, r28
+    18fc:	df 91       	pop	r29
+    18fe:	cf 91       	pop	r28
+    1900:	1f 91       	pop	r17
+    1902:	0f 91       	pop	r16
+    1904:	08 95       	ret
+
+00001906 <vfprintf>:
+    1906:	2f 92       	push	r2
+    1908:	3f 92       	push	r3
+    190a:	4f 92       	push	r4
+    190c:	5f 92       	push	r5
+    190e:	6f 92       	push	r6
+    1910:	7f 92       	push	r7
+    1912:	8f 92       	push	r8
+    1914:	9f 92       	push	r9
+    1916:	af 92       	push	r10
+    1918:	bf 92       	push	r11
+    191a:	cf 92       	push	r12
+    191c:	df 92       	push	r13
+    191e:	ef 92       	push	r14
+    1920:	ff 92       	push	r15
+    1922:	0f 93       	push	r16
+    1924:	1f 93       	push	r17
+    1926:	cf 93       	push	r28
+    1928:	df 93       	push	r29
+    192a:	cd b7       	in	r28, 0x3d	; 61
+    192c:	de b7       	in	r29, 0x3e	; 62
+    192e:	2c 97       	sbiw	r28, 0x0c	; 12
+    1930:	cd bf       	out	0x3d, r28	; 61
+    1932:	de bf       	out	0x3e, r29	; 62
+    1934:	7c 01       	movw	r14, r24
+    1936:	6b 01       	movw	r12, r22
+    1938:	8a 01       	movw	r16, r20
+    193a:	fc 01       	movw	r30, r24
+    193c:	16 82       	std	Z+6, r1	; 0x06
+    193e:	17 82       	std	Z+7, r1	; 0x07
+    1940:	83 81       	ldd	r24, Z+3	; 0x03
+    1942:	81 ff       	sbrs	r24, 1
+    1944:	bd c1       	rjmp	.+890    	; 0x1cc0 <vfprintf+0x3ba>
+    1946:	ce 01       	movw	r24, r28
+    1948:	01 96       	adiw	r24, 0x01	; 1
+    194a:	4c 01       	movw	r8, r24
+    194c:	f7 01       	movw	r30, r14
+    194e:	93 81       	ldd	r25, Z+3	; 0x03
+    1950:	f6 01       	movw	r30, r12
+    1952:	93 fd       	sbrc	r25, 3
+    1954:	85 91       	lpm	r24, Z+
+    1956:	93 ff       	sbrs	r25, 3
+    1958:	81 91       	ld	r24, Z+
+    195a:	6f 01       	movw	r12, r30
+    195c:	88 23       	and	r24, r24
+    195e:	09 f4       	brne	.+2      	; 0x1962 <vfprintf+0x5c>
+    1960:	ab c1       	rjmp	.+854    	; 0x1cb8 <vfprintf+0x3b2>
+    1962:	85 32       	cpi	r24, 0x25	; 37
+    1964:	39 f4       	brne	.+14     	; 0x1974 <vfprintf+0x6e>
+    1966:	93 fd       	sbrc	r25, 3
+    1968:	85 91       	lpm	r24, Z+
+    196a:	93 ff       	sbrs	r25, 3
+    196c:	81 91       	ld	r24, Z+
+    196e:	6f 01       	movw	r12, r30
+    1970:	85 32       	cpi	r24, 0x25	; 37
+    1972:	29 f4       	brne	.+10     	; 0x197e <vfprintf+0x78>
+    1974:	b7 01       	movw	r22, r14
+    1976:	90 e0       	ldi	r25, 0x00	; 0
+    1978:	0e 94 8e 0e 	call	0x1d1c	; 0x1d1c <fputc>
+    197c:	e7 cf       	rjmp	.-50     	; 0x194c <vfprintf+0x46>
+    197e:	51 2c       	mov	r5, r1
+    1980:	31 2c       	mov	r3, r1
+    1982:	20 e0       	ldi	r18, 0x00	; 0
+    1984:	20 32       	cpi	r18, 0x20	; 32
+    1986:	a0 f4       	brcc	.+40     	; 0x19b0 <vfprintf+0xaa>
+    1988:	8b 32       	cpi	r24, 0x2B	; 43
+    198a:	69 f0       	breq	.+26     	; 0x19a6 <vfprintf+0xa0>
+    198c:	30 f4       	brcc	.+12     	; 0x199a <vfprintf+0x94>
+    198e:	80 32       	cpi	r24, 0x20	; 32
+    1990:	59 f0       	breq	.+22     	; 0x19a8 <vfprintf+0xa2>
+    1992:	83 32       	cpi	r24, 0x23	; 35
+    1994:	69 f4       	brne	.+26     	; 0x19b0 <vfprintf+0xaa>
+    1996:	20 61       	ori	r18, 0x10	; 16
+    1998:	2c c0       	rjmp	.+88     	; 0x19f2 <vfprintf+0xec>
+    199a:	8d 32       	cpi	r24, 0x2D	; 45
+    199c:	39 f0       	breq	.+14     	; 0x19ac <vfprintf+0xa6>
+    199e:	80 33       	cpi	r24, 0x30	; 48
+    19a0:	39 f4       	brne	.+14     	; 0x19b0 <vfprintf+0xaa>
+    19a2:	21 60       	ori	r18, 0x01	; 1
+    19a4:	26 c0       	rjmp	.+76     	; 0x19f2 <vfprintf+0xec>
+    19a6:	22 60       	ori	r18, 0x02	; 2
+    19a8:	24 60       	ori	r18, 0x04	; 4
+    19aa:	23 c0       	rjmp	.+70     	; 0x19f2 <vfprintf+0xec>
+    19ac:	28 60       	ori	r18, 0x08	; 8
+    19ae:	21 c0       	rjmp	.+66     	; 0x19f2 <vfprintf+0xec>
+    19b0:	27 fd       	sbrc	r18, 7
+    19b2:	27 c0       	rjmp	.+78     	; 0x1a02 <vfprintf+0xfc>
+    19b4:	30 ed       	ldi	r19, 0xD0	; 208
+    19b6:	38 0f       	add	r19, r24
+    19b8:	3a 30       	cpi	r19, 0x0A	; 10
+    19ba:	78 f4       	brcc	.+30     	; 0x19da <vfprintf+0xd4>
+    19bc:	26 ff       	sbrs	r18, 6
+    19be:	06 c0       	rjmp	.+12     	; 0x19cc <vfprintf+0xc6>
+    19c0:	fa e0       	ldi	r31, 0x0A	; 10
+    19c2:	5f 9e       	mul	r5, r31
+    19c4:	30 0d       	add	r19, r0
+    19c6:	11 24       	eor	r1, r1
+    19c8:	53 2e       	mov	r5, r19
+    19ca:	13 c0       	rjmp	.+38     	; 0x19f2 <vfprintf+0xec>
+    19cc:	8a e0       	ldi	r24, 0x0A	; 10
+    19ce:	38 9e       	mul	r3, r24
+    19d0:	30 0d       	add	r19, r0
+    19d2:	11 24       	eor	r1, r1
+    19d4:	33 2e       	mov	r3, r19
+    19d6:	20 62       	ori	r18, 0x20	; 32
+    19d8:	0c c0       	rjmp	.+24     	; 0x19f2 <vfprintf+0xec>
+    19da:	8e 32       	cpi	r24, 0x2E	; 46
+    19dc:	21 f4       	brne	.+8      	; 0x19e6 <vfprintf+0xe0>
+    19de:	26 fd       	sbrc	r18, 6
+    19e0:	6b c1       	rjmp	.+726    	; 0x1cb8 <vfprintf+0x3b2>
+    19e2:	20 64       	ori	r18, 0x40	; 64
+    19e4:	06 c0       	rjmp	.+12     	; 0x19f2 <vfprintf+0xec>
+    19e6:	8c 36       	cpi	r24, 0x6C	; 108
+    19e8:	11 f4       	brne	.+4      	; 0x19ee <vfprintf+0xe8>
+    19ea:	20 68       	ori	r18, 0x80	; 128
+    19ec:	02 c0       	rjmp	.+4      	; 0x19f2 <vfprintf+0xec>
+    19ee:	88 36       	cpi	r24, 0x68	; 104
+    19f0:	41 f4       	brne	.+16     	; 0x1a02 <vfprintf+0xfc>
+    19f2:	f6 01       	movw	r30, r12
+    19f4:	93 fd       	sbrc	r25, 3
+    19f6:	85 91       	lpm	r24, Z+
+    19f8:	93 ff       	sbrs	r25, 3
+    19fa:	81 91       	ld	r24, Z+
+    19fc:	6f 01       	movw	r12, r30
+    19fe:	81 11       	cpse	r24, r1
+    1a00:	c1 cf       	rjmp	.-126    	; 0x1984 <vfprintf+0x7e>
+    1a02:	98 2f       	mov	r25, r24
+    1a04:	9f 7d       	andi	r25, 0xDF	; 223
+    1a06:	95 54       	subi	r25, 0x45	; 69
+    1a08:	93 30       	cpi	r25, 0x03	; 3
+    1a0a:	28 f4       	brcc	.+10     	; 0x1a16 <vfprintf+0x110>
+    1a0c:	0c 5f       	subi	r16, 0xFC	; 252
+    1a0e:	1f 4f       	sbci	r17, 0xFF	; 255
+    1a10:	ff e3       	ldi	r31, 0x3F	; 63
+    1a12:	f9 83       	std	Y+1, r31	; 0x01
+    1a14:	0d c0       	rjmp	.+26     	; 0x1a30 <vfprintf+0x12a>
+    1a16:	83 36       	cpi	r24, 0x63	; 99
+    1a18:	31 f0       	breq	.+12     	; 0x1a26 <vfprintf+0x120>
+    1a1a:	83 37       	cpi	r24, 0x73	; 115
+    1a1c:	71 f0       	breq	.+28     	; 0x1a3a <vfprintf+0x134>
+    1a1e:	83 35       	cpi	r24, 0x53	; 83
+    1a20:	09 f0       	breq	.+2      	; 0x1a24 <vfprintf+0x11e>
+    1a22:	5b c0       	rjmp	.+182    	; 0x1ada <vfprintf+0x1d4>
+    1a24:	22 c0       	rjmp	.+68     	; 0x1a6a <vfprintf+0x164>
+    1a26:	f8 01       	movw	r30, r16
+    1a28:	80 81       	ld	r24, Z
+    1a2a:	89 83       	std	Y+1, r24	; 0x01
+    1a2c:	0e 5f       	subi	r16, 0xFE	; 254
+    1a2e:	1f 4f       	sbci	r17, 0xFF	; 255
+    1a30:	44 24       	eor	r4, r4
+    1a32:	43 94       	inc	r4
+    1a34:	51 2c       	mov	r5, r1
+    1a36:	54 01       	movw	r10, r8
+    1a38:	15 c0       	rjmp	.+42     	; 0x1a64 <vfprintf+0x15e>
+    1a3a:	38 01       	movw	r6, r16
+    1a3c:	f2 e0       	ldi	r31, 0x02	; 2
+    1a3e:	6f 0e       	add	r6, r31
+    1a40:	71 1c       	adc	r7, r1
+    1a42:	f8 01       	movw	r30, r16
+    1a44:	a0 80       	ld	r10, Z
+    1a46:	b1 80       	ldd	r11, Z+1	; 0x01
+    1a48:	26 ff       	sbrs	r18, 6
+    1a4a:	03 c0       	rjmp	.+6      	; 0x1a52 <vfprintf+0x14c>
+    1a4c:	65 2d       	mov	r22, r5
+    1a4e:	70 e0       	ldi	r23, 0x00	; 0
+    1a50:	02 c0       	rjmp	.+4      	; 0x1a56 <vfprintf+0x150>
+    1a52:	6f ef       	ldi	r22, 0xFF	; 255
+    1a54:	7f ef       	ldi	r23, 0xFF	; 255
+    1a56:	c5 01       	movw	r24, r10
+    1a58:	2c 87       	std	Y+12, r18	; 0x0c
+    1a5a:	0e 94 83 0e 	call	0x1d06	; 0x1d06 <strnlen>
+    1a5e:	2c 01       	movw	r4, r24
+    1a60:	83 01       	movw	r16, r6
+    1a62:	2c 85       	ldd	r18, Y+12	; 0x0c
+    1a64:	2f 77       	andi	r18, 0x7F	; 127
+    1a66:	22 2e       	mov	r2, r18
+    1a68:	17 c0       	rjmp	.+46     	; 0x1a98 <vfprintf+0x192>
+    1a6a:	38 01       	movw	r6, r16
+    1a6c:	f2 e0       	ldi	r31, 0x02	; 2
+    1a6e:	6f 0e       	add	r6, r31
+    1a70:	71 1c       	adc	r7, r1
+    1a72:	f8 01       	movw	r30, r16
+    1a74:	a0 80       	ld	r10, Z
+    1a76:	b1 80       	ldd	r11, Z+1	; 0x01
+    1a78:	26 ff       	sbrs	r18, 6
+    1a7a:	03 c0       	rjmp	.+6      	; 0x1a82 <vfprintf+0x17c>
+    1a7c:	65 2d       	mov	r22, r5
+    1a7e:	70 e0       	ldi	r23, 0x00	; 0
+    1a80:	02 c0       	rjmp	.+4      	; 0x1a86 <vfprintf+0x180>
+    1a82:	6f ef       	ldi	r22, 0xFF	; 255
+    1a84:	7f ef       	ldi	r23, 0xFF	; 255
+    1a86:	c5 01       	movw	r24, r10
+    1a88:	2c 87       	std	Y+12, r18	; 0x0c
+    1a8a:	0e 94 78 0e 	call	0x1cf0	; 0x1cf0 <strnlen_P>
+    1a8e:	2c 01       	movw	r4, r24
+    1a90:	2c 85       	ldd	r18, Y+12	; 0x0c
+    1a92:	20 68       	ori	r18, 0x80	; 128
+    1a94:	22 2e       	mov	r2, r18
+    1a96:	83 01       	movw	r16, r6
+    1a98:	23 fc       	sbrc	r2, 3
+    1a9a:	1b c0       	rjmp	.+54     	; 0x1ad2 <vfprintf+0x1cc>
+    1a9c:	83 2d       	mov	r24, r3
+    1a9e:	90 e0       	ldi	r25, 0x00	; 0
+    1aa0:	48 16       	cp	r4, r24
+    1aa2:	59 06       	cpc	r5, r25
+    1aa4:	b0 f4       	brcc	.+44     	; 0x1ad2 <vfprintf+0x1cc>
+    1aa6:	b7 01       	movw	r22, r14
+    1aa8:	80 e2       	ldi	r24, 0x20	; 32
+    1aaa:	90 e0       	ldi	r25, 0x00	; 0
+    1aac:	0e 94 8e 0e 	call	0x1d1c	; 0x1d1c <fputc>
+    1ab0:	3a 94       	dec	r3
+    1ab2:	f4 cf       	rjmp	.-24     	; 0x1a9c <vfprintf+0x196>
+    1ab4:	f5 01       	movw	r30, r10
+    1ab6:	27 fc       	sbrc	r2, 7
+    1ab8:	85 91       	lpm	r24, Z+
+    1aba:	27 fe       	sbrs	r2, 7
+    1abc:	81 91       	ld	r24, Z+
+    1abe:	5f 01       	movw	r10, r30
+    1ac0:	b7 01       	movw	r22, r14
+    1ac2:	90 e0       	ldi	r25, 0x00	; 0
+    1ac4:	0e 94 8e 0e 	call	0x1d1c	; 0x1d1c <fputc>
+    1ac8:	31 10       	cpse	r3, r1
+    1aca:	3a 94       	dec	r3
+    1acc:	f1 e0       	ldi	r31, 0x01	; 1
+    1ace:	4f 1a       	sub	r4, r31
+    1ad0:	51 08       	sbc	r5, r1
+    1ad2:	41 14       	cp	r4, r1
+    1ad4:	51 04       	cpc	r5, r1
+    1ad6:	71 f7       	brne	.-36     	; 0x1ab4 <vfprintf+0x1ae>
+    1ad8:	e5 c0       	rjmp	.+458    	; 0x1ca4 <vfprintf+0x39e>
+    1ada:	84 36       	cpi	r24, 0x64	; 100
+    1adc:	11 f0       	breq	.+4      	; 0x1ae2 <vfprintf+0x1dc>
+    1ade:	89 36       	cpi	r24, 0x69	; 105
+    1ae0:	39 f5       	brne	.+78     	; 0x1b30 <vfprintf+0x22a>
+    1ae2:	f8 01       	movw	r30, r16
+    1ae4:	27 ff       	sbrs	r18, 7
+    1ae6:	07 c0       	rjmp	.+14     	; 0x1af6 <vfprintf+0x1f0>
+    1ae8:	60 81       	ld	r22, Z
+    1aea:	71 81       	ldd	r23, Z+1	; 0x01
+    1aec:	82 81       	ldd	r24, Z+2	; 0x02
+    1aee:	93 81       	ldd	r25, Z+3	; 0x03
+    1af0:	0c 5f       	subi	r16, 0xFC	; 252
+    1af2:	1f 4f       	sbci	r17, 0xFF	; 255
+    1af4:	08 c0       	rjmp	.+16     	; 0x1b06 <vfprintf+0x200>
+    1af6:	60 81       	ld	r22, Z
+    1af8:	71 81       	ldd	r23, Z+1	; 0x01
+    1afa:	07 2e       	mov	r0, r23
+    1afc:	00 0c       	add	r0, r0
+    1afe:	88 0b       	sbc	r24, r24
+    1b00:	99 0b       	sbc	r25, r25
+    1b02:	0e 5f       	subi	r16, 0xFE	; 254
+    1b04:	1f 4f       	sbci	r17, 0xFF	; 255
+    1b06:	2f 76       	andi	r18, 0x6F	; 111
+    1b08:	72 2e       	mov	r7, r18
+    1b0a:	97 ff       	sbrs	r25, 7
+    1b0c:	09 c0       	rjmp	.+18     	; 0x1b20 <vfprintf+0x21a>
+    1b0e:	90 95       	com	r25
+    1b10:	80 95       	com	r24
+    1b12:	70 95       	com	r23
+    1b14:	61 95       	neg	r22
+    1b16:	7f 4f       	sbci	r23, 0xFF	; 255
+    1b18:	8f 4f       	sbci	r24, 0xFF	; 255
+    1b1a:	9f 4f       	sbci	r25, 0xFF	; 255
+    1b1c:	20 68       	ori	r18, 0x80	; 128
+    1b1e:	72 2e       	mov	r7, r18
+    1b20:	2a e0       	ldi	r18, 0x0A	; 10
+    1b22:	30 e0       	ldi	r19, 0x00	; 0
+    1b24:	a4 01       	movw	r20, r8
+    1b26:	0e 94 c6 0e 	call	0x1d8c	; 0x1d8c <__ultoa_invert>
+    1b2a:	a8 2e       	mov	r10, r24
+    1b2c:	a8 18       	sub	r10, r8
+    1b2e:	44 c0       	rjmp	.+136    	; 0x1bb8 <vfprintf+0x2b2>
+    1b30:	85 37       	cpi	r24, 0x75	; 117
+    1b32:	29 f4       	brne	.+10     	; 0x1b3e <vfprintf+0x238>
+    1b34:	2f 7e       	andi	r18, 0xEF	; 239
+    1b36:	b2 2e       	mov	r11, r18
+    1b38:	2a e0       	ldi	r18, 0x0A	; 10
+    1b3a:	30 e0       	ldi	r19, 0x00	; 0
+    1b3c:	25 c0       	rjmp	.+74     	; 0x1b88 <vfprintf+0x282>
+    1b3e:	f2 2f       	mov	r31, r18
+    1b40:	f9 7f       	andi	r31, 0xF9	; 249
+    1b42:	bf 2e       	mov	r11, r31
+    1b44:	8f 36       	cpi	r24, 0x6F	; 111
+    1b46:	c1 f0       	breq	.+48     	; 0x1b78 <vfprintf+0x272>
+    1b48:	18 f4       	brcc	.+6      	; 0x1b50 <vfprintf+0x24a>
+    1b4a:	88 35       	cpi	r24, 0x58	; 88
+    1b4c:	79 f0       	breq	.+30     	; 0x1b6c <vfprintf+0x266>
+    1b4e:	b4 c0       	rjmp	.+360    	; 0x1cb8 <vfprintf+0x3b2>
+    1b50:	80 37       	cpi	r24, 0x70	; 112
+    1b52:	19 f0       	breq	.+6      	; 0x1b5a <vfprintf+0x254>
+    1b54:	88 37       	cpi	r24, 0x78	; 120
+    1b56:	21 f0       	breq	.+8      	; 0x1b60 <vfprintf+0x25a>
+    1b58:	af c0       	rjmp	.+350    	; 0x1cb8 <vfprintf+0x3b2>
+    1b5a:	2f 2f       	mov	r18, r31
+    1b5c:	20 61       	ori	r18, 0x10	; 16
+    1b5e:	b2 2e       	mov	r11, r18
+    1b60:	b4 fe       	sbrs	r11, 4
+    1b62:	0d c0       	rjmp	.+26     	; 0x1b7e <vfprintf+0x278>
+    1b64:	8b 2d       	mov	r24, r11
+    1b66:	84 60       	ori	r24, 0x04	; 4
+    1b68:	b8 2e       	mov	r11, r24
+    1b6a:	09 c0       	rjmp	.+18     	; 0x1b7e <vfprintf+0x278>
+    1b6c:	24 ff       	sbrs	r18, 4
+    1b6e:	0a c0       	rjmp	.+20     	; 0x1b84 <vfprintf+0x27e>
+    1b70:	9f 2f       	mov	r25, r31
+    1b72:	96 60       	ori	r25, 0x06	; 6
+    1b74:	b9 2e       	mov	r11, r25
+    1b76:	06 c0       	rjmp	.+12     	; 0x1b84 <vfprintf+0x27e>
+    1b78:	28 e0       	ldi	r18, 0x08	; 8
+    1b7a:	30 e0       	ldi	r19, 0x00	; 0
+    1b7c:	05 c0       	rjmp	.+10     	; 0x1b88 <vfprintf+0x282>
+    1b7e:	20 e1       	ldi	r18, 0x10	; 16
+    1b80:	30 e0       	ldi	r19, 0x00	; 0
+    1b82:	02 c0       	rjmp	.+4      	; 0x1b88 <vfprintf+0x282>
+    1b84:	20 e1       	ldi	r18, 0x10	; 16
+    1b86:	32 e0       	ldi	r19, 0x02	; 2
+    1b88:	f8 01       	movw	r30, r16
+    1b8a:	b7 fe       	sbrs	r11, 7
+    1b8c:	07 c0       	rjmp	.+14     	; 0x1b9c <vfprintf+0x296>
+    1b8e:	60 81       	ld	r22, Z
+    1b90:	71 81       	ldd	r23, Z+1	; 0x01
+    1b92:	82 81       	ldd	r24, Z+2	; 0x02
+    1b94:	93 81       	ldd	r25, Z+3	; 0x03
+    1b96:	0c 5f       	subi	r16, 0xFC	; 252
+    1b98:	1f 4f       	sbci	r17, 0xFF	; 255
+    1b9a:	06 c0       	rjmp	.+12     	; 0x1ba8 <vfprintf+0x2a2>
+    1b9c:	60 81       	ld	r22, Z
+    1b9e:	71 81       	ldd	r23, Z+1	; 0x01
+    1ba0:	80 e0       	ldi	r24, 0x00	; 0
+    1ba2:	90 e0       	ldi	r25, 0x00	; 0
+    1ba4:	0e 5f       	subi	r16, 0xFE	; 254
+    1ba6:	1f 4f       	sbci	r17, 0xFF	; 255
+    1ba8:	a4 01       	movw	r20, r8
+    1baa:	0e 94 c6 0e 	call	0x1d8c	; 0x1d8c <__ultoa_invert>
+    1bae:	a8 2e       	mov	r10, r24
+    1bb0:	a8 18       	sub	r10, r8
+    1bb2:	fb 2d       	mov	r31, r11
+    1bb4:	ff 77       	andi	r31, 0x7F	; 127
+    1bb6:	7f 2e       	mov	r7, r31
+    1bb8:	76 fe       	sbrs	r7, 6
+    1bba:	0b c0       	rjmp	.+22     	; 0x1bd2 <vfprintf+0x2cc>
+    1bbc:	37 2d       	mov	r19, r7
+    1bbe:	3e 7f       	andi	r19, 0xFE	; 254
+    1bc0:	a5 14       	cp	r10, r5
+    1bc2:	50 f4       	brcc	.+20     	; 0x1bd8 <vfprintf+0x2d2>
+    1bc4:	74 fe       	sbrs	r7, 4
+    1bc6:	0a c0       	rjmp	.+20     	; 0x1bdc <vfprintf+0x2d6>
+    1bc8:	72 fc       	sbrc	r7, 2
+    1bca:	08 c0       	rjmp	.+16     	; 0x1bdc <vfprintf+0x2d6>
+    1bcc:	37 2d       	mov	r19, r7
+    1bce:	3e 7e       	andi	r19, 0xEE	; 238
+    1bd0:	05 c0       	rjmp	.+10     	; 0x1bdc <vfprintf+0x2d6>
+    1bd2:	ba 2c       	mov	r11, r10
+    1bd4:	37 2d       	mov	r19, r7
+    1bd6:	03 c0       	rjmp	.+6      	; 0x1bde <vfprintf+0x2d8>
+    1bd8:	ba 2c       	mov	r11, r10
+    1bda:	01 c0       	rjmp	.+2      	; 0x1bde <vfprintf+0x2d8>
+    1bdc:	b5 2c       	mov	r11, r5
+    1bde:	34 ff       	sbrs	r19, 4
+    1be0:	0d c0       	rjmp	.+26     	; 0x1bfc <vfprintf+0x2f6>
+    1be2:	fe 01       	movw	r30, r28
+    1be4:	ea 0d       	add	r30, r10
+    1be6:	f1 1d       	adc	r31, r1
+    1be8:	80 81       	ld	r24, Z
+    1bea:	80 33       	cpi	r24, 0x30	; 48
+    1bec:	11 f4       	brne	.+4      	; 0x1bf2 <vfprintf+0x2ec>
+    1bee:	39 7e       	andi	r19, 0xE9	; 233
+    1bf0:	09 c0       	rjmp	.+18     	; 0x1c04 <vfprintf+0x2fe>
+    1bf2:	32 ff       	sbrs	r19, 2
+    1bf4:	06 c0       	rjmp	.+12     	; 0x1c02 <vfprintf+0x2fc>
+    1bf6:	b3 94       	inc	r11
+    1bf8:	b3 94       	inc	r11
+    1bfa:	04 c0       	rjmp	.+8      	; 0x1c04 <vfprintf+0x2fe>
+    1bfc:	83 2f       	mov	r24, r19
+    1bfe:	86 78       	andi	r24, 0x86	; 134
+    1c00:	09 f0       	breq	.+2      	; 0x1c04 <vfprintf+0x2fe>
+    1c02:	b3 94       	inc	r11
+    1c04:	33 fd       	sbrc	r19, 3
+    1c06:	13 c0       	rjmp	.+38     	; 0x1c2e <vfprintf+0x328>
+    1c08:	30 ff       	sbrs	r19, 0
+    1c0a:	06 c0       	rjmp	.+12     	; 0x1c18 <vfprintf+0x312>
+    1c0c:	5a 2c       	mov	r5, r10
+    1c0e:	b3 14       	cp	r11, r3
+    1c10:	18 f4       	brcc	.+6      	; 0x1c18 <vfprintf+0x312>
+    1c12:	53 0c       	add	r5, r3
+    1c14:	5b 18       	sub	r5, r11
+    1c16:	b3 2c       	mov	r11, r3
+    1c18:	b3 14       	cp	r11, r3
+    1c1a:	68 f4       	brcc	.+26     	; 0x1c36 <vfprintf+0x330>
+    1c1c:	b7 01       	movw	r22, r14
+    1c1e:	80 e2       	ldi	r24, 0x20	; 32
+    1c20:	90 e0       	ldi	r25, 0x00	; 0
+    1c22:	3c 87       	std	Y+12, r19	; 0x0c
+    1c24:	0e 94 8e 0e 	call	0x1d1c	; 0x1d1c <fputc>
+    1c28:	b3 94       	inc	r11
+    1c2a:	3c 85       	ldd	r19, Y+12	; 0x0c
+    1c2c:	f5 cf       	rjmp	.-22     	; 0x1c18 <vfprintf+0x312>
+    1c2e:	b3 14       	cp	r11, r3
+    1c30:	10 f4       	brcc	.+4      	; 0x1c36 <vfprintf+0x330>
+    1c32:	3b 18       	sub	r3, r11
+    1c34:	01 c0       	rjmp	.+2      	; 0x1c38 <vfprintf+0x332>
+    1c36:	31 2c       	mov	r3, r1
+    1c38:	34 ff       	sbrs	r19, 4
+    1c3a:	12 c0       	rjmp	.+36     	; 0x1c60 <vfprintf+0x35a>
+    1c3c:	b7 01       	movw	r22, r14
+    1c3e:	80 e3       	ldi	r24, 0x30	; 48
+    1c40:	90 e0       	ldi	r25, 0x00	; 0
+    1c42:	3c 87       	std	Y+12, r19	; 0x0c
+    1c44:	0e 94 8e 0e 	call	0x1d1c	; 0x1d1c <fputc>
+    1c48:	3c 85       	ldd	r19, Y+12	; 0x0c
+    1c4a:	32 ff       	sbrs	r19, 2
+    1c4c:	17 c0       	rjmp	.+46     	; 0x1c7c <vfprintf+0x376>
+    1c4e:	31 fd       	sbrc	r19, 1
+    1c50:	03 c0       	rjmp	.+6      	; 0x1c58 <vfprintf+0x352>
+    1c52:	88 e7       	ldi	r24, 0x78	; 120
+    1c54:	90 e0       	ldi	r25, 0x00	; 0
+    1c56:	02 c0       	rjmp	.+4      	; 0x1c5c <vfprintf+0x356>
+    1c58:	88 e5       	ldi	r24, 0x58	; 88
+    1c5a:	90 e0       	ldi	r25, 0x00	; 0
+    1c5c:	b7 01       	movw	r22, r14
+    1c5e:	0c c0       	rjmp	.+24     	; 0x1c78 <vfprintf+0x372>
+    1c60:	83 2f       	mov	r24, r19
+    1c62:	86 78       	andi	r24, 0x86	; 134
+    1c64:	59 f0       	breq	.+22     	; 0x1c7c <vfprintf+0x376>
+    1c66:	31 ff       	sbrs	r19, 1
+    1c68:	02 c0       	rjmp	.+4      	; 0x1c6e <vfprintf+0x368>
+    1c6a:	8b e2       	ldi	r24, 0x2B	; 43
+    1c6c:	01 c0       	rjmp	.+2      	; 0x1c70 <vfprintf+0x36a>
+    1c6e:	80 e2       	ldi	r24, 0x20	; 32
+    1c70:	37 fd       	sbrc	r19, 7
+    1c72:	8d e2       	ldi	r24, 0x2D	; 45
+    1c74:	b7 01       	movw	r22, r14
+    1c76:	90 e0       	ldi	r25, 0x00	; 0
+    1c78:	0e 94 8e 0e 	call	0x1d1c	; 0x1d1c <fputc>
+    1c7c:	a5 14       	cp	r10, r5
+    1c7e:	38 f4       	brcc	.+14     	; 0x1c8e <vfprintf+0x388>
+    1c80:	b7 01       	movw	r22, r14
+    1c82:	80 e3       	ldi	r24, 0x30	; 48
+    1c84:	90 e0       	ldi	r25, 0x00	; 0
+    1c86:	0e 94 8e 0e 	call	0x1d1c	; 0x1d1c <fputc>
+    1c8a:	5a 94       	dec	r5
+    1c8c:	f7 cf       	rjmp	.-18     	; 0x1c7c <vfprintf+0x376>
+    1c8e:	aa 94       	dec	r10
+    1c90:	f4 01       	movw	r30, r8
+    1c92:	ea 0d       	add	r30, r10
+    1c94:	f1 1d       	adc	r31, r1
+    1c96:	80 81       	ld	r24, Z
+    1c98:	b7 01       	movw	r22, r14
+    1c9a:	90 e0       	ldi	r25, 0x00	; 0
+    1c9c:	0e 94 8e 0e 	call	0x1d1c	; 0x1d1c <fputc>
+    1ca0:	a1 10       	cpse	r10, r1
+    1ca2:	f5 cf       	rjmp	.-22     	; 0x1c8e <vfprintf+0x388>
+    1ca4:	33 20       	and	r3, r3
+    1ca6:	09 f4       	brne	.+2      	; 0x1caa <vfprintf+0x3a4>
+    1ca8:	51 ce       	rjmp	.-862    	; 0x194c <vfprintf+0x46>
+    1caa:	b7 01       	movw	r22, r14
+    1cac:	80 e2       	ldi	r24, 0x20	; 32
+    1cae:	90 e0       	ldi	r25, 0x00	; 0
+    1cb0:	0e 94 8e 0e 	call	0x1d1c	; 0x1d1c <fputc>
+    1cb4:	3a 94       	dec	r3
+    1cb6:	f6 cf       	rjmp	.-20     	; 0x1ca4 <vfprintf+0x39e>
+    1cb8:	f7 01       	movw	r30, r14
+    1cba:	86 81       	ldd	r24, Z+6	; 0x06
+    1cbc:	97 81       	ldd	r25, Z+7	; 0x07
+    1cbe:	02 c0       	rjmp	.+4      	; 0x1cc4 <vfprintf+0x3be>
+    1cc0:	8f ef       	ldi	r24, 0xFF	; 255
+    1cc2:	9f ef       	ldi	r25, 0xFF	; 255
+    1cc4:	2c 96       	adiw	r28, 0x0c	; 12
+    1cc6:	cd bf       	out	0x3d, r28	; 61
+    1cc8:	de bf       	out	0x3e, r29	; 62
+    1cca:	df 91       	pop	r29
+    1ccc:	cf 91       	pop	r28
+    1cce:	1f 91       	pop	r17
+    1cd0:	0f 91       	pop	r16
+    1cd2:	ff 90       	pop	r15
+    1cd4:	ef 90       	pop	r14
+    1cd6:	df 90       	pop	r13
+    1cd8:	cf 90       	pop	r12
+    1cda:	bf 90       	pop	r11
+    1cdc:	af 90       	pop	r10
+    1cde:	9f 90       	pop	r9
+    1ce0:	8f 90       	pop	r8
+    1ce2:	7f 90       	pop	r7
+    1ce4:	6f 90       	pop	r6
+    1ce6:	5f 90       	pop	r5
+    1ce8:	4f 90       	pop	r4
+    1cea:	3f 90       	pop	r3
+    1cec:	2f 90       	pop	r2
+    1cee:	08 95       	ret
+
+00001cf0 <strnlen_P>:
+    1cf0:	fc 01       	movw	r30, r24
+    1cf2:	05 90       	lpm	r0, Z+
+    1cf4:	61 50       	subi	r22, 0x01	; 1
+    1cf6:	70 40       	sbci	r23, 0x00	; 0
+    1cf8:	01 10       	cpse	r0, r1
+    1cfa:	d8 f7       	brcc	.-10     	; 0x1cf2 <strnlen_P+0x2>
+    1cfc:	80 95       	com	r24
+    1cfe:	90 95       	com	r25
+    1d00:	8e 0f       	add	r24, r30
+    1d02:	9f 1f       	adc	r25, r31
+    1d04:	08 95       	ret
+
+00001d06 <strnlen>:
+    1d06:	fc 01       	movw	r30, r24
+    1d08:	61 50       	subi	r22, 0x01	; 1
+    1d0a:	70 40       	sbci	r23, 0x00	; 0
+    1d0c:	01 90       	ld	r0, Z+
+    1d0e:	01 10       	cpse	r0, r1
+    1d10:	d8 f7       	brcc	.-10     	; 0x1d08 <strnlen+0x2>
+    1d12:	80 95       	com	r24
+    1d14:	90 95       	com	r25
+    1d16:	8e 0f       	add	r24, r30
+    1d18:	9f 1f       	adc	r25, r31
+    1d1a:	08 95       	ret
+
+00001d1c <fputc>:
+    1d1c:	0f 93       	push	r16
+    1d1e:	1f 93       	push	r17
+    1d20:	cf 93       	push	r28
+    1d22:	df 93       	push	r29
+    1d24:	fb 01       	movw	r30, r22
+    1d26:	23 81       	ldd	r18, Z+3	; 0x03
+    1d28:	21 fd       	sbrc	r18, 1
+    1d2a:	03 c0       	rjmp	.+6      	; 0x1d32 <fputc+0x16>
+    1d2c:	8f ef       	ldi	r24, 0xFF	; 255
+    1d2e:	9f ef       	ldi	r25, 0xFF	; 255
+    1d30:	28 c0       	rjmp	.+80     	; 0x1d82 <fputc+0x66>
+    1d32:	22 ff       	sbrs	r18, 2
+    1d34:	16 c0       	rjmp	.+44     	; 0x1d62 <fputc+0x46>
+    1d36:	46 81       	ldd	r20, Z+6	; 0x06
+    1d38:	57 81       	ldd	r21, Z+7	; 0x07
+    1d3a:	24 81       	ldd	r18, Z+4	; 0x04
+    1d3c:	35 81       	ldd	r19, Z+5	; 0x05
+    1d3e:	42 17       	cp	r20, r18
+    1d40:	53 07       	cpc	r21, r19
+    1d42:	44 f4       	brge	.+16     	; 0x1d54 <fputc+0x38>
+    1d44:	a0 81       	ld	r26, Z
+    1d46:	b1 81       	ldd	r27, Z+1	; 0x01
+    1d48:	9d 01       	movw	r18, r26
+    1d4a:	2f 5f       	subi	r18, 0xFF	; 255
+    1d4c:	3f 4f       	sbci	r19, 0xFF	; 255
+    1d4e:	20 83       	st	Z, r18
+    1d50:	31 83       	std	Z+1, r19	; 0x01
+    1d52:	8c 93       	st	X, r24
+    1d54:	26 81       	ldd	r18, Z+6	; 0x06
+    1d56:	37 81       	ldd	r19, Z+7	; 0x07
+    1d58:	2f 5f       	subi	r18, 0xFF	; 255
+    1d5a:	3f 4f       	sbci	r19, 0xFF	; 255
+    1d5c:	26 83       	std	Z+6, r18	; 0x06
+    1d5e:	37 83       	std	Z+7, r19	; 0x07
+    1d60:	10 c0       	rjmp	.+32     	; 0x1d82 <fputc+0x66>
+    1d62:	eb 01       	movw	r28, r22
+    1d64:	09 2f       	mov	r16, r25
+    1d66:	18 2f       	mov	r17, r24
+    1d68:	00 84       	ldd	r0, Z+8	; 0x08
+    1d6a:	f1 85       	ldd	r31, Z+9	; 0x09
+    1d6c:	e0 2d       	mov	r30, r0
+    1d6e:	19 95       	eicall
+    1d70:	89 2b       	or	r24, r25
+    1d72:	e1 f6       	brne	.-72     	; 0x1d2c <fputc+0x10>
+    1d74:	8e 81       	ldd	r24, Y+6	; 0x06
+    1d76:	9f 81       	ldd	r25, Y+7	; 0x07
+    1d78:	01 96       	adiw	r24, 0x01	; 1
+    1d7a:	8e 83       	std	Y+6, r24	; 0x06
+    1d7c:	9f 83       	std	Y+7, r25	; 0x07
+    1d7e:	81 2f       	mov	r24, r17
+    1d80:	90 2f       	mov	r25, r16
+    1d82:	df 91       	pop	r29
+    1d84:	cf 91       	pop	r28
+    1d86:	1f 91       	pop	r17
+    1d88:	0f 91       	pop	r16
+    1d8a:	08 95       	ret
+
+00001d8c <__ultoa_invert>:
+    1d8c:	fa 01       	movw	r30, r20
+    1d8e:	aa 27       	eor	r26, r26
+    1d90:	28 30       	cpi	r18, 0x08	; 8
+    1d92:	51 f1       	breq	.+84     	; 0x1de8 <__ultoa_invert+0x5c>
+    1d94:	20 31       	cpi	r18, 0x10	; 16
+    1d96:	81 f1       	breq	.+96     	; 0x1df8 <__ultoa_invert+0x6c>
+    1d98:	e8 94       	clt
+    1d9a:	6f 93       	push	r22
+    1d9c:	6e 7f       	andi	r22, 0xFE	; 254
+    1d9e:	6e 5f       	subi	r22, 0xFE	; 254
+    1da0:	7f 4f       	sbci	r23, 0xFF	; 255
+    1da2:	8f 4f       	sbci	r24, 0xFF	; 255
+    1da4:	9f 4f       	sbci	r25, 0xFF	; 255
+    1da6:	af 4f       	sbci	r26, 0xFF	; 255
+    1da8:	b1 e0       	ldi	r27, 0x01	; 1
+    1daa:	3e d0       	rcall	.+124    	; 0x1e28 <__ultoa_invert+0x9c>
+    1dac:	b4 e0       	ldi	r27, 0x04	; 4
+    1dae:	3c d0       	rcall	.+120    	; 0x1e28 <__ultoa_invert+0x9c>
+    1db0:	67 0f       	add	r22, r23
+    1db2:	78 1f       	adc	r23, r24
+    1db4:	89 1f       	adc	r24, r25
+    1db6:	9a 1f       	adc	r25, r26
+    1db8:	a1 1d       	adc	r26, r1
+    1dba:	68 0f       	add	r22, r24
+    1dbc:	79 1f       	adc	r23, r25
+    1dbe:	8a 1f       	adc	r24, r26
+    1dc0:	91 1d       	adc	r25, r1
+    1dc2:	a1 1d       	adc	r26, r1
+    1dc4:	6a 0f       	add	r22, r26
+    1dc6:	71 1d       	adc	r23, r1
+    1dc8:	81 1d       	adc	r24, r1
+    1dca:	91 1d       	adc	r25, r1
+    1dcc:	a1 1d       	adc	r26, r1
+    1dce:	20 d0       	rcall	.+64     	; 0x1e10 <__ultoa_invert+0x84>
+    1dd0:	09 f4       	brne	.+2      	; 0x1dd4 <__ultoa_invert+0x48>
+    1dd2:	68 94       	set
+    1dd4:	3f 91       	pop	r19
+    1dd6:	2a e0       	ldi	r18, 0x0A	; 10
+    1dd8:	26 9f       	mul	r18, r22
+    1dda:	11 24       	eor	r1, r1
+    1ddc:	30 19       	sub	r19, r0
+    1dde:	30 5d       	subi	r19, 0xD0	; 208
+    1de0:	31 93       	st	Z+, r19
+    1de2:	de f6       	brtc	.-74     	; 0x1d9a <__ultoa_invert+0xe>
+    1de4:	cf 01       	movw	r24, r30
+    1de6:	08 95       	ret
+    1de8:	46 2f       	mov	r20, r22
+    1dea:	47 70       	andi	r20, 0x07	; 7
+    1dec:	40 5d       	subi	r20, 0xD0	; 208
+    1dee:	41 93       	st	Z+, r20
+    1df0:	b3 e0       	ldi	r27, 0x03	; 3
+    1df2:	0f d0       	rcall	.+30     	; 0x1e12 <__ultoa_invert+0x86>
+    1df4:	c9 f7       	brne	.-14     	; 0x1de8 <__ultoa_invert+0x5c>
+    1df6:	f6 cf       	rjmp	.-20     	; 0x1de4 <__ultoa_invert+0x58>
+    1df8:	46 2f       	mov	r20, r22
+    1dfa:	4f 70       	andi	r20, 0x0F	; 15
+    1dfc:	40 5d       	subi	r20, 0xD0	; 208
+    1dfe:	4a 33       	cpi	r20, 0x3A	; 58
+    1e00:	18 f0       	brcs	.+6      	; 0x1e08 <__ultoa_invert+0x7c>
+    1e02:	49 5d       	subi	r20, 0xD9	; 217
+    1e04:	31 fd       	sbrc	r19, 1
+    1e06:	40 52       	subi	r20, 0x20	; 32
+    1e08:	41 93       	st	Z+, r20
+    1e0a:	02 d0       	rcall	.+4      	; 0x1e10 <__ultoa_invert+0x84>
+    1e0c:	a9 f7       	brne	.-22     	; 0x1df8 <__ultoa_invert+0x6c>
+    1e0e:	ea cf       	rjmp	.-44     	; 0x1de4 <__ultoa_invert+0x58>
+    1e10:	b4 e0       	ldi	r27, 0x04	; 4
+    1e12:	a6 95       	lsr	r26
+    1e14:	97 95       	ror	r25
+    1e16:	87 95       	ror	r24
+    1e18:	77 95       	ror	r23
+    1e1a:	67 95       	ror	r22
+    1e1c:	ba 95       	dec	r27
+    1e1e:	c9 f7       	brne	.-14     	; 0x1e12 <__ultoa_invert+0x86>
+    1e20:	00 97       	sbiw	r24, 0x00	; 0
+    1e22:	61 05       	cpc	r22, r1
+    1e24:	71 05       	cpc	r23, r1
+    1e26:	08 95       	ret
+    1e28:	9b 01       	movw	r18, r22
+    1e2a:	ac 01       	movw	r20, r24
+    1e2c:	0a 2e       	mov	r0, r26
+    1e2e:	06 94       	lsr	r0
+    1e30:	57 95       	ror	r21
+    1e32:	47 95       	ror	r20
+    1e34:	37 95       	ror	r19
+    1e36:	27 95       	ror	r18
+    1e38:	ba 95       	dec	r27
+    1e3a:	c9 f7       	brne	.-14     	; 0x1e2e <__ultoa_invert+0xa2>
+    1e3c:	62 0f       	add	r22, r18
+    1e3e:	73 1f       	adc	r23, r19
+    1e40:	84 1f       	adc	r24, r20
+    1e42:	95 1f       	adc	r25, r21
+    1e44:	a0 1d       	adc	r26, r0
+    1e46:	08 95       	ret
+
+00001e48 <_exit>:
+    1e48:	f8 94       	cli
+
+00001e4a <__stop_program>:
+    1e4a:	ff cf       	rjmp	.-2      	; 0x1e4a <__stop_program>
